@@ -1,0 +1,40 @@
+\documentstyle[11pt]{article}
+\newcommand{\eat}[1]{}
+\newcommand{\para}[1]{\medskip \noindent {\bf #1}}
+\newcommand{\reminder}[1]{$\Longrightarrow$ {\em #1} \\}
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{-0.6in}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+
+\begin{document}
+\begin{center}
+{\bf \underline{Current and Pending Support}}
+
+\medskip
+{\bf Himanshu Gupta}
+\\
+{\bf Stony Brook University}
+
+\end{center}
+
+\medskip
+
+\begin{tabular}{|p{2in}|p{0.7in}|p{0.5in}|p{0.7in}|p{0.7in}|p{1in}|}
+\hline
+\textbf{Title} & \textbf{Current or Pending} & \textbf{Source} & \textbf{Award Amount} & \textbf{Period} & \textbf{Summer months per year}\\
+\hline
+
+NeTS: Small: Collaborative Research: Understanding Traffic Dynamics in Cellular Data Networks and Applications to Resource Management & Current & NSF & \$320,000 & 9/11 to 9/14 & 0.20 \\
+
+\hline
+
+NeTS: Medium: Collaborative Research: FireFly: A Flexible All-Wireless Inter-Rack Fabric for Data Centers using Free Space Optics & Pending & NSF & \$1,200,000 & 9/14 to 9/18 & 0.55 \\
+
+\hline
+\hline
+\end{tabular}
+\end{document}

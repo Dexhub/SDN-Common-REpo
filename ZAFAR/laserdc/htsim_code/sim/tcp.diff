@@ -1,0 +1,59 @@
+1c1
+< 
+---
+> #include "tcp.h"
+13,14d12
+< 
+< 	//cout << "Calling constructor \n";
+35d32
+< 	complete = false;
+45c42
+< 	cout << " FLOW START TIME: " << completion_time_msec << " FLOW ID: " << _flow_label << " FLOW_SIZE" << _flow_size << " complete = " << complete << "\n"; 	
+---
+> 	cout << " FLOW START TIME: " << completion_time_msec << " FLOW ID: " << _flow_label << "\n"; 	
+77,78d73
+< 
+< 	cout << " Flowlabel = " << _flow_label << " Seqno "<< seqno  << " _mss " << _mss << " flowsize = " <<  _flow_size << endl;
+80c75
+<   if (((seqno + _mss) >= _flow_size) && (complete == false))
+---
+>   if (seqno + _mss >= _flow_size)
+82c77
+< 	//cout << "FLOW SIZE: " << seqno + _mss << " FLOW ID: " << _flow_label <<  "\n"; 
+---
+> 	cout << "FLOW SIZE: " << seqno + _mss << " FLOW ID: " << _flow_label <<  "\n"; 
+85,88c80
+< 	cout << " FLOW COMPLETION TIME: " << completion_time_msec << " FLOW ID: " << _flow_label << "\n";
+< 	complete = true;
+< 	//cout << "complete = " << complete << endl;
+< 	 	
+---
+> 	cout << " FLOW COMPLETION TIME: " << completion_time_msec << " FLOW ID: " << _flow_label << "\n"; 	
+92c84
+<   if ( ((seqno +_mss) < _flow_size) && (complete == false))
+---
+>   if (seqno +_mss < _flow_size)
+268,273d259
+< 		if (complete == true)
+< 		{
+< 		
+< 		//	_cwnd = 1;
+< 		//	_maxcwnd = 1;
+< 		//cout << "In the send function post complete" << endl;	
+276,278c262
+< 		}
+< 		while (( (_last_acked + _cwnd) >= (_highest_sent + _mss)) && (complete == false)) {
+<                 //	cout << "In the send function while loop" << " complete = " << complete << " flow = " << _flow_label << endl;
+---
+> 		while (( _last_acked + _cwnd >= _highest_sent + _mss) && (_highest_sent + _mss < _flow_size)) {
+290,295d273
+< 	if (complete == true)
+< 	{
+< 	//cout << "In the retransmit function " << endl;
+< 	}
+< 	if (complete == false)
+< 	{
+301d278
+< 	}
+372d348
+< 	cout << " Receiver seqno: " << seqno << " FLOW: ID " << _src->_flow_label << endl;

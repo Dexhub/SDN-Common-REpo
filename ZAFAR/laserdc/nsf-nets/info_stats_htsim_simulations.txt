@@ -1,0 +1,5 @@
+The average size of short flows 10KB
+The average size of long flows 32MB
+
+
+

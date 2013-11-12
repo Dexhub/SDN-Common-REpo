@@ -1,0 +1,439 @@
+\section{Topology Design}
+\label{sec:top}
+
+Our vision (see Figure~\ref{fig:arch}) is a data center network where
+the ToR switches are interconnected using FSO devices.  Note that we
+are not proposing a fully wireless data center~\cite{cornell}; our
+focus is on the `inter-rack' fabric. The FSO transceivers are placed
+on top of each rack.  These devices are aligned to connect, after
+reflection from the ceiling mirror, to devices on other racks.  (FSO
+links are duplex by construction). 
+
+As mentioned in the previous section, we will explore use of two
+different mechanisms to steer the FSO devices, viz., Switchable
+mirrors (SMs) and Galvano Motors (GMs). Each FSO is equipped with
+either multiple (usually, 5-20) SMs or a single GM. Each SM is
+pre-aligned to target a specific FSO on a specific rack in the system,
+and each GM is pre-oriented to target a pre-determined geographic area
+in the data center. In real-time, based on the current traffic, each
+SM in the system is chosen to be in the mirror or transparent state
+(with only one SM per FSO being in the mirror state), and each GM is
+aligned to target a specific FSO in its pre-determine geographic area.
+
+Ideally, we would like as many FSO transceivers on each rack, with
+each FSO equipped with as many SMs or a GM that can cover a large
+geographic area, and ``reconfigure'' the topology to any desired
+topology in real-time with zero delay. However, in practice, there
+will be many constraints.  First, the FSO size would limit the number
+of FSO devices that can be placed on a rack. Second, the limited
+number of SMs, limited area covered by GMs, and the non-zero steering
+latency would make reconfiguration possibilities limited.
+
+In the above setting, there are two natural design questions that need
+to be solved: (i) Determination of the pre-alignments of the SMs and
+GMs, and (ii) Real-time choice of SM-states and GM-orientations, in
+response to changing traffic. We consider each of these problems in 
+the following two subsections.
+
+\subsection{Pre-Configuration Topology}
+
+In this section, we consider the problem of determination of the
+pre-configured topology. For clarity of understanding, we start with
+limiting our attention to the data center architecture {\bf consisting
+  of only SMs} (i.e., no GMs). We would consider more general
+architectures later. Also, we consider an illustrative data center
+setting consisting of exactly 512 racks, each containing 48
+machines/servers. The top of the rack has $m$ FSOs.  Each rack has a
+ToR switch containing (48 + $m$) ports, with 48 of them connected to
+the 48 machines on the rack and $m$ of them connected to the $m$
+FSOs. Each FSO is equipped with $k$ SMs.
+
+\softpara{Objective Functions.} We consider two different objective
+functions to evaluate a pre-configured topology: (a) total evacuation
+time for a uniform traffic model (for a given re-configuration
+algorithm and latency), or (b) dynamic bisection bandwidth (as defined
+later). Each of these two objective functions can also be considered
+in conjunction with a given non-uniform traffic model. 
+
+\para{Pre-Configuration Topology Problem.} The pre-configuration
+problem can be formally defined as follows. Given a certain setting
+(number of racks, number of machines per rack, number of FSOs per
+rack, steering capability and latency at each FSO), the problem is to
+determine the intial configuration (pre-alignment of each SM or
+orientation of each GM) so as to optimize one of the above three
+performance metrics, viz., minimize uniform-traffic evacuation model
+or dynamic bisection bandwidth (perhaps, under the constraint of
+maximum diameter).
+
+\para{Uniform-Traffic Evacuation Model.}  In the uniform-traffic
+evacuation model, we assume that each rack has a constant and large
+amount of traffic for each other rack, and the objective is to
+evacuate the entire traffic in minimum amount of time (while allowing
+ourselves the flexibility to change our flexible network as desired,
+as long as the latency of reconfiguration is taken into
+consideration).  If we consider an extreme case of zero (or
+sufficiently low) reconfiguration-latency, then it is reasonable to
+consider regular random graphs as a plausible solution which should
+perform well. Random graphs have well-known advantages compared to
+other strucutred topologies. E.g., recent work~\cite{jellyfish} shows
+that random regular graphs provide bandwidth and latency comparable to
+structured topologies. Furthermore, a random graph is naturally
+amenable to incremental expandability. In our setting of $k$ SMs per
+rack and $m$ FSOs per rack, we can create a $k$-regular random graph
+over the FSOs (or a $km$-regular graph over the racks) by aligning the
+SMs appropriately. In our preliminary work~\cite{hotnets}, we
+demonstrated near-optimal performance with a random pre-configuration
+topology for the setting of 512 racks, 16 FSOs per rack, and 5 SMs per
+FSO.
+
+If $km$ (degree per rack) is low relative to $n$ (\# racks), then a
+random graph may not have good connectivity.  This concern might
+become relevant in the regimes we are considering -- $km$ is a few
+tens, and $n$ may be a few hundred.  Thus, in such case, we consider
+an alternative topology wherein we use some FSOs (using one of its SM)
+to construct a ``baseline'' topology that guarantees connectivity
+properties, and align the remaining FSOs/SMs randomly.
+%
+We believe that a hypercube is a suitable candidate for this baseline
+topology for three reasons: (1) it uses a small number of links and
+leaves many candidate links for the random links; (2) it has a small
+diameter ($\log n$ for $n$ racks); and (3) it has a reasonable
+bisection bandwidth ($n/2$ over $n$ racks).  Furthermore, the
+performance of a hypercube can be improved by adding {\em diagonal}
+edges which connect each node to its ``complement''; these
+``short-cuts'' halve the diameter (proof omitted). We also conjecture
+(based on empirical findings) that the diagonals also improve (roughly
+double) the (static) bisection bandwidth. 
+%
+Finally, note that there are different types of short-cuts/diagonals
+that can be considered for hypercubes, each with different trade-offs.
+%
+The above idea can be used in two different ways: (i) the hypercube
+links are kept static (i.e., the state of the SMs used for the hypercube 
+links are never changed), and (ii) the hypercube links are dynamic. 
+%
+The first strategy ensures that there is always a connected backbone
+for the network, while the second yields higher performance by
+utilizing more flexility. In our preliminary work~\cite{hotnets}, we
+observed that the in our settings (512 racks, 16 FSOs/rack, 5 SMs/FSO)
+the second strategy yielded similar performance as random graphs,
+without any connecitivity problems.
+
+Our intuition for exploring the above two pre-configured topologies in
+our settings was to minimize the average hop-count between a pair of
+racks. In fact, with certain constraints on the uniformity of the
+graph and the all-pairs path, we conjecture that average hop-count is
+directly correlated to the evaluation time objective value. We will
+formally prove this result, and based on this intuition, we will
+consider other pre-configuration topologies that can yield better
+performance for given settings. 
+
+\begin{itemize}
+\item
+Is there a non-traffic *average* ``goodness''? 
+\item
+ Can we do better? Other structured k-regular graphs? Results regarding bounds.
+\end{itemize}
+
+\softpara{Role of Reconfiguration Latency.}  Finally, we note that the
+latency plays in important role in the evaluation of the evacuation
+time objective. E.g., if the reconfiguration latency is zero, then all
+the ``candidate'' links of the network can be effectively considered
+as always-active links.  However, if the reconfiguration latency is
+very high, then the evacuation time depends on a {\em single}
+configuration of the network. It would be interesting to determine how
+the reconfiguration latency affects the choice of pre-configuration
+latency, when trying to minimize the total evacuation time. 
+
+\begin{itemize}
+\item
+If latency is zero:   try a tree; if diameter problem is OK, then hypercube+diagonals?
+\item
+If very high latency: ...
+\item
+somewhere in between: Quantatively? 20msec translates to what? Depends on statistics about 
+	elephanat flows.
+\end{itemize}
+
+\para{Rethinking Performance Metrics: Dynamic Bisection Bandwidth.}
+Traditional metrics such as bisection bandwidth and diameter largely
+reflect a {\em static} perspective of the topology. For the types of
+flexible networks as described above, we need to rethink these
+metrics. In particular, we need a notion of {\em dynamic} bisection
+bandwidth (DBW) based on the fact that, in a flexible network such as
+ours, different topologies can be used for different communication
+requirements. Formally, dynamic bisection bandwidth can be defined as
+the minimum (across all possible equal partitions of the graph)
+configurable-bandwidth of the graph, where the configurable-bandwidth
+for a given partition is the maximum bandwidth possible across all
+possible configurations of the given flexible network.
+%
+The above definitions implicitly assume that we can reconfigure the
+topology as and when needed based on the communication needs. However,
+if the reconfiguration is done very infrequently (due to high latency,
+or other design constraints), then the above definition should be
+changed appropriately (e.g., the dynamic bisection bandwidth should be
+defined as the minimum bisection bandwidth across all possible
+configuration).
+
+\softpara{Optimizing Dynamic Bisection Bandwidth.} We now consider
+the problem of determine the pre-configuration topology with the 
+aim of maximing the dynamic bisection bandwidth as defined above.
+%
+Consider data center with 512 racks with 48 machines each. Let us
+assume the ToR switch to be a 10GigE switch, with each link (FSO to
+FSO, machine to ToR) having a maximum capacity of 10Gpbs. Since each
+machine can send/receive at most 10Gbps traffic, the maximum desired
+bisection bandwidth for this DC is $D$ = 10(512)(48)/2 Gpbs = 256(48)
+links of 10Gpbs each. Let us see how we can achieve this much
+(dynamic) bisection bandwidth using FSOs and SMs.
+%
+We consider two extremes, viz., when each FSO has only one SM (i.e., 
+an inflexible network), and when an FSO can have as many SMs as needed. 
+%
+When each FSO has only one SM, it is easy to see that equipping each
+rack with 256+48 FSOs achieves an inter-rack bisection bandwidth of
+$D$ Gpbs. Furthermore, note that an inter-rack bisection bandwidth of
+a certain amount also implies an inter-machine bisection bandwidth of
+the same amount (and vice-versa), due to the 10GigE ToR switch
+connecting the machines on a rack. It is not clear what is the minimum
+number of FSOs required to achieve the bisection bandwidth of $D$
+Gpbs.
+%
+Considering the other extreme, where an FSO can have an unlimited
+number of SMs, we see that we need at least 48 FSOs (with 256 SMs
+each) to achieve a {\em dynamic} bisection bandwidth of $D$ Gbps.  In
+this case, the number of FSOs required is minimum possible, but the
+number of SMs per FSO could be possibly further reduced. 
+%
+Above, we have illustrated the spectrum of possibilities by consider
+two ends of the spectrum. In general, we want to address two problems:
+(i) For a certain desired dynamic bisection bandwidth, what is the
+minimum number of FSOs required per rack if each can be equipped with
+a certain given number of SMs. Similarly, what is the minimum number
+of SMs required per FSO for a given number of FSOs per rack, to
+achieve a certain given dynamic bisection bandwidth? (ii) Given a
+certain number of FSOs per rack and number of SMs per FSO, what is the
+maximum achievable dynamic bisection bandwidth?
+%
+Note that the above problems are quite different from the well-known
+problem of {\em determining} bisection bandwidth of a given graph,
+which is known to NP-hard~\cite{}. In the above problems, we are
+instead interested in ``constructing'' a {\em flexible} graph with a
+desired (dynamic) bisection bandwidth. \blue{How about results on 
+the regular graphs?} In our research, we would address the above
+problems.
+
+\softpara{Incorporating Traffic Statistics.}  The above discussion
+relating to the two objective functions implicitly assumed lack of any
+traffic information. However, if we have some statistics available on
+the expected workload, then the pre-configuration can be tailored to
+the available traffic knowledge. Note that since the pre-configuration
+can even be done on a regular but infrequent basis, it is desirable to
+be able to pre-configure based on expected traffic. 
+%
+One simple form of traffic statisfics could be in the form of a
+weighted complete graph over the racks, with the weight signifying the
+traffic workload between that pair of racks. Then, one way to solve
+the pre-configuration problem could be to extract the maximum weighted
+$km$-regular subgraph from the weighted complete graph representing
+the given traffic matrix. To the best of our knowledge, this problem
+has been been addressed before in the theory literature.  Thus, we
+would first attempt to prove the hardness of this problem, and develop
+approximation algorithms. There is a very simple ILP formulation for
+the problem, and hence, can be solved optimally using CPLEX for small
+instances. For larger instances, we can develop a greedy heuristic
+that interatively extracts links based on certain criteria. In our
+research, we would explore the above avenues.
+%
+There are two additional constraints that can be incorporated in the
+above subgraph extraction problem: (a) First, the $km$ SMs on each
+rack are actually in the form of $k$ SMs on each of the $m$ FSOs,
+implying that the $km$ links at any rack would be organized in $m$
+sets of $k$ links each with only one link from each set being active
+at any time. This fact and the given switching latency should both be
+taken into consideration when extracting the subgraph. (b) Second, the
+links from the complete graph that are not chosen in the extracted
+subgraph, should also have a low hop-count in the extracted subgraph.
+%
+Incorporating the above constaints in the ILP formulation doesn't seem
+straightforward, but the greedy algorithm can be easily modified to 
+handle the above constaints. 
+%
+In our research, we would address the above, and also consider the
+problem in the context of more sophisticiated available traffic
+statistics~\cite{}.
+
+
+\para{Galvo Motors (GMs), and GMs with SMs.}  In the discussion till
+now, we have considered the FSO-based architecture involving only SMs.
+As noted in previous section, we also plan to explore the steering
+mechanism based on GMs, wherein each FSO is equipped with a single GM
+which is oriented towards a pre-configured geographic area $A$ in the
+data center, and within $A$, the GM can be steered in real-time to
+target any specific FSO. The pre-configuration problem in this context
+involves determining the initial orientations of the GMs.
+%
+Use of GMs, instead of or in addition to SMs, adds a few additional
+challenges to the pre-configuration problem. Firstly, it's not clear
+if one can realize a truly random regular graph using GMs.  If we
+orient the GMs randomly, that only results in {\em sets} of edges
+being distributed randomly. 
+% 
+Secondly, the angular contraint of GM's steerability makes it less
+amenable to achieving a high dynamic bisecion bandwidth.
+%
+Lastly, the traffic-aware pre-configuration problem in the context 
+of GMs can't be easily expressed as a combinatorial graph problem
+or an ILP, and may require geometric solutions.
+%
+In our research, we would extend our SM-only based solutions to the
+GM-based architectures.
+%
+In addition, we would also explore architectures involving a mix of
+GMs and SMs (i.e., having some of the FSOs equipped with GMs, while
+the others equipped with SMs), and consider pre-configuration topology
+problem in this context. One of the additional challenges in this
+setting would be to also decide how many FSOs on each rack should
+be equipped with SMs and how many with GMs. This question may need
+to be answered within the constraint of available cost/budget. 
+%
+It would be interesting to understand the cost-performance tradeoffs
+that GMs or GMs in combination with SMs offer relative to the SM-only
+architecture. Note that in architectures involving GMs, the steering
+latency may depend on the ``angular distance,'' which may have a
+bearing on the eventual performance and hence, the design choices.
+
+\softpara{Other Architectureal Ideas.}
+We can augment our architecture (based on ToRs, FSOs, SMs, and GMs)
+in a few other ways to enhance the performance of our system. In
+particular, we would like to explore two possibilities:
+\begin{itemize}
+\item
+In our architecture, the only switches used are the ToR switches that
+have some of the ports connected to the rack machines and the
+remaining ports connected to the FSOs on the rack. However, adding
+additional ``steiner/hub'' switches (as in all the traditional DC
+designs) all of whose ports are connected to the FSOs can also be used
+to add more flexibility to the design.  The challenges here are: (a)
+Find appropriate physical space to place such switches and associated
+FSOs, and (b) design appropriate topology to determine the connections
+that maximize performance. 
+
+\item
+Even though, an FSO link is capable of transmitting a much higher
+bandwidth, in our design, the rate on each FSO link is limited by the
+rate of the ToR switch ports. One way to allow higher bandwidth on an
+FSO link is to use a WSS (wavelength selective switch) in between the
+ToR switch ports and the FSOs, as in OSA~\cite{}, allowing multiple
+ports to ``feed'' into a single FSO link. The WSS can be configured
+in real-time to allow a configurable number of ports to feed into
+a single FSO -- yielding another dimension of flexibility to our 
+design, viz., links of variable bandwidth which is configurable in
+real-time.
+\end{itemize}
+
+
+\para{Budget Based Optimization}
+Given budget and/or equipment: pick Setting to Maximize Performance, either one or both topologies.
+Similar Vein as REWIRE. Best we can hope for are some other structured graph, that have good performance.
+
+\vspace{2in}
+
+\softpara{Computing DBW and Dynamic Diameter.} 
+To consider the above metrics in our design objectives, we need to first
+be able to efficiently {\em compute} these measures for a given network.
+%
+Computation of dynamic diameter for a flexible network is quite
+straight-forward: the dynamic diameter of a flexible network is actually
+just equal to the diameter of the graph with {\em all} the candidate links. 
+This is true since the minimum distance across all realizations is simply
+the distance between the given nodes in the graph with all candidate links.
+%
+However, computation of dynamic bisection bandwidth is non-trivial.
+Firstly, note that even the computation of traditional/static
+bisection bandwidth is known to be NP-complete, with the best
+approximation factor being polylogarithmic~\cite{}. It is clear that
+the DBW problem is more general, and hence is also NP-complete. Since
+the approximation algorithm is unacceptably complicated and
+approximate, we would try to generalize the well-known heuristics (SA
+and KI) known for the static version to the dynamic BW. The heuristics
+are known to perform wonderfully well for a wide range of random
+graphs.  We will try to design heuristic to achieve similar
+performance.  Moreover, our graphs are regular graphs -- so, the
+heuristic could be specialized.  This will be explored in our
+research.
+
+
+
+\para{Reconfiguration Algorithm.}
+
+We envision a (centralized) {\em Topology Manager} that dynamically
+does the above-said reconfiguration in real-time, and the {\em Routing
+Manager} acts in concert with the Topology Manager to setup routing
+table entries for each ToR switch to route flows between racks.
+
+
+\begin{itemize}
+\item
+. Given the setting, what algorithm?
+\item
+. Should it be considered in conjunction with pre-configure?
+\item
+. Elephant flows? Continuous function? 
+\item
+. If average hop is low, then what we have may be best. If average hop is high, then our 
+  method may not make sense. 
+\end{itemize}
+
+
+
+
+\eat{
+
+\para{Minimizing Average Inter-Rack Distance.}  The PCT problem with
+this objective of minimizing the average inter-rack distance (PCT-MAID
+problem) is closely related to the NP-hard maximum
+degree-and-diameter-bouned subgraph problem~\cite{} which is known to
+be in APX (i.e., cannot be approximated within a constant factor).
+The PCT-MAID 
+
+. Degree only. amini-2008. O(n/log n,m/log n). Optimal for no-connectivity
+  Does NOT SPAN.
+. Degree+diameter contraint. 2011. Greedy.
+  Does NOT SPAN.
+. Nothing for Degree + Average-distance.
+
+
+Convert the given budget and the pricing information to a constraint
+equation over $n/l, m, m_1,$ and \k.
+
+
+Assuming that an $f$ 
+
+
+ and the number of candidate links per GM is $c$,
+we get $m_1 = f.m$ and $k = 1/m(\k(m-m_1) + c.m_1)$. Here, $c$ depends
+on the physical dimensions of the racks, etc. We will run the algorithm
+for various values of $f$ and possibly, $c$.
+
+
+Now, from above two, we get a constraint equation on $n, m, k$. 
+
+
+
+For a
+given $n$, $m$ and $k$, solve the PCFT problem. Convert the PCFT
+solution to a realization solution by diving the $k.m$ links per rack
+into (i) $f.m$ ``contiguous'' sets (one for each GM) of $c$ links, and
+(ii) $(1-f)m$ sets (one for each FSO with SMs) of \k\ links
+each. Pre-orient GMs appropriately.
+
+Now, explore the space of $n,m,k,f$ efficiently. Here, developing some
+connection between realizable DBW  to the values will help.
+
+}
+
+
+
+

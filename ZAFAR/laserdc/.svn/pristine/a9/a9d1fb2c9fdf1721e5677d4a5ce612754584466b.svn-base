@@ -1,0 +1,16 @@
+\section{Online reconfiguration}
+
+\begin{itemize}
+\item what is the input to this module
+
+\item what are the requirements, objective criteria?
+
+\item why not LP? or something simple?
+
+\item what is the algo we are using?
+
+\item is this fast? scalable?  any intelligence here? is it provably optimal?
+
+\item why not hedera, mahout, cthru  etc?
+
+\end{itemize}

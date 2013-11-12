@@ -1,0 +1,17 @@
+1. CFLAGS -03/04 to speed up?
+
+2. move debug to config.h and add ifdef debug to main.cpp
+
+3. add the cleanup_clock.h/.cpp files
+
+4. add the destructor function for the TcpSrc and TcpSink classes? -- not much to do here
+
+5. add the priority queue of TCPSrcesToDelete -- rather than directly deleting TcpSrc/Sink structures 
+
+6. add flow label into the packet class ..
+
+7. change _tcps structure to be a set of active flows instead of everything 
+
+8. change the network and rexmit timer functions to look up deleted flow list 
+
+

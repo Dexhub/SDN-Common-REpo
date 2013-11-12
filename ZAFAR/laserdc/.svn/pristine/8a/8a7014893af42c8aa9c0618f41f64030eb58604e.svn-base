@@ -1,0 +1,112 @@
+\documentclass[11pt,onecolumn]{article}
+
+\usepackage{times}
+\usepackage{fullpage}
+\input{../def.tex}
+
+\thispagestyle{empty}
+
+\date{}
+
+\begin{document}
+\noindent {\Large \em Vyas Sekar, Stony Brook University, Current and
+Pending Support, Sep 2013}
+
+
+
+\vspace{0.5cm}
+
+\noindent {\bf Current Support}
+\begin{packeditemize} 
+\item
+Title: Adaptive and Scalable Network Policy Enforcement \\
+Source of Support: ONR; Total Award Amount: \$358,062 for SBU \\
+Total Award Period Covered: 01/01/13 - 12/31/15 \\
+Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:1 \\
+co-PI with Michael K Reiter, UNC 
+
+\item
+Title: Infrastructure and Architecture for a Software-Defined Internet \\
+Source of Support: Intel; Total Award Amount: \$300,000 for SBU \\
+Total Award Period Covered: 01/01/13 - 12/31/15 \\
+Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:0  \\
+co-PI with Sylvia Ratnasamy, Scott Shenker (UC Berkeley), Katerina Argyraki (EPFL) 
+
+
+\item
+Title: NeTS: Medium: Collaborative: Enabling Flexible Middlebox Processing in the Cloud; \\ 
+Source of Support: NSF; Total Award Amount: \$500,000 for SBU \\
+Total Award Period Covered: 09/01/13 - 08/31/17 \\
+Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:1 \\ 
+co-PI with Aditya Akella, Univ of Wisconsin
+
+
+\item
+Title: Enabling the Transition to the Mobile Web\\
+Source of Support: Google; Total Award Amount: \$50,000 for SBU \\
+Total Award Period Covered: 01/01/13 - 12/31/13 \\
+Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:0  \\
+co-PI with Harsha Madhyastha, UC Riverside 
+
+
+\item
+Title: TWC: Frontier: Collaborative: Rethinking Security in the Era of
+Cloud Computing\\
+Source of Support: NSF; Total Award Amount: \$600,000 for SBU\\
+Total Award Period Covered: 08/15/13 - 08/15/18 \\
+Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:1  \\
+co-PI with Aditya Akella (UW-Madison), Jeff Chase (Duke), Ari Juels (RSA), Peng Ning
+(NCSU),   Michael Reiter (UNC), Thomas Ristenpart (UW-Madison), Mike
+Swift (UW-Madison)
+
+\item
+Title:Proposal to Support Student Travel for the ACM CoNEXT 2013
+Conference \\
+Source of Support: NSF; Total Award Amount: \$20,000 for SBU\\
+Total Award Period Covered: 12/1/13 - 7/1/14 \\
+Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:0  
+
+
+\end{packeditemize}
+
+
+
+\noindent {\bf Pending Support (under submission)}
+\begin{packeditemize}
+
+
+\item None 
+%\item
+%itle: NeTS: Large: Collaborative: Design Considerations for a Video-Centric Internet;  \\ 
+%Source of Support: NSF; Total Award Amount: \$600,000 for SBU \\
+%Total Award Period Covered: 09/01/13 - 08/31/18 \\
+%Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:1  \\
+%co-PI with Srinivasan Seshan, Hui Zhang (CMU), Aditya Akella (Univ Wisconsin), Ion Stoica (UC Berkeley)
+
+
+%\item
+%Title: TWC: Medium: Collaborative: Exploiting Structure for Proactive Protection against Web-based Malware (this proposal)\\
+%Source of Support: NSF; Total Award Amount: \$960,000 for SBU\\
+%Total Award Period Covered: 09/01/13 - 08/31/17 \\
+%Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:1  \\
+%co-PI with Leman Akoglu, Radu Sion (SBU), Nick Feamster (Georgia Tech) 
+
+\end{packeditemize}
+
+
+\noindent {\bf Planned Submissions}
+\begin{packeditemize}
+
+\item
+Title: NeTS: Medium: Collaborative:Flexible All-Wireless Inter-Rack Fabric for Datacenters Using Free-Space Optics  (this proposal)\\
+Source of Support: NSF; Total Award Amount: \$300,000 for CMU\\
+Total Award Period Covered: 09/01/14 - 08/31/18 \\
+Location of Project: Stony Brook; Months: Cal:0 , Acad:0 , Sumr:0.1  \\
+ with Himanshu Gupta (PI, Stony Brook), Samir R Das (Stony Brook), and
+Jon Longtin (Stony Brook)
+
+\end{packeditemize}
+
+
+
+\end{document}

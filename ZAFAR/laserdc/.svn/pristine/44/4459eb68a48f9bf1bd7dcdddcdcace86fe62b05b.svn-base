@@ -1,0 +1,56 @@
+Assume, only 1 FSO per rack. Each FSO acts as a sender as well as a receiver.
+
+Let the inter-rack traffic be t_{ij} between rack i and j. Let t_ij's be
+integers.
+
+Assume the bandwidth of each link to be 1. I.e., one unit of traffic takes
+one unit of time.
+
+Let $T$ be the best evacuation time.
+
+It is easy to see that:
+
+SUM_i t_ij <= T	  (because the receiver j can only receive one unit of traffic in a unit time)
+SUM_j t_ij <= T   (because the sender i can only send one unit of traffic in a unit time)
+
+Assume n racks. Now, consider a bi-partite graph of n senders and n receivers. 
+Draw t_ij edges beween sender i and receiver j in the graph. The maximum degree
+of a node in this graph is T. Thus, based on the Hall's theorem, the edges can
+be partitioned into at most T machings. 
+
+Each matching represents a depletion of edges (unit traffic) in unit time, 
+where each sender talks to only one receiver and vice-versa. So, the total
+completion time is at most T.
+
+Thus, the optimal (T) is achievable using one-hop traffic and matchings.
+
+GENERALIZATION to m FSOs per rack. 
+==============
+
+Let $T$ be the best evacuation time. 
+
+FIRST: For each (i,j), MAKE the SMALLER of the two values t_{ij} and t_{ji} ZERO. 
+
+Now, observe that: 
+
+SUM_i t_ij <= mT
+SUM_j t_ij <= mT
+
+You can mT number of matchings. Each set of m matching corresponds to a valid
+depletion of edges in ONE unit of time (since we have m senders and m receivers
+at each rack). 
+
+The ignored (t_ij or t_ji) traffic can be accomodated/piggybacked on the corresponding
+reverse traffic. 
+
+Thus, achievable in T unit times.
+
+
+HALL's Theorem
+==============
+
+Consider a bi-partite graph, wherein the maximum degree is r. Then, the edges 
+can be partitioned into at most r matchings.
+
+This follows from the well-known theorem which says that if the bi-partite graph
+is r-regular, then the edges can be partitioned into r perfect matchings.

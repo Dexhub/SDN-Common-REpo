@@ -1,0 +1,115 @@
+
+\subsection{Fast reconfiguration and traffic engineering}
+
+\begin{task}
+\label{task:system:fastalgo}
+We will develop fast, near-optimal algorithms for  topology
+reconfiguration and traffic engineering. We will  investigate tradeoffs between
+  performance goals  using real-world datacenter traces and
+application requirements. We will also investigate distributed and online
+algorithms  that are robust to estimation errors and do not
+require global coordination.  
+\end{task}
+
+
+%\begin{task}
+%\label{task:system:onlinelocal}
+%\end{task}
+
+
+%\input{macros}
+ 
+%To explain the optimization problem that we
+%need to solve and highlight why this problem is hard, we begin with an abstract
+%integer linear program formulation in a static setting.
+\mypara{Problem Context and Challenges} At a high-level, we need to solve a a
+joint topology design and TE problem in contrast to prior
+work in network management that considers TE  in isolation on
+fixed topologies.  We consider a setting with $\NumRacks$ {\Rack}s each
+equipped with $\NumFSOs$ {\FSO} devices.   Let the index $\RackIndex$  refer to
+a specific {\Rack} and  $\FSOIndex$  refer to a specific {\FSO} device.  Thus,
+the subscript $\RackFSOa$  will refer to a specific Rack-FSO combination.  Let
+$\InterRack$ denote a pair of racks and let us assume that we know some
+estimated traffic matrix for every pair of racks denoted by
+$\Traffic_\InterRack$ for the volume of traffic from $\InterRack$.  
+
+%Suppose the bandwidth of each inter-FSO link (if enabled) is $\Capacity$. 
+
+ As a starting point, we consider the objective  on  routing   the demands in
+the traffic matrix to  minimize network  congestion~\cite{thorupfortz,jrexte}.
+ There are  two main level of control decisions. First, we need to decide
+ if a pair of Rack-FSO links need to be activated; $\EdgeVarIndex$ is 
+a binary variable that is 1 if we choose to activate  $\Edge$. 
+ Note that  we can only choose from a set of
+$\Candidates_{\RackFSOa}$ possible links as defined by the pre-configured
+topology from Section~\ref{sec:topology}.  Second, we need a routing 
+ strategy for each demand; let $\FlowEdge$
+ denote the volume of the inter-rack  $\InterRack$ demand routed on the
+edge $\Edge$.  Given these control variables, we can model the problem as a
+Integer Linear Program (not shown) that combines {\em edge activation}  
+ with traditional max-flow like constraints for {\em flow routing}. 
+
+
+%\mypara{Challenges}
+
+ Unfortunately, this problem is theoretically NP-hard (not shown due to space
+constraints) and it is  practically intractable---state-of-art ILP solvers take
+several hours even for a 20-node problem instance.   In practice, we also  need
+to model metrics  such as fairness, latency, as well as tenant-provider SLAs.
+Furthermore, this implicitly ssumes that (a) the traffic demands are known (or
+predictable) and (b) that the optimization can be run by a global optimizer.
+
+
+%$two  natural
+%c%lasses of  approaches: (1)  ``greedy'' solutions especially if the specific
+%bjective functions are submodular~\cite{} and (2)
+
+\mypara{Proposed Approach} We need to a scalable optimization across  multiple
+metrics that is also amenable to a distributed/online implementation.  We
+propose to explore three complementary strategies: 
+
+\begin{packeditemize}
+
+\item {\em Approximation algorithms:} Specifically, we will investigate
+``randomized rounding'' strategies that solve a relaxed linear program (i.e.,
+converting the discrete $\EdgeVarIndex$ into fractionals)  and then selectively
+choosing to ``round'' some of these fractions to 1. We can also exploit  the
+``flow'' structure of the optimization to design distributed optimization
+strategies~\cite{khandekar,conext13}.
+
+% However, these existing algorithms cannot be
+%directly applied as they do not address the topology selection aspects.
+
+% For instance, we can scope the problem to 
+%  only look at the traffic matrix entries with the highest demands 
+% or alternatively constrain the number of links that will be 
+% reconfigured.  Second, we will explore   Similarly, 
+
+\item {\em Multi-stage optimization:} Intuitively, solving the traffic
+engineering problem is simpler   than the joint optimization; e.g., using
+max-flow solvers~\cite{}. Thus, one  heuristic is to see if the new traffic
+demand can be satisfied by better TE over the existing
+topology configuration and  check if this TE solution is  close to the optimal.   At first glance, this is  a
+chicken-or-egg problem because we need to run the hard optimization to
+determine how close to optimal we are!  In practice, we only need a bound on
+the optimal value and not the solution and we can run a relaxed LP to get an
+upperbound.
+
+%\footnote{In case of maximization problems,
+%the LP will be a upperbound and in case of minimization problems the LP
+%solution will be a lower bound.} and compare the solution provided by the
+%traffic engineering optimization to this bound.
+
+\item {\em Exploit real-world structure:} We can leverage the natural structure
+of real-world workloads; e.g.,  a small number of ``elephant'' flows carry the
+most bytes~\cite{}.  Since these elephant flows are typically
+long-lived~\cite{}, they are amenable to coarser time-scale optimizations.
+Thus, we can design heuristics that use topology reconfiguration logic for the
+elephants and fallback to TE for the ``mice''.  This structure is also
+naturally amenable to an online/local strategy as it avoids the need for global
+coordination.
+
+
+\end{packeditemize}
+
+

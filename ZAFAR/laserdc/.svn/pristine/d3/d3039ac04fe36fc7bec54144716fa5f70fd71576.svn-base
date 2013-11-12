@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: abbrv.bst
+Database file #1: Ref.bib
+Database file #2: VyasRef.bib
+Warning--to sort, need author or key in fsona
+Warning--to sort, need author or key in lightpointe
+Warning--to sort, need author or key in sfp
+Warning--to sort, need author or key in sm
+Warning--to sort, need author or key in sm-size
+Warning--to sort, need author or key in 64switch
+Warning--to sort, need author or key in 48-switch-cost
+Warning--to sort, need author or key in 48-10-switch
+Warning--to sort, need author or key in airflow
+Warning--to sort, need author or key in hotnets09scribe
+You've used 36 entries,
+            2118 wiz_defined-function locations,
+            632 strings with 9194 characters,
+and the built_in function-call counts, 10387 in all, are:
+= -- 862
+> -- 671
+< -- 0
++ -- 273
+- -- 234
+* -- 663
+:= -- 1700
+add.period$ -- 90
+call.type$ -- 36
+change.case$ -- 213
+chr.to.int$ -- 0
+cite$ -- 46
+duplicate$ -- 390
+empty$ -- 894
+format.name$ -- 234
+if$ -- 2177
+int.to.chr$ -- 0
+int.to.str$ -- 36
+missing$ -- 22
+newline$ -- 164
+num.names$ -- 52
+pop$ -- 370
+preamble$ -- 1
+purify$ -- 187
+quote$ -- 0
+skip$ -- 275
+stack$ -- 0
+substring$ -- 183
+swap$ -- 54
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 144
+warning$ -- 10
+while$ -- 52
+width$ -- 38
+write$ -- 316
+(There were 10 warnings)

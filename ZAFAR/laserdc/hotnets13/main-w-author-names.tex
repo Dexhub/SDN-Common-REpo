@@ -1,0 +1,61 @@
+%\documentclass[conference]{IEEETran}
+\documentclass{sig-alt-hotnets}
+
+\usepackage{times}
+\usepackage{subfig}
+
+\input{def}
+
+%\newcommand{\subparagraph}{}
+%\usepackage[compact]{titlesec}
+
+
+\newcommand{\vyas}[1]{{\footnotesize\color{red}[VS: #1]}}
+
+\newcounter{savecntr}
+\newcounter{restorecntr}
+\usepackage{footnote}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\title{ Patch Panels in the Sky: \\ A Case for Free-Space Optics
+  in Data Centers}
+
+\numberofauthors{1}
+\author{
+ \alignauthor  Navid Hamed Azimi, Himanshu Gupta, Vyas Sekar,  Samir R. Das \\
+ \affaddr{Computer Science Department}\\
+ \affaddr {Stony Brook University}\\
+ \affaddr{Stony Brook, NY 11794, USA}\\
+ \vspace{0.3in}
+}
+
+\begin{document}
+\maketitle
+
+
+
+% VS -- its ok to remove abstract i think 
+%\input{abstract}
+
+%% 1 page
+\input{intro_vyas}
+%% 1 page
+\input{fso}
+%% 1.75 page 
+\input{design}
+%% 1 page
+\input{performance}
+%% 1 page
+\input{future}
+%% 0.25
+\input{conc}
+%\input{concerns}
+{
+\footnotesize
+\bibliographystyle{plain}
+\bibliography{Ref,VyasRef}
+}
+
+\end{document}

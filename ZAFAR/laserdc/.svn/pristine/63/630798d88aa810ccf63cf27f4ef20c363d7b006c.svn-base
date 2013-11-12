@@ -1,0 +1,151 @@
+
+@inproceedings{greenswitch-hotpower08,
+author = {Ganesh Ananthanarayanan and Randy H. Katz},
+title = {{ Greening the switch}},
+booktitle = {Proc.\ HotPower}
+year =  2008
+}
+
+@article{energyproportional-ieeecomputer07,
+title = {The Case for Energy-Proportional Computing},
+author  = {Luiz André Barroso and Urs Hölzle},
+year  = 2007,
+URL = {http://www.computer.org/portal/site/computer/index.jsp?pageID=computer_level1&path=computer/homepage/Dec07&file=feature.xml&xsl=article.xsl},
+journal = {IEEE Computer},
+volume  = {40}
+}
+
+@article{clos-bell53,
+author ={Charles Clos},
+title = {{ A study of non-blocking switching networks}},
+journal = {
+Bell
+System Technical Journal},
+volume = 32, 
+year = 1953
+}
+
+ @inproceedings{vpnprov-sigcomm99,
+author = { Nicholas G. Duffield and  Pawan Goyal and Albert G. Greenberg and Partho Mishra and K. K.
+Ramakrishnan, and Jacobus E. van der Merwe},
+title = {{ A flexible model for 
+resource management in virtual private networks}}.
+booktitle = {Proc.\ SIGCOMM},
+year = 1999
+}
+
+
+
+@inproceedings{dcmeasurements-imc09,
+author = { Srikanth Kandula and Sudipta Sengupta and Albert G Greenberg and Parveen Patel},
+title = {{ The
+Nature of Datacenter Traffic: Measurements & Analysis}},
+booktitle = {Proc.\ IMC},
+year = 2009
+}
+
+ 
+@inproceedings{maxthruput-infocom06,
+author = {Murali Kodialam and T. V. Lakshman and Sudipta Sengupta},
+title = {{Maximum
+throughput routing of traffic in the hose model}},
+booktitle = {Proc.\ Infocom},
+year = 2006
+}
+
+
+@inproceedings{energyaware-globalinternet,
+author = {{Priya Mahadevan and Puneet Sharma and Sujata Banerjee and Partha Ranganathan},
+title = {{Energy aware network operations}},
+booktitle = {Proc.\ IEEE Global
+Internet Symosium},
+year =  2009
+}
+
+@inproceedings{elephant-imc04,
+author = { Tatsuya  Mori and  Masato Uchida and  Ryochi  Kawahara and  Jianping  Pan and Shigeki Goto},
+
+title  = {{Identifying elephant ows through periodically sampled
+packets}},
+booktitle = {Proc. 
+ IMC},
+year = 2004
+}
+
+@inproceedings{devolved-infocom.
+author = { Adrian S.-W. Tam and Kang Xi and  H. Jonathan Chao},
+title = {{ Use of Devolved
+Controllers in Data Center Networks}},
+booktitle = {Proc.\
+INFOCOM Workshop
+on Cloud Computing},
+year = 2011
+}
+
+@inproceedings{hyperflow-inm10,
+author = { Amin Tootoonchian and Yashar Ganjali},
+title = {{ HyperFlow: A Distributed
+Control Plane for OpenFlow}},
+booktitle = {Proc.\
+ INM/WREN},
+year= 2010
+}
+
+
+@inproceedings{kandoo-hotsdn12,
+title = {{Kandoo: A Framework for Efficient and Scalable
+Offloading of Control Applications}},
+author  = {Soheil Hassas Yeganeh and Yashar Ganjali},
+booktitle = {Proc.\ HotSDN},
+year= 2012
+}
+
+@inproceedings{bigdata-hotsdn12,
+title = {{Programming Your Network at Run-time
+for Big Data Applications}},
+author = {Guohui Wang and T. S. Eugene Ng and Anees Shaikh},
+booktitle = {Proc.\ HotSDN},
+year= 2012
+}
+
+@inproceedings{consistentbw-hotsdn12,
+title = {{Walk the line: consistent network updates with bandwidth guarantees}},
+author = { 	Soudeh Ghorbani and and 	Matthew Caesar},
+booktitle = {Proc.\ HotSDN},
+year= 2012
+}
+
+@inproceedings{opensketch-nsdi13,
+title  = {{Software Defined Traffic Measurement with OpenSketch}},
+author = { Minlan Yu and Lavanya Jose and Rui Miao},
+booktitle = {Proc.\ NSDI},
+year =  2013
+}
+
+@inproceedings{flowsense-pam13,
+title  = {{FlowSense: Monitoring Network Utilization with Zero Measurement Cost}},
+author ={ Curtis Yu and  Cristian Lumezanu and Vishal Singh and  Yueping Zhang and  Geoff Jiang and  Harsha V. Madhyastha},
+booktitle = {Proc.\ PAM}
+year= 2013
+}
+
+@inproceedings{resourceaccuracy-hotsdn13,
+title = {{Resource/Accuracy Tradeoffs in Software Defined Measurement}},
+author ={ Masoud Moshref and  Minlan Yu and  Ramesh Govindan},
+booktitle = {Proc.\ HotSDN},
+year = 2013
+}
+
+@inproceedings{opentm-pam10,
+title = {{OpenTM: Traffic Matrix Estimator for OpenFlow Networks}},
+author = { Amin Tootoonchian and Monia Ghobadi and Yashar Ganjali},
+booktitle = { Proc.\ PAM},
+year = 2010
+}
+
+@inproceedings{bigdata-hotcloud13,
+title = {{Transparent and Flexible Network Management for Big Data Processing in the Cloud}},
+author = { Anupam Das, Cristian Lumezanu, Yueping Zhang, Vishal Singh, Guofei Jiang, Curtis Yu},
+booktitle = {Proc.\ HotCloud},
+year =   2013
+}

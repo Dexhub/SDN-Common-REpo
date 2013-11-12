@@ -1,0 +1,120 @@
+\subsection{Reconfiguration and Traffic Engineering}
+\label{sec:reconfig}
+
+\begin{task}
+\label{task:system:fastalgo}
+We will develop fast and efficient algorithms for the joint
+optimization problem of reconfiguration and traffic engineering.
+\end{task}
+
+%To explain the optimization problem that we
+%need to solve and highlight why this problem is hard, we begin with an abstract
+%integer linear program formulation in a static setting.
+
+\para{Joint Reconfiguration and Traffic Engineering (JRTE) Problem.}
+Given the traffic load, the {\em JRTE} problem is to: (a) {\em
+  Reconfigure}, i.e., select a realizable-topology from a given
+pre-configured flexible topology, and (b) {\em Traffic Engineer (TE)},
+i.e,.  route the given inter-rack flows over the realizable-topology
+selected in (a), to optimize a desired objective.
+%
+The objective functions of interests could be to minimize link
+congestion or maximize total flow in conjunction with fairness,
+latency bound, and/or tenant provided SLAs.
+
+The reconfiguration subproblem of JRTE falls in the general class of
+{\em degree-constrainted subgraph} problems~\cite{}, and is akin to
+the topology control problem~\cite{} addressed for wireless
+networks. However, the constraints and TE-based objectives of our
+subproblem makes it very different prior-addressed problems. Note that
+the TE subproblem of JRTE is essentially solving the NP-hard
+unsplittable multi-commodity flow problem~\cite{hedera,mcf} over the
+selected topology---thus, the JRTE problem is trivially NP-hard.
+
+\para{Proposed Approaches.} Note that the JRTE algorithm is run in
+real-time, and hence, should not take more than a few milliseconds,
+for it to be of any real benefit. Thus, the challenge is to design
+very fast, scalable, and efficient JRTE algorithms.
+
+\begin{packeditemize}
+\item {\em Matching Techniques.} Recall from Section~\ref{sec:pcft}
+  that a realizable-topology is a matching over the FSOs. Thus, a
+  reasonable approach to the reconfiguration subproblem could be to
+  select the maximum-weighted matching (solvable in polynomial time)
+  between FSOs, where the link $(i,j)$ is weighted by the inter-rack
+  traffic demand between the correspondin racks. Such a topology
+  maximizes the total inter-rack demand that can be served using one
+  hop. In general, we would like to pick a matching that yields the
+  minimum weighted-average inter-rack distance (where the distances
+  are weighted by the traffic demands); however, standard matching
+  techniques do not apply to this unsubmodular~\cite{} objective
+  function. One approach would be to use a greedy strategy that
+  iteratively adds augmenting paths~\cite{} based on a suitable
+  benefit-function for augmenting paths. After reconfiguration as
+  above, the TE part can be done using known techniques~\cite{} over
+  the selected matching.
+
+\item {\em LP Relaxation Techniques.} Another promising approach is to
+  formulate the JRTE problem as an ILP (using splittable flow-like
+  constraints, and binary variables for link selection) with the
+  objective of minimizing link congestion or maximum ``fair''
+  flow~\cite{max-fair-flow}, and solve the relaxed LP. We can then
+  convert the LP solution to an ILP solution by an appropriate
+  rounding technique while ensuring that the matching-constraint is
+  still satisfied (unsatisfied flow-constraints only result in a
+  sub-optimal but valid solution). \blue{To handle the unsplittable
+    aspect of flows, we can: (i) use the classic path-striping
+    technique~\cite{rand-round}, and/or (ii) allow flows to be split,
+    but minimize the number of splits by considering the {\em
+      aggregate} flow per destination, as suggested in the recent
+    work~\cite{localflow}.} An alternate approach in a similar vein as
+  above is: First solve the TE problem over the entire PCFT graph, and
+  use the flow-values to select a ``good'' matching. It would be
+  interesting to compare the performance of above approaches over real
+  traffic traces.
+\end{packeditemize}
+
+\para{Further Directions.} In addition to the above, we are also
+interested in designing algorithms based on limited traffic
+information, and incremental or localized approaches.
+
+\begin{packeditemize}
+\item {\em Strategies with Limited Traffic Information.} Our previous
+  discussion implicity assumes availability of traffic demands for the
+  next \blue{epoch.}  However, in reality, traffic predictability may
+  be limited. In the worst case, we may only be able to distinguish
+  between ``elephant'' (large) and ``mice'' (small) flows, based on
+  their \blue{initial size.}  In such restricted settings, a
+  reasonable approach would be to solve the JRTE problem only in
+  response to the arriving elephant flows, while relying solely on TE
+  for the mice flows. In our preliminary work~\cite{hotnets}, we
+  employed a simple strategy based on the above idea, and achieved
+  near-optimal performance over randomly generated traffic
+  traces. More information about traffic patterns such as spatial and
+  temporal distribution of elephant flows (or flow sizes in general)
+  would require challenging generalizations of the above
+  approach. Such elephant flow based approaches should be quite
+  effective, since the structure of real workloads suggests that
+  elephant flows are typically long-lived~\cite{} and a small number
+  of them carry the most bytes~\cite{}. An additional objective, in
+  the context of above approach, should be to favor JRTE solutions
+  that cause minimal disruption to existing traffic flows. This could
+  be achieved by developing techniques to compute the ``impact'' of a
+  solution on the existing traffic; this may be intractable, but
+  computing upper and/or lower bounds of the impact may be sufficient
+  for our purposes.
+
+\item {\em Incremental or Localized Strategies.} One way to develop
+  fast JRTE algorithms is to determine the solution in an incremental
+  manner (e.g., by constraining the number of links that are activated
+  or deactivated). Morever, we can also restrict ourselves to only
+  ``localized'' distributed strategies. To design incremental JRTE
+  algorithms, we can use augmenting-path techniques to incrementally
+  improve the matching~\cite{}, with additional constraints and/or a
+  benefit function (as suggested before). \blue{To design localized
+    strategies, we would explore extend the recent
+    work~\cite{localflow} which develops a simple switch-local routing
+    algorithm. In our context, we will locally (e.g., at each switch)
+    change active links as well as the forwarding hops, in response to
+    sufficient change in arriving flows.}
+\end{packeditemize}

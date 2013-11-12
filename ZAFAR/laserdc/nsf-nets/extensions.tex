@@ -1,0 +1,67 @@
+\section{Possible Extensions to \ArchName Architecture}
+\label{sec:ext}
+
+In our project, we would also investigate the following ideas, which
+impart more flexibility to our design and/or present additional
+opportunities to improve \ArchName's performance.
+
+\begin{packeditemize}
+\item
+{\em Dynamic Reconfiguration of Link Bandwidths.}  In \ArchName, the
+\blue{bandwidth} of each FSO link is limited by the capacity of the
+ToR switch port. Facilitating FSO links to have variable bandwidth
+would add another dimension of flexibility to our design. 
+%
+This can be achieved by having each port of ToR switch associated with
+a unique wavelength, and using a multiplexer and a WSS (wavelength
+selective switch) unit between the ToR switch and the FSOs, as in
+OSA~\cite{osa-tr}. In essence, the multiplexor and WSS allow one or
+more ToR ports to ``feed'' into a single FSO link, and hence,
+facilitating variable-bandwidth FSO links. The WSS can be reconfigured
+in real-time to determine the allocated ports (and hence, bandwidth)
+to each FSO link.
+%
+It would be interesting and challenging to incorporate the above
+flexibility into our design, and appropriately generalize the
+techniques from Section~\ref{sec:topology} and~\ref{sec:system}.
+
+\item
+{\em Non-ToR Switches and FSOs.} As described before, our network
+architecture consists of only ToR switches whose ports are either
+connected to the rack machines or the FSOs on the rack. Incorporating
+non-ToR switches (as in most data center architectures~\cite{}), whose
+ports are connected to only FSOs, can impart more flexibility to
+\ArchName's design. The new challenges that need to be addressed in
+this context are: (a) Physically accomodating the FSOs connected to
+such non-ToR switches in the data center, (b) PCFT, \BBO, and JRTE
+problems would include determining the inter-connections between these
+additional switches. Note that the resulting PCFT solutions would now
+be non-regular graphs.
+
+\item
+{\em Vertically Steerable FSOs; $45^\circ$ Mirror Poles.} In our
+design, we use a ceiling mirror to circumvent physical obstruction for
+line-of-sight FSO communication. However, in certain contexts such as
+outdoor scenarios for containerized architectures~\cite{dc-container}
+installing a ceiling mirror may not be feasible. In such cases, we
+need other mechanisms for line-of-sight communications.  E.g., we can
+install FSOs on vertically-steerable poles such that each link
+operates on a separate horizontal plane. Another possible mechanism
+could be to have FSOs direct their beams to vertically-steerable small
+mirrors angled at $45^\circ$. To avoid physical obstruction from
+poles/mirrors in the above approaches, shorter distance links can be
+operated on a lower horizontal plane than the longer distance links.
+\end{packeditemize}
+
+\eat{
+\item
+{\em Multicast.} Big data applications have diverse communication
+patterns that mix together unicast, multicast, all-to-all cast,
+etc. Recent works show~\cite{ccr-8} show that all-to-all data exchange
+on average accounts for 33\% of the runnign time of Hadoop jobs. As
+suggested in~\cite{ccr}, the optical communications are particularly
+amenable to efficient implementation of such *-cast patterns by
+leveraging various components such as directional couplers,
+wavelength-division multiplexed, etc. \blue{Incorporating the above
+  ideas in our design will require making challenging design choices.}
+}

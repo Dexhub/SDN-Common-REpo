@@ -1,0 +1,92 @@
+\section{Discussion} 
+\label{sec:future}
+
+%Further Challenges}
+
+%\green{Before we conclude, we discuss other research challenges and opportunities
+% that  our  vision of a flexible FSO-based datacenter network  introduces. }
+
+\para{Rethinking Metrics of Goodness.}  Traditional  metrics  such as  bisection bandwidth and diameter largely reflect a
+{\em static} perspective of the topology. For the types of flexible networks we
+envision, we need to  rethink these metrics; e.g., 
+we  need a notion of  {\em dynamic} bisection bandwidth  based on the best achievable
+  bandwidth by some {\em realizable} topology for a given 
+network partition.
+
+\para{Optimal Topologies.} Given new dynamic performance indices, we need to
+reason about the  pre-configured alignment of SMs that optimizes these
+metrics. While the random and extended hypercube designs work well, we do not
+know if these are provably (near-)optimal.  Furthermore, choosing an optimal
+run-time topology is effectively an  online optimization problem---given a
+pre-configured topology, current configuration and traffic patterns, what is
+the best way to reconfigure the network?  What makes this  challenging is that
+even the offline version of this problem is intractable. 
+ 
+%Here, the switching latency should be taken into consideration. We note that
+%even the {\em offline} version of the problem is computationally intractable.
+
+\para{FSOs for Modularized Data centers.} While our current work
+focuses on the inter-rack fabric, FSOs might also be useful for
+ containerized architectures~\cite{helios}.  This context
+introduces new challenges and opportunities.  Specifically, a ceiling
+mirror is not feasible in outdoor scenarios and we need other
+mechanisms (e.g., vertically steerable FSOs?) for line-of-sight. At
+the same time, the coarser aggregation may permit higher switching
+ latencies and thus be amenable to slower (mechanical) steering
+mechanisms that can provide full reconfigurability.
+
+\eat{
+This could imply that we may be less concerned by the cost of
+individual FSOs (as there are fewer).  Furthermore, the traffic
+patterns may be more predictable, and thus amenable to other steering
+technologies (see below).}
+
+\para{Multipath and Traffic Engineering.}  We could further improve
+the performance using multi-path TCP~\cite{multipathtcp} or better traffic
+engineering~\cite{thorup}. We posit that multi-path TCP has 
+natural synergies with reconfigurability as it can  
+alleviate transient congestion and connectivity issues.
+
+
+%how does topology  design affect these?
+
+%Our use of SMs with a pre-configured
+%topology represents a practical FSO architecture that can be
+%cost-effectively implemented given today's commercially available
+%technologies. That said,
+
+
+
+%\para{More Degrees of Freedom.}  Future FSO designs may provide more degrees of
+%freedom: mechanical and non-mechanical steering of SMs and  lasers~\cite{elec-survey}.  An 
+% interesting question is to  match the
+%timescales of reconfiguration each mechanism offers vs.\ the predictability 
+%of traffic patterns; e.g., planned  VM migrations 
+% may be amenable to slower steering options.
+
+% and the
+%  dynamicity of the traffic.} \red{Can be made clearer.}
+
+\para{Other Benefits.} In addition to the quantitative benefits we
+explored, FSO-based flexible architectures also offer other qualitative
+advantages. First, by acting as an enabler for new topologies, it naturally
+inherits the  properties  they provide; e.g., random graphs offer incremental
+expandability~\cite{jellyfish}. Second, selectively disabling links may also
+decrease energy costs~\cite{elastictree-nsdi10}.  Furthermore, by eliminating
+the wired infrastructure, FSOs can potentially reduce  cooling costs by 
+ avoiding  problems due to airflow  obstruction~\cite{airflow}.
+
+%and power (e.g.,  by eliminating aggregation switches) costs.
+ 
+%  VS: dont know what navid had .. but here are a couple ones:
+	% http://www.cisco.com/en/US/solutions/collateral/ns340/ns517/ns224/ns783/white_paper_c11-473501.html 
+	%http://www.mm4m.net/library/Avoidable_Mistakes_that_Compromise_Cooling_Perfomance.pdf
+
+%  power/cooling, cabling cost 
+
+
+%ese future designs will require novel
+%techniques for optimal topology design.
+
+%\vyas{Exploring nonmechanical steering platforms goes here}
+

@@ -1,0 +1,52 @@
+\section{\ArchName Network Management}
+\label{sec:system}
+
+In this section, we focus on the design of a {\em datacenter
+  management layer} that uses building blocks from previous sections,
+to implement a \blue{feasible} reconfigurable datacenter network.
+%
+We start with describing the high-level roles of the different
+components of the management layer. See Figure~\ref{fig:mgmt}.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-1cm} 
+\includegraphics[width=240pt]{PPTFigs/sysoverview-new.pdf}
+\vspace{-0.8cm} 
+\caption{Overview of the \ArchName management layer}
+\vspace{-0.6cm} 
+\label{fig:mgmt}
+\end{wrapfigure}
+
+\begin{packeditemize}
+\item {\bf Monitoring Engine (ME):} ME provides network status
+  information (e.g., links status, traffic patterns, or views
+of ``elephant'' flows~\cite{hedera,devoflow,conext13ericson})
+to the management layer. 
+
+\item {\bf Optimization Engine (OE):} Given the offered traffic
+  workload, a pre-configured flexible topology (PCFT), and the current
+  network state (e.g., link status), the optimization engine devises
+  an efficient {\em reconfiguration and traffic engineering strategy}
+  so as to optimize desired performance goals.
+
+\item {\bf Data Plane Translation Engine (DPE):} DPE translates the
+  OE output into an efficient data plane strategy.
+
+\item {\bf Application APIs:} APIs enable the users/tenants to inform
+    application details (e.g., expected traffic patterns,
+    single/multi-path TCP) to the optimization and data plane modules,
+    \blue{to best leverage the benefits of \ArchName.}
+\end{packeditemize}
+
+\softpara{Plan.} For the ME, we will leverage past work on scalable 
+traffic matrix and elephant flow
+detection~\cite{hedera,devoflow,yingzhangconext13}.  Similarly, we
+will extend prior work on APIs for applications to expose traffic
+patterns~\cite{coflow,bigdatahotsdn}.
+%
+We address OE and DTE in the following subsections. In the last
+subsection, we address design of a wireless out-of-band control
+network for configuration dissemination and data collection.
+
+\input{reconfig}
+\input{data-plane}

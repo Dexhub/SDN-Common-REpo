@@ -1,0 +1,49 @@
+\section{Results From Prior NSF Support}
+
+\textbf{Samir R. Das} and \textbf{Himanshu Gupta} are PI/Co-PIs on the following 
+recently concluded/ongoing NSF awards:
+%i) `A Measurement-Driven Physical-Interference-Based Approach for the Design of Mesh Networks' (2007-09, \$200,000), 
+i) `A Market-Driven Approach to Dynamic Spectrum Sharing' (2008-13, \$406,000), and  ii) 
+`Understanding Traffic Dynamics in Cellular Data Networks and Applications to Resource Management,' (2011-14, \$320,425).  
+%The first award resulted in developing measurement-driven methodologies for understanding wireless 
+%interference and exploiting them for transmission scheduling. 
+%
+These projects
+focus on developing market-driven algorithms and systems for dynamic spectrum access systems (first)
+and understanding spatio-temporal traffic dynamics in cellular data networks via analysis of network traces and using them
+for spectrum/energy management applications (second). Over 15 papers were co-authored by the PIs 
+related to these awards and 6 PhD students received
+direct support. The PIs gave several public lectures based on the results.
+%\red{[SD: if we have space we may also mention the sensor grants.]}. 
+%and taught well-received 
+%tutorials (on mesh networks and on interference modeling). 
+%The awards
+%also contributed to developing teaching materials in graduate and undergraduate wireless networking class
+%that the PI teaches and generated
+%or strengthened industry collaborations (NEC Research, Bell Labs and start-ups).
+
+\textbf{Jon Longtin}, Co-PI, CBET-1048744, ``NSF/DOE Thermoelectrics Partnership:
+Integrated Design and Manufacturing of Cost-Effective and
+Industrial-Scalable TEG for Vehicle Applications,'' \$404,226,
+10/1/10-09/30/13. This work developed thermoelectric materials and systems
+for automotive applications using thermal spray technology. $\mathrm{Mg_{2}Si}$ and
+filled Skudderudites were deposited directly onto exhaust system
+components to convert exhaust waste heat to electricity. Key tasks on the
+project included 1) materials development and characterization, 2)
+short-pulse laser micromachining deposited thermoelectric materials, 3)
+techniques for fabrication of multi-layer thermoelectric generators, and
+4) device characterization and testing.  6 conference, 4 journal
+publications, 4 Masters thesis and 1 Ph.D. thesis have resulted from the
+project.
+
+
+%% VS: not sure what to say here .. it has cloud in the title so i do want to say something to distance it and also say that i cant have anything to show since it just got funded
+\textbf{Vyas Sekar} is a PI on two recently awarded NSF grants ``Enabling
+Flexible Middlebox Processing in the Cloud'' and ``Rethinking Security in the
+Era of Cloud Computing'' starting in Sep 2013. The research proposed therein
+focuses largely on ``middlebox'' functionality such as IDS, firewall, and
+proxies and does not focus on the datacenter topology and routing aspects.
+These projects have just commenced and there are no outputs at this time.  As
+such the proposed research in these projects does not overlap with the
+management layer/SDN approaches proposed here. 
+

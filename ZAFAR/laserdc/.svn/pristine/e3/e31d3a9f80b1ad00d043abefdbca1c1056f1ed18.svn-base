@@ -1,0 +1,23 @@
+\section{Introduction}
+
+\begin{itemize}
+
+\item dc is big business 
+
+\item dc design is hard -- existing work is too rigid
+
+\item flexibility if done right promises much
+
+\item existing flexibility doesnt go far enough  -- inherits wired complexity, incremental, and may introduce other problems etc 
+
+\item vision -- all wireless flexible inter-rack 
+
+\item enabler is fso 
+
+\item three key challenges -- steerability/form factor, practical topology design, practical consistency for topology reconfigs 
+
+\item eval demo is awesome -- high throughput, reliable, extremely fast control plane, near optimal performance, correctness during reconfig 
+
+\item world will get even better
+
+\end{itemize}

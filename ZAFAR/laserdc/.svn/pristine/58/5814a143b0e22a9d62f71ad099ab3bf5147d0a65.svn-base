@@ -1,0 +1,175 @@
+
+
+@article{NWF:78,
+author = {{G. Nemhauser, L. Wosley, and M. Fisher}},
+title = {An analysis of the approximations for maximizing submodular set functions},
+journal = {Mathematical Programming},
+volume = 14,
+year = 1978,
+pages = {265-294}
+}
+
+@inproceedings{SRWZKA:08short,
+title = {{cSamp: A System for Network-Wide Flow Monitoring}},
+author = {{V. Sekar et~al.}},
+booktitle = {{Proc. of NSDI}},
+year = 2008
+}
+
+@inproceedings{SRWZKA:08,
+title = {{cSamp: A System for Network-Wide Flow Monitoring}},
+author = {Vyas Sekar and Michael K. Reiter and Walter Willinger and Hui Zhang and Ramana Kompella and David G. Andersen},
+booktitle = {{Proc. of NSDI}},
+year = 2008
+}
+
+
+@article{RS:89,
+author = {{G. Robertazzi and S. C. Schwartz}},
+title = {{ An accelerated sequential algorithm for producing D-optimal designs}},
+journal =  {{SIAM Journal of Scientific and Statistical Computing}}, 
+volume = 10,
+number = 2, 
+month = Mar,
+year= 1989,
+pages =	 {341--358}
+}
+
+@inproceedings{M:77,
+author = {{M. Minoux}},
+title = {{ Accelerated Greedy Algorithms for Maximizing Submodular Set Functions}},
+booktitle = {Proc. of 8th IFIP Conference, Springer-Verlag},
+year= 1977
+}
+
+@inproceedings{AMIAS:07,
+author = {Katerina Argyraki and Petros Maniatis and 	Olga Irzak and Subramanian Ashish and Scott Shenker},
+title = {{Loss and Delay Accountability for the Internet}},
+booktitle = {Proc. of ICNP},
+year= 2007
+}
+
+
+@inproceedings{KMGG:07,
+author = {Andreas Krause and Brendan McMahan and Carlos Guestrin and Anupam Gupta},
+title = {{Selecting Observations Against Adversarial Objectives}},
+booktitle = {Proc. of NIPS},
+year = 2007
+}
+
+@inproceedings{KG:07,
+author = {Andreas Krause and  Carlos Guestrin},
+title = {{Near-optimal Observation Selection Using Submodular Functions}},
+booktitle = {Proc. of AAAI},
+year = 2007
+}
+
+@inproceedings{KGGK:06,
+author = {Andreas Krause and  Carlos Guestrin and Anupam Gupta and Jon Kleinberg},
+title = {{ Near-optimal Sensor Placements: Maximizing Information while Minimizing Communication Cost }},
+booktitle = {Proc. of IPSN},
+year = 2006
+}
+
+
+@inproceedings{GKS:05,
+author ={Carlos Guestrin and Andreas Krause and Ajit Singh},
+title = {{ Near-optimal Sensor Placements in Gaussian Processes}},
+booktitle = {Proc. of ICML},
+year = 2005
+}
+
+
+    @article{Wolsey:82,
+     jstor_articletype = {primary_article},
+     title = {Maximising Real-Valued Submodular Functions: Primal and Dual Heuristics for Location Problems},
+     author = {Wolsey, Laurence A.},
+     journal = {Mathematics of Operations Research},
+     jstor_issuetitle = {},
+     volume = {7},
+     number = {3},
+     jstor_formatteddate = {Aug., 1982},
+     pages = {410--425},
+     url = {http://www.jstor.org/stable/3689607},
+     ISSN = {0364765X},
+     publisher = {INFORMS},
+     language = {},
+     copyright = {Copyright © 1982 INFORMS},
+     year = {1982},
+    }
+
+@inproceedings{CCPV:07,
+  author    = {Gruia Calinescu and
+               Chandra Chekuri and
+               Martin P{\'a}l and
+               Jan Vondr{\'a}k},
+  title     = {Maximizing a Submodular Set Function Subject to a Matroid
+               Constraint (Extended Abstract)},
+  booktitle = {12th Integer Programming and Combinatorial Optimization Conference},
+  year      = {2007},
+  pages     = {182-196},
+}
+@article{S:04,
+author = {Maxim Sviridenko},
+title = {{A note on maximizing a submodular set function subject to knapsack constraint}}, 
+journal = {Operations Research Letters},
+vol = 32,
+pages = {41--43},
+year = 2004 
+
+}
+
+@inproceedings{RSF:08,
+author = {Anirudh Ramachandran and Srinivasan Seetharaman and Nick Feamster},
+title = {{ Fast Monitoring of Traffic Subpopulations }},
+booktitle = {Proc. of IMC},
+year = 2008 
+}
+@article{click,
+ author = {Robert Morris and Eddie Kohler and John Jannotti and M. Frans Kaashoek},
+ title = {The Click modular router},
+ journal = {SIGOPS Operating Systems Review},
+ volume = {33},
+ number = {5},
+ year = {1999},
+ pages = {217--231},
+ }
+
+@inproceedings{netfpga,
+title = { {NetFPGA - An Open Platform for Gigabit-rate Network Switching and Routing }},
+author = {{J. W. Lockwood, N. McKeown, G. Watson, G. Gibb, P. Hartke, J. Naous, R. Raghuraman, and J. Luo}},
+booktitle  = {Proc. IEEE MSE},
+year = 2007
+}
+
+@article{MJ:00,
+title = {{Fair end-to-end window-based congestion control}},
+author = {Jeonghoon Mo and Jean Walrand},
+journal = {IEEE Transactions on Networking},
+volume = 8, 
+number = 5,
+month = {Oct}, 
+year = 2000
+}
+@inproceedings{SGRZ:10,
+author = {Vyas Sekar and Anupam Gupta and Michael K. Reiter and Hui Zhang},
+title = {{Coordinated Sampling sans Origin-Destination Identifiers: Algorithms and Analysis }},
+booktitle = {Proc.\ COMSNETS},
+year = 2010
+}
+@inproceedings{ASA:09,
+author = {Ashok Anand and Vyas Sekar and Aditya Akella},
+title = {{SmartRE: An Architecture for Coordinated Network-Wide Redundancy Elimination}},
+booktitle = {Proc. SIGCOMM},
+year = 2009
+}
+
+@misc{aman,
+key={aman},
+howpublished = {{Personal Communication with Aman Shaikh, AT\&T Research}},
+}
+
+@misc{openmp,
+title = {{OpenMP}},
+howpublished = {\url{www.openmp.org}}
+}

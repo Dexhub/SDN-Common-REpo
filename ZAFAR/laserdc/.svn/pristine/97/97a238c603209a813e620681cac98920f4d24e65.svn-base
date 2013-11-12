@@ -1,0 +1,100 @@
+\section{Introduction}
+
+%% datacenter is hot
+Data centers (DCs) are a critical piece of today's computing infrastructure
+that drive  key networked applications.
+In this context, data center network designs must satisfy several potentially
+conflicting goals---performance (e.g., minimize oversubscribed links,
+low latency)~\cite{fattree,vl2}, equipment and management
+cost~\cite{fattree,popa-cost}, flexibility to adapt to changing
+traffic patterns~\cite{proteus,3db,flyways,cthru}, incremental
+expandability to add new servers or racks~\cite{legup,jellyfish}, and
+other practical concerns including cabling complexity, power, and
+cooling~\cite{farrington,portland,cabling}.
+%
+The traditional data center architectures are fixed (wired) and hence,
+are over-provisioned to handle the worst-case communication
+requirements rather than the average-case, increasing the cost and
+maintenance of networking architecture.
+%
+Some recent works have suggested to augment the simple wired
+infrastructure with additional inter-rack wireless~\cite{flyways,3db}
+or optical links~\cite{cthru}, to impart certain flexibility to the
+network and thus, help alleviate congested hotspots.
+%
+However, the overall vision of a fully wireless and a largely
+flexibible network architecture for data centers that offers favorable
+cost-performance tradeoff remains far from realized. The goal of our
+research proposal is to realize this vision. 
+
+
+\para{Our Proposal.}  In particular, we take the flexibility offered
+by wireless inter-rack links to the logical extreme and propose to
+design an \emph{all-wireless inter-rack data center fabric}. Our
+vision, if realized, would provide unprecedented degrees of
+flexibility for data centers. That is, it will allow operators to
+dynamically reconfigure the {\em entire} network topology to adapt to
+changing traffic demands. Moreover, a wireless architecture eliminates
+maintenance and operational costs due to cabling complexities, and
+more importantly, can act as an enabler for operators to explore and
+benefit from topology structures that would otherwise remain ``paper
+designs'' due to the perceived cabling complexity.
+
+To realize our vision of an \emph{all-wireless} inter-rack data center
+fabric, we look beyond the traditional RF-based solutions and explore
+a somewhat non-standard ``wireless'' technology, namely {\em
+  Free-Space Optics} (FSO).  FSO uses visible or infra-red lasers to
+implement point-to-point data links, at very high data rates
+($>$1~Gbps) and at longer ranges. Unlike the RF wireless technologies,
+FSO communication links have a minimal wireless-interference footprint
+(due to their low wavelength) and their usage is not constrained by
+federal regulations.
+%
+While FSO is an enabling technology, there are various scientific
+challenges that need to be addressed before we can realize a
+cost-effective and flexible DC network fabric. Our research proposal
+plans to address these challenges, and build an FSO-based DC network
+prototype.
+
+\para{Proposal Objectives, and Our Team.}  In the context of realizing
+the above vision of an FSO-based all-wireless inter-rack fabric for a
+data center, our research proposal has the following specific
+objectives.
+
+\item
+We will design an FSO communication device that is cost-effective and
+has a small-form factor, for use in a data center network. The device
+will include an appropriate steering and alignment mechanism with
+effective speed and precision; we will explore feasibility of two
+possible steering mechanisms in our research.
+
+\item
+We will design efficient algorithms for two topology design problems
+that arise in our context: (a) Pre-configuration topology design,
+which corresponds to an initial alignment/configuration of the FSO
+devices, based on various constraints and available traffic
+statistics, and (b) Reconfiguration algorithm, which controls the
+real-time configuration of FSO devices based on the current network
+traffic and flows.
+
+\item
+We will address various network management challenges that arise in
+our context. In particular, $\ldots$
+
+\item
+We will build a prototype of an FSO device, develop a system prototype
+over XX platform, and conduct extensive simulations over real data
+center traffic to demonstrate viability and performance of our overall
+vision. 
+\end{itemize}
+
+Our research consists of three computer scientists with complementary
+networking and theoretical expertise and a mechanical engineer with
+expertise in laser-based optical measurement techniques, giving us a
+complete spectrum of expertise needed for various scientific aspects
+of our research proposal.
+
+\para{Broader Impact.}
+\vspace*{1in}
+
+

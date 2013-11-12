@@ -1,0 +1,151 @@
+\subsection{A Wire-free Control Channel}
+\begin{task} 
+\label{task:system:ctrlchannel}
+We will design and implement a RF-based  architecture to provide a robust, 
+low latency control channel for \ArchName.
+\end{task}
+
+\mypara{Problem Context and Challenges} Existing work in the SDN-style
+centralized network management literature either implicitly or explicitly
+assumes the availability of an ``out-of-band'' control channel that is not
+managed by the SDN network itself~\cite{}. This control channel is typically
+used for the controller-switch protocols---delivering configuration commands
+and collecting switch statistics. Otherwise, there can be subtle bootstrapping
+problems with respect to the availability of the control channel itself.
+% a problem that is less explored understood in the SDN literature~\cite{}.
+
+%As a starting point for our vision we will assume the existence of an
+%out-of-band channel as well. In fact, depending on the deployment scenario this
+%might be feasible at very low cost. For instance, using just  2 low-cost 64
+%port switches, we can easily connect to $>$ 100  racks per ``container''.
+
+As discussed in the previous section, we will have to engineer a
+reliability/consistency mechanism even for the regular inter-rack fabric. We
+can exploit this basic reachability framework as a basis for in-band
+control. For instance, we can set up static shortest paths between each FSO
+switch to the controller at the time of pre-configuration and not reconfigure 
+the constituent links. That said, if we are to automate this process, 
+we still have a
+bootstrapping problem where these switches will need to discover paths to the
+SDN controller. Furthermore, there is still a concern  that the control path
+may be transiently unavailable during \blue{micro-alignment pauses.} While these may not
+be fundamentally intractable, since the reliability of the control 
+channel is critical to the operation of the entire network we will explore 
+design issues for an out-of-band control channel. 
+
+%Here, we will need to fall back on
+%traditional L2/L3 protocols such as STP~\cite{}. (Most commercially available
+%SDN switches support a subset of traditional protocols and are not pure
+%OpenFlow switches~\cite{}.}
+
+
+\mypara{Proposed Approach} 
+A promising candidate for the out-of-band control
+channel is a separate RF-based wireless network in keeping
+with the general vision of all-wireless inter-rack fabric. 
+%However, commodity wireless technologies may not scale 
+%given the needed QoS requirements for 
+%the control traffic -- very high link reliability and low latency.
+For capacity planning, assume 
+%consider the two major types of control traffic: (1) 
+%$\approx\!10^{3-4}$ configuration
+%change commands per sec from the
+%controller to the FSO subsystem on each rack with $\approx\!10^2$ bits per command;
+$\approx\!10^3$ new flow arrivals per rack with each 
+producing an update of size $\approx\!10^2$ bits to the controller and 
+the controller reconfiguring zero or more FSO 
+links in response. Further, assume $\approx\!10^3$ 
+reconfiguration commands (of size $\approx\!10^2$ bits) from the controller
+to the FSO subsystem on each rack. This produces
+control traffic comfortably below 1\,Mbps per rack.  Back-of-the-envelop estimates using
+dimensions of data center  
+and reasonable wireless link budgets show that the
+upcoming 802.11ad standard in the 60\,GHz band should be able
+to support this rate for about 1000 racks using just 1 channel,
+with the controller connected to an AP and with phased-array antennas 
+on the controller side (likely to be common for future 802.11ad APs). 
+Fixed directional antennas are sufficient
+on the racks as they talk to only the controller. 
+For larger data centers, multiple channels are needed (supported by multiple
+NICs) as the aggregate data rate will push beyond the capacity of a 
+single channel. But since at most 3 orthogonal channels are possible
+in the 60GHz band, for the largest of the data centers ($\approx\!10,000$ racks),
+additional APs ($\approx\,10$, ceiling mounted) distributed across the data center
+and connected to the controller via fiber links and a switch
+need to be deployed.\footnote{Wires can be completely eliminated
+by mesh networking these APs. But since they are very 
+few perhaps the added complexity is not worthwhile.} 
+
+The link layer protocol plays an important role to enable
+low latency communication. Since the control traffic 
+is somewhat regular, scheduled access -- as opposed 
+to more conventional CSMA-based random access -- is more meaningful. 
+If designed right, this can guarantee a (small) upper bound of the 
+channel access delay and a completely interference free channel access. 
+Together these properties provide the needed QoS for control
+traffic. Note that critical control traffic related
+to micro-alignments also go over this control network. This
+traffic is expected to be low volume, but should be of the highest
+priority. The controller schedules access slots for the clients (racks) based 
+the current network state, reconfiguration needs, etc. If multiple
+APs are needed for larger systems, interference between 
+links is to be pre-determined based on static measurements 
+at the setup time. This allows for conflict-free scheduling
+of links~\cite{}. Since there is no mobility either at the end points
+or in the general RF environment, such measurement-based 
+methods are feasible~\cite{}. The 802.11ad standard has support
+for scheduled access, so future data centers will be able to 
+use commodity RF platforms. However, as many of our
+experiences with commodity systems indicate, appropriate software/tool 
+support may not be available in commodity systems, e.g., driver-level
+and firmware support to implement
+special purpose scheduling, measurement support to determine
+interference, etc. and it will require working with the device manufacturers. 
+Thus, for the purpose of our prototyping, we will custom-build
+the RF-based control channel on a software radio platform (USRP/GnuRadio)
+in the 2.4\,GHz band\footnote{In a scaled down set up, the 2.4\,GHz band
+is enough as the capacity requirement is much lower.} and
+implement the scheduling support for demonstration and
+evaluation.
+
+% show 
+%Direct wireless links from the racks
+%to the controller may not scale well at this data rate beyond
+%
+%
+%The capacity requirement per rack is expected to be 
+%in the order of 1\,Mbps. To see this, consider i) the 
+%control traffic from the controller to the FSO subsystem 
+%on the rack -- 
+%ii) 
+%
+%
+%A promising alternative to in-band control is to
+%equip each ToR switch with a lightweight commodity RF interface. Because the
+%bandwidth requirements of this control channel are typically not that high, we
+%believe we can use a simple RF-based wireless control channel for the entire
+%datacenter. Consider two cases. First, even if we send 1000 configuration
+%commands per ToR switch per second, the total bandwidth requirement will be
+%less than  {\bf 10 Mbps} per-rack. Second, even if we want to collect per-flow
+%statistics per-second from every ToR switch assuming roughly 10K flows/second
+%per-rack and assuming a 100 byte flow record size  we will only need {\bf 10
+%Mbps} per rack.\footnote{Since the bandwidth demands are low, we could engineer
+%a out-of-band channel with a few switches as well. However, this goes against
+%our overall vision of a pure wireless network fabric and thus we plan to
+%investigate eliminating  this wired control fabric as well.}   
+%
+%
+%The more critical challenge here is {\em latency} of the control channel
+%especially for configuration commands. Specifically, if the control loop delay
+%is too high then it might induce some stability problems for the
+%reconfiguration algorithms as they may not be able to converge in reasonable
+%timescales. (Note that we can tolerate some error or delay in the data
+%collection or correct for it in the reconfiguration algorithms described
+%earlier.) Unfortunately, existing ``commodity'' wireless MAC protocols are not
+%geared toward such low-latency.  
+%
+%
+%Because we only need one of these devices per rack, we will design 
+% a custom software-radio based  solution using {\bf XXX Samir please fill}
+%
+% %\vyas{this might be relevant .. but need to think more}

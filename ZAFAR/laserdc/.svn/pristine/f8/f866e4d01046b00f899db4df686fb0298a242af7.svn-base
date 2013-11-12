@@ -1,0 +1,72 @@
+\documentclass[10pt]{article} 
+\usepackage{palatino} %times} %% USES MUCH LESS SPACE
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xspace}
+\usepackage[font=bf,aboveskip=7pt,belowskip=-10pt]{caption} 
+\usepackage{subfig}
+\usepackage{soul}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{-0.6in}
+\setlength{\textheight}{9.05in}
+\setlength{\textwidth}{6.5in}
+
+\usepackage[compact]{titlesec}
+% The above line seems to be creating a pdflatex error.  [HG]
+% SPACE
+
+\input{def}
+
+%\newcommand{\subparagraph}{}
+\usepackage{wrapfig}
+
+\newcommand{\vyas}[1]{{\footnotesize\color{magenta}[VS: #1]}}
+\newcommand{\samir}[1]{{\footnotesize\color{magenta}[SD: #1]}}
+\newcommand{\hg}[1]{{\footnotesize\color{magenta}[HG: #1]}}
+%\newcommand{\vyas}[1]{}
+%{\footnotesize\color{red}[VS: #1]}}
+\newcommand{\plsfill}{{\color{red}XXXFillmeXXX\xspace}}
+%\newcommand{\plsfill}{}
+
+%{\color{red}XXXFillmeXXX\xspace}}
+
+
+\newcounter{savecntr}
+\newcounter{restorecntr}
+\usepackage{footnote}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\input{macros}
+
+\begin{document}
+
+% Adding the newpages below, so that its easy to stick to our page-limit plan.
+% Section 1-2    3-3.5 pages,
+% Section 3      3 pages,
+% Section 4-6    6 to 6.5 pages, 
+% Rest           2 to 2.5 pages.
+
+\input{intro}
+\input{motivation_shrink}
+\newpage  
+\input{fso_gupta}
+\newpage
+\input{topology}
+\newpage
+\input{system}
+\input{wire-free-control}
+\input{extensions}
+\newpage
+\input{evalplan}
+\input{education}
+\input{prior-nsf}
+
+{
+\bibliographystyle{plain}
+\bibliography{../bib/Ref,../bib/VyasRef}
+}
+
+\end{document}

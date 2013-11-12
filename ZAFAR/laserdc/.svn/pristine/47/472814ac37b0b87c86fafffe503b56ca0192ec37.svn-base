@@ -1,0 +1,628 @@
+
+
+@misc{astaro_625_tech,
+title = {Astaro Security Gateway 625 Technical Information},
+howpublished = {\url{http://www.astaro.com/products/hardware-appliances/astaro-security-gateway-625}}
+
+@misc{astaro_625_techshort,
+title = {Astaro Security Gateway},
+howpublished = {\url{http://bit.ly/o6FX0m}}
+}
+
+@misc{xen_io_perfshort,
+title = {{I/O Virtualization Performance}},
+author = {Huang Zhiteng},
+howpublished = {\url{http://bit.ly/qPUPeq}}
+}
+
+@misc{xen_io_perf,
+title = {{I/O Virtualization Performance}},
+author = {Huang Zhiteng},
+howpublished = {\url{http://xen.org/files/xensummit_intel09/xensummit2009_IOVirtPerf.pdf}}
+}
+
+@inproceedings{JHHMP:11,
+title = {{SSLShader: Cheap SSL Acceleration with Commodity Processors}},
+author = {Keon Jang and Sangjin Han and Seungyeop Han and Sue Moon and KyoungSoo Park},
+booktitle = {Proc.\ NSDI},
+year = 2011
+}
+
+@inproceedings{HJPM:10,
+title = {{PacketShader: a GPU-Accelerated Software Router}},
+author = {Sangjin Han and  Keon Jang and  KyoungSoo Park and Sue Moon},
+booktitle = {Proc.\ SIGCOMM},
+year = 2010
+}
+
+@article{JS:08,
+author = {Dilip Joseph and Ion Stoica},
+title = {Modeling middleboxes},
+journal = {IEEE Network},
+year = 2008
+}
+
+@misc{R:09,
+title = {Robust Network Planning},
+author = {Matthew Roughan},
+howpublished = {Chapter 5, Guide to Reliable Internet Services and Applications}, 
+}
+
+@misc{F5,
+title = {{F5 Networks products}},
+howpublished = {\url{http://www.f5.com/products/big-ip/}}
+}
+
+@misc{trafficmatrixgrant,
+howpublished = {\url{http://www.sciencealert.com.au/news/20101412-21682.html}}
+}
+
+@inproceedings{DEAC:09,
+title = {{RouteBricks: Exploiting Parallelism to Scale Software  Routers}},
+author = {Mihai Dobrescu and Norbert Egi and Katerina Argyraki and Byung-Gon Chun and Kevin Fall and Gianluca Iannaccone and Allan Knies and Maziar Manesh and Sylvia Ratnasamy},
+booktitle = {Proc.\ SOSP},
+year = 2009
+}
+
+@inproceedings{DEAC:09short,
+title = {{RouteBricks: Exploiting Parallelism to Scale Software  Routers}},
+author = {{M. Dobrescu et~al}},
+booktitle = {Proc.\ SOSP},
+year = 2009
+}
+
+@misc{MRS:00,
+key = "mitzenmacher",
+author = {Michael Mitzenmacher and Andrea W. Richa and Ramesh Sitaraman},
+title = {{The Power of Two Random Choices: A Survey of Techniques and Results }},
+howpublished = {Handbook of Randomized Computing},
+year= 2000 
+}
+
+@misc{MRS:00short,
+key = "mitzenmacher",
+author = {{M. Mitzenmacher et~al.}},
+title = {{The Power of Two Random Choices: A Survey of Techniques and Results }},
+howpublished = {Handbook of Randomized Computing},
+year= 2000 
+}
+
+@inproceedings{KCGS:10,
+title = {{Onix: A distributed control platform for large-scale production network}},
+author = {{T. Koponen et~al}},
+booktitle = {Proc.\ OSDI},
+year = 2010
+}
+
+@misc{cavium,
+title = {Cavium Networks},
+howpublished = {\url{http://www.caviumnetworks.com/}
+}
+}
+
+@misc{paloalto,
+title = {Palo Alto Networks},
+howpublished = {\url{http://www.paloaltonetworks.com/}
+}
+}
+
+
+@misc{ciscoblade,
+title = {Cisco Blade servers}, 
+howpublished = {\url{http://www.cisco.com/en/US/products/ps10280/index.html}}
+}
+
+@article{GHH:09short,
+title = {{Flow Processing and the Rise of Commodity Network Hardware}},
+author = {{A. Greenlagh et~al.}},
+journal = {ACM CCR},
+month = apr,
+year = 2009
+}
+
+@article{GHH:09,
+title = {{Flow Processing and the Rise of Commodity Network Hardware}},
+author = {Adam Greenlagh and Mark Handley and Mickael Hoerdt and Felipe Huici and Laurent Mathy and Panagiotis Papadimitriou},
+journal = {ACM CCR},
+month = apr,
+year = 2009
+}
+
+@misc{middleboxmarket2short,
+title = {World Enterprise Network Security Markets},
+howpublished = {\url{http://bit.ly/gYW4Us}}
+}
+
+
+
+
+@misc{middleboxmarket2,
+title = {{World Enterprise Network and Data Security Markets}},
+howpublished = {\url{http://www.abiresearch.com/press/3591-Enterprise+Network+and+Data+Security+Spending+Shows+Remarkable+Resilience}}
+}
+
+
+@misc{middleboxmarket,
+title = {Network security spending to soar in the next 5 year},
+howpublished = {\url{http://www.v3.co.uk/v3-uk/news/1998293/network-security-spending-soar}}
+}
+
+@misc{xo-cloud,
+title = {XO Communications Unveils Cloud-Based Network Security Platform},
+howpublished = {\url{http://www.eweek.com/c/a/Midmarket/XO-Communications-Unveils-CloudBased-Network-Security-Platform-400270/}}
+}
+
+@misc{host-re,
+title = {Can Windows Servers Do WAN Optimization?},
+howpublished = {\url{http://www.informationweek.com/news/infrastructure/WAN_optimization/231000174}}
+}
+
+@misc{silverpeak,
+title = {SilverPeak WAN optimization},
+howpublished = {\url{http://www.computerworld.com/s/article/9217298/Silver_Peak_unveils_multi_gigabit_WAN_optimization_appliance}}
+}
+
+@misc{aryaka,
+title = {Aryaka Completes WAN Optimization Network},
+howpublished = {\url{http://www.informationweek.com/news/cloud-computing/infrastructure/229403124}}
+}
+
+@misc{cloudbandwidth,
+title = {Cloud services driving average 11\% increase in business Internet bandwidth demand},
+howpublished = {\url{http://connectedplanetonline.com/business_services/news/cloud-services-driving-11-percent-increase-in-bandwidth-demand-0418/}}
+}
+@misc{virtelawan,
+title = {Virtela Extends WAN Optimization Service to Resources in Public Clouds},
+howpublished = {\url{http://www.cio.com/article/658840/Virtela_Extends_WAN_Optimization_Service_to_Resources_in_Public_Clouds?source=rss_all}}
+}
+
+@misc{untangle,
+title = {Untangle},
+howpublished = {\url{www.untangle.com}}
+}
+
+@inproceedings{SKGR:10short,
+title = {Network-Wide Deployment of Intrusion Detection and Prevention Systems},
+booktitle = {Proc.\ CoNext},
+author = {{V. Sekar et~al.}},
+year= 2010
+}
+
+
+@inproceedings{SKGR:10,
+title = {Network-Wide Deployment of Intrusion Detection and Prevention Systems},
+booktitle = {Proc.\ CoNext},
+author = {Vyas Sekar and Ravishankar Krishnaswamy and Anupam Gupta and Michael K. Reiter},
+year= 2010
+}
+
+
+@misc{crossbeamshort,
+title = {Crossbeam Network Consolidation},
+howpublished = {\url{http://bit.ly/qlotDK}},
+}
+
+@misc{crossbeam,
+title = {Crossbeam Network Consolidation},
+howpublished = {\url{http://www.crossbeam.com/why-crossbeam/network-consolidation/}}
+}
+
+@misc{consolidationarticle,
+title = {{Next Step in Virtualization: Consolidating Network Appliances in the Data Center}},
+howpublished = {\url{http://www.cio.com/article/685413/Next_Step_in_Virtualization_Consolidating_Network_Appliances_in_the_Data_Center}}
+}
+
+@inproceedings{BAS:11short,
+title = {Demystifying Configuration Challenges and Trade-Offs in Network-based ISP Services},
+booktitle = {Proc.\ SIGCOMM},
+author = {{T. Benson et~al}},
+year = 2011
+}
+
+
+@inproceedings{BAS:11,
+title = {Demystifying Configuration Challenges and Trade-Offs in Network-based ISP Services},
+booktitle = {Proc.\ SIGCOMM},
+author = {Theophilius Benson and Aditya Akella and Aman Shaikh},
+year = 2011
+}
+
+@inproceedings{WQXMZ:11,
+title = {{An Untold Story of Middleboxes in Cellular Networks}},
+author  = {Zhaoguang Wang and Zhiyun Qian and Qiang Xu and Zhuoqing Morley Mao and Ming Zhang},
+booktitle = {Proc.\ SIGCOMM},
+year = 2011
+}
+
+@misc{xombold,
+title = {{xOMB: eXtensible Open MiddleBoxes}},
+author = {James Anderson and Amin Vahdat},
+howpublished = {Unpublished Manuscript}
+}
+
+@inproceedings{xomb,
+ author = {Anderson, James W. and Braud, Ryan and Kapoor, Rishi and Porter, George and Vahdat, Amin},
+ title = {{xOMB: extensible open middleboxes with commodity servers}},
+  series = {ANCS},
+ year = {2012},
+} 
+
+@inproceedings{xombl,
+ author = {Anderson, James W. and Braud, Ryan and Kapoor, Rishi and Porter, George and Vahdat, Amin},
+ title = {xOMB: extensible open middleboxes with commodity servers},
+ booktitle = {Proceedings of the eighth ACM/IEEE symposium on Architectures for networking and communications systems},
+ series = {ANCS '12},
+ year = {2012},
+ isbn = {978-1-4503-1685-9},
+ location = {Austin, Texas, USA},
+ pages = {49--60},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2396556.2396566},
+ doi = {10.1145/2396556.2396566},
+ acmid = {2396566},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {application-layer switch, middlebox, network processing pipeline},
+} 
+
+
+@inproceedings{AFMT:10short,
+title = {SwitchBlade: A Platform for Rapid Deployment of Network
+Protocols on Programmable Hardware},
+author = {{B. Anwer et~al.}},
+booktitle = {SIGCOMM},
+year =  2010
+}
+
+@inproceedings{AFMT:10,
+title = {{SwitchBlade: A Platform for Rapid Deployment of Network Protocols on Programmable Hardware}},
+author = {Bilal Anwer and Nick Feamster and Murtaza Motiwala and Mukarram bin Tariq},
+booktitle = {Proc. SIGCOMM},
+year =  2010
+}
+
+@inproceedings{LGL:11short,
+author = {{G. Lu et al.}},
+title = {{ServerSwitch: A Programmable and High Performance Platform for Data Center Networks}},
+booktitle = {Proc.\ NSDI},
+year =  2011
+}
+
+@inproceedings{LGL:11,
+author = { Guohan Lu and  Chuanxiong Guo and  Yulong Li and Zhiqiang Zhou and Tong Yuan and Haitao Wu and Yongqiang Xiong and Rui Gao and Yongguang Zhang},
+title = {{ServerSwitch: A Programmable and High Performance Platform for Data Center Networks}},
+booktitle = {Proc.\ NSDI},
+year =  2011
+}
+@article{GKP:08,
+author = {Natasha Gude and  Teema Koponen and  Justin Pettit and  Ben Pfaff and  Martin Casado and  Nick McKeown  and Scott Shenker},
+title  = {{NOX: Towards an Operating System for Networks}},
+journal = {ACM SIGCOMM CCR},
+month =  Jul,
+year = 2008
+}
+
+
+@article{GKP:08short,
+author = {{N. Gude et al.}},
+title  = {{NOX: Towards an Operating System for Networks}},
+journal = {ACM SIGCOMM CCR},
+month =  Jul,
+year = 2008
+}
+
+@inproceedings{EGH:08,
+author = {Norbert Egi and  Adam Greenhalgh and  Mark Handley and  Mickael Hoerdt and  Felipe Huici and  Laurent Mathy},
+title = {  Towards high performance virtual routers on commodity hardware},
+booktitle = {Proc.\  CoNEXT},
+year = 2008
+}
+
+@inproceedings{EGH:08short,
+author = {{N. Egi et al}},
+title = {  Towards high performance virtual routers on commodity hardware},
+booktitle = {Proc.\  CoNEXT},
+year = 2008
+}
+
+
+@inproceedings{PPSP:06,
+title = {{binpac: A yacc for Writing Application Protocol Parsers}},
+author = {Ruoming Pang and Vern Paxson and Robin Sommer and Larry Peterson},
+booktitle = {Proc.\ IMC},
+year = 2006
+}
+
+@misc{silverpeakwanreleaseshort,
+title =  {{Silver Peak software WAN optimization}},
+howpublished  = {\url{http://bit.ly/nCBRst}}
+}
+
+
+@misc{silverpeakwanrelease,
+title =  {{Silver Peak releases software-only WAN optimization }},
+howpublished  = {\url{http://www.networkworld.com/news/2011/071311-silver-peak-releases-software-only-wan.html}}
+}
+
+@misc{midcom-rfc3989,
+title= {{Middlebox Communications (MIDCOM) Protocol Semantics}},
+howpublished = {RFC 3989}
+}
+
+@misc{midboxtaxonomy-rfc3234,
+title = {{Middleboxes: Taxonomy and Issues}},
+howpublished = {RFC 3234}
+}
+
+@misc{midboxtaxonomy-rfc3303,
+title = {{Middlebox communication architecture and framework}},
+howpublished = {RFC 3303}
+}
+
+@inproceedings{intel-sigcomm10,
+title = {{Encrypting the Internet}},
+author = {Michael Kounavis, Xiaozhu Kang, Ken Grewal, Mathew Eszenyi,
+Shay Gueron, David Durham},
+booktitle = {Proc.\ SIGCOMM},
+year= 2010
+}
+
+@inproceedings{intel-sigcomm10short,
+title = {{Encrypting the Internet}},
+author = {{M. Kounavis et~al.}},
+booktitle = {Proc.\ SIGCOMM},
+year= 2010
+}
+
+@inproceedings{maziar-presto10,
+title = {{Evaluating the Suitability of Server Network Cards for Software Routers}} ,
+author = {Maziar Manesh and  Katerina Argyraki and  Mihai Dobrescu and  Norbert Egi and 
+Kevin Fall and  Gianluca Iannaccone and  Eddie Kohler and  Sylvia Ratnasamy},
+booktitle = {Proc. PRESTO},
+year = 2010
+}
+
+
+@inproceedings{maziar-presto10short,
+title = {{Evaluating the Suitability of Server Network Cards for Software Routers}},
+author = {{M. Manesh et~al}},
+booktitle = {Proc. PRESTO},
+year = 2010
+}
+
+@inproceedings{SKS:10long,
+title = {{SideCar: Building Programmable Datacenter Networks without
+Programmable Switches}},
+author = {Alan shieh and Srikanth Kandula and Emin Gun Sirer},
+booktitle = {Proc. HotNets},
+year = 2010
+}
+@inproceedings{SKS:10,
+title = {{SideCar: Building Programmable Datacenter Networks without
+Programmable Switches}},
+author = {Alan Shieh and Srikanth Kandula and Emin Gun Sirer},
+booktitle = {Proc. HotNets},
+year = 2010
+}
+
+
+
+@inproceedings{SKS:10short,
+title = {{SideCar: Building Programmable Datacenter Networks without
+Programmable Switches}},
+author = {{A. Shieh et~al}},
+booktitle = {Proc. HotNets},
+year = 2010
+}
+
+
+@inproceedings{DAMIR:10,
+title = {{Controlling Parallelism in Multi-core Software Routers}},
+author = {Mihai Dobrescu and  Katerina Argyraki and  Maziar Manesh and  Gianluca Iannaccone and Sylvia Ratnasamy},
+booktitle = {Proc.\ PRESTO},
+year = 2010
+}
+
+@inproceedings{DAMIR:10short,
+title = {{Controlling Parallelism in Multi-core Software Routers}},
+author = {{Mihai Dobrescu et~al}},
+booktitle = {Proc.\ PRESTO},
+year = 2010
+}
+
+@inproceedings{WSK:04short,
+title= {{Middleboxes No Longer Considered Harmful}},
+author = {{M. Walfish et~al}},
+booktitle = {Proc.\ OSDI},
+year = 2004
+}
+@inproceedings{WSK:04,
+title= {{Middleboxes No Longer Considered Harmful}},
+author = {Michael Walfish and Jeremy Stribling and Maxwell Krohn and Hari Balakrishnan and Robert Morris and Scott Shenker},
+booktitle = {Proc.\ OSDI},
+year = 2004
+}
+
+
+
+@inproceedings{A:03,
+author = {Mark Allman},
+title = {{On the Performance of Middleboxes}},
+ booktitle = {Proc.\ IMC},
+year = 2003
+}
+
+@inproceedings{MAF:04,
+author = {Alberto Medina and Mark Allman and Sally Floyd},
+title = {{Measuring Interactions Between Transport Protocols and Middleboxes}},
+booktitle = {Proc.\ IMC},
+year = 2004
+}
+
+@inproceedings{HNRGHT:11short,
+title = {{Is it still possible to extend TCP?}},
+author = {{M. Honda et~al}},
+booktitle = {Proc.\ IMC},
+year = 2011
+}
+
+@inproceedings{HNRGHT:11,
+title = {{Is it still possible to extend TCP?}},
+author = {Michio Honda and Yoshifumi Nishida and Costin Raiciu and Adam Greenhalgh and Mark Handley and Hideyuki Tokuda},
+booktitle = {Proc.\ IMC},
+year = 2011
+}
+
+@inproceedings{SRRES:11,
+title  = {{The Middlebox Manifesto: Enabling Innovation in Middlebox Deployments}},
+author  = {Vyas Sekar and Sylvia Ratnasamy and Michael K. Reiter and Norbert Egi and Guangyu Shi},
+booktitle = {Proc. HotNets},
+year = 2011
+}
+
+
+@inproceedings{SRRES:11short,
+title  = {{The Middlebox Manifesto: Enabling Innovation in Middlebox Deployments}},
+author  = {{V. Sekar et~al}},
+booktitle = {Proc. HotNets},
+year = 2011
+}
+
+@misc{intelnic,
+title = {Intel 82599 10 Gigabit Ethernet},
+howpublished = {\url{http://download.intel.com/design/network/datashts/82599_datasheet.pdf}}
+}
+
+@misc{intelnicshort,
+title = {Intel 82599 10 Gigabit Ethernet},
+howpublished= {\url{http://bit.ly/qSOOcJ}}
+}
+
+@article{BV:05,
+title = {{Scalable packet classification}},
+author = {Florin Baboescu and George Varghese},
+journal = {IEEE ToN},
+volume = 13,
+number = 1,
+year = 2005
+}
+
+@inproceedings{WCMPKMZ:10,
+title = {{An Analysis of Linux Scalability to Many Cores}},
+author = {Silas Boyd-Wickizer and Austin T. Clements and  Yandong Mao and  Aleksey Pesterev and  M. Frans Kaashoek and Robert Morris and Nickolai Zeldovich},
+booktitle = {Proc.\ OSDI},
+year = 2010
+}
+
+
+@inproceedings{WCMPKMZ:10short,
+title = {{An Analysis of Linux Scalability to Many Cores}},
+author = {{ S. Boyd-Wickizer et~al}},
+booktitle = {Proc.\ OSDI},
+year = 2010
+}
+
+@misc{bigipdatasheet,
+title = {{Big-IP hardware datasheet}},
+howpublished = {\url{www.f5.com/pdf/products/big-ip-platforms-ds.pdf}}
+}
+
+@misc{bigipdatasheetshort,
+title = {Big-IP hardware datasheet},
+ howpublished = {\url{http://bit.ly/Yv3Pc}}
+}
+
+@inproceedings{MBLE:10short,
+title = {{Leveraging Parallelism for Multi-dimensional Packet Classification on Software Routers}},
+author = {{Y. Ma et~al}},
+booktitle = {Proc.\ SIGMETRICS},
+year = 2010
+}
+
+
+@inproceedings{MBLE:10,
+title = {{Leveraging Parallelism for Multi-dimensional Packet Classification on Software Routers}},
+author = {Yadi Ma and Suman Banerjee and Shan Lu and Cristian Estan},
+booktitle = {Proc.\ SIGMETRICS},
+year = 2010
+}
+
+@techreport{ourtr,
+    Author = {Vyas Sekar  and Norbert  Egi and Sylvia  Ratnasamy and Michael K Reiter and Guangyu Shi},
+    Title = {Design and Implementation of a Consolidated Middlebox Architecture},
+    Institution = {EECS Department, University of California, Berkeley},
+    number = "UCB/EECS-2011-110",
+    Year = {2011},
+    Month = {Oct},
+    URL = {http://www.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-110.html},
+}
+
+@misc{ourtrshort,
+title  = {{Design and Implementation of a Consolidated Middlebox Architecture}},
+author = {{V. Sekar et~al.}},
+howpublished = {Technical Report, EECS UC Berkeley, Oct 2011}
+}
+
+@misc{sriov,
+title = {{SR-IOV}},
+howpublished = {\url{http://www.pcisig.com/specifications/iov/single_root/}}
+}
+
+@misc{sriovshort,
+title = {SR-IOV},
+howpublished = {\url{http://bit.ly/fnpry4}}
+}
+
+
+@inproceedings{mihaiold,
+title = {{Managing Resource Contention in Software-based Networking (Mostly by Ignoring It)}},
+author = {Mihai Dobrescu and Katerina Argyarki and Sylvia Ratnasamy},
+booktitle = {Proc. NSDI}, 
+year = 2012
+}
+
+@inproceedings{mihai,
+title = {{Toward Predictable Performance in Software Packet-Processing Platforms}},
+author = {Mihai Dobrescu and Katerina Argyarki and Sylvia Ratnasamy},
+booktitle = {Proc. NSDI}, 
+year = 2012
+}
+
+@inproceedings{Kokku:03,
+title = {{ A Case for Run-time Adaptation in Packet Processing Systems}},
+author = { Ravi Kokku,  Taylor Riche, Aaron Kunze, Jayaram Mudigonda, Jamie Jason, Harrick Vin}, 
+ booktitle = {Proc.\ HotNets},
+ year =2003
+}
+
+@inproceedings{denali,
+author = {Andrew Whitaker and Marianne Shaw and Steven D. Gribble},
+title = {{ Scale and performance in the Denali isolation kernel}},
+ booktitle = {Proc.\ OSDI},
+year = 2002
+}
+
+@inproceedings{netmap,
+title = {{Transparent acceleration of software packet forwarding using netmap}},
+author = {Luigi Rizzo and  Marta Carbone and Gaetano Catalli},
+booktitle = {Proc.\ Infocom},
+year = 2012
+
+}
+
+@misc{linuxcontainer,
+title = {Linux Containers},
+howpublished = {\url{http://lxc.sourceforge.net/man/lxc.html}}
+}
+
+@article{nemesis, author = {Ian M Leslie and Derek McAuley and Richard Black
+and Timothy Roscoe and Paul Barham and David Evers and Robin Fairbaims and Eoin
+Hyden }, title = {{ The Design and Implementation of an Operating System to
+Support Distributed Multimedia Applications}}, journal  = {IEEE JSAC}, number =
+7, volume = 14, month = sep, year  = 1996 }
+
+
+@misc{ibmvirtualnips,
+title  = {{ IBM Network Intrusion Prevention System Virtual Appliance}},
+howpublished = {\url{http://www-01.ibm.com/software/tivoli/products/virtualized-network-security/requirements.html}}
+}

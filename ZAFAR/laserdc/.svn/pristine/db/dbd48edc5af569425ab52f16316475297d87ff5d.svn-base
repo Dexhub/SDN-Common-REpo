@@ -1,0 +1,158 @@
+\subsection{Reconfiguration and Traffic Engineering}
+\label{sec:reconfig}
+
+\begin{task}
+\label{task:system:fastalgo}
+We will develop fast and efficient algorithms for the joint
+optimization problem of reconfiguration and traffic engineering.
+\end{task}
+
+%To explain the optimization problem that we
+%need to solve and highlight why this problem is hard, we begin with an abstract
+%integer linear program formulation in a static setting.
+
+\para{Joint Reconfiguration and Traffic Engineering (JRTE) Problem.}
+Given the traffic load, the {\em JRTE} problem is to: (a) Select a
+realizable-topology from a given pre-configured flexible topology
+(recall that a realizable-topology is a matching of candidate links
+over the FSOs); and (b) Route the given inter-rack flows over the {\em
+  selected} realizable topology, so as to optimize a desired
+objective. The second traffic engineering (TE) part essentially
+involves solving the multi-commodity flow problem over the realizable
+topology.  \blue{For the latter, the set of FSOs on each rack are
+  considered as one node (since they are connected by a ToR switch).}
+%
+The objective functions of interests could be to minimize link
+congestion or maximize total flow in conjunction with fairness,
+latency bound, and/or tenant provided SLAs.
+
+\para{Connection to Prior Works} For the special case when the given
+PCFT has exactly one realizable-topology (i.e., the given candidate
+links already form a matching over the FSOs), our JRTE problem is
+exactly the NP-hard~\cite{} multi-commodity flow problem with the
+desired objective, \blue{assuming the given TCP flows to be
+  unsplittable~\cite{hedera}.} Thus, our JRTE problem is trivially
+NP-hard.
+%
+The reconfiguration subproblem can be looked upon as a kind of
+topology control problem~\cite{}, which is to establish/select links
+between given wireless nodes to achievenetwork connectivity while
+minimizing the transmission power (or energy consumption) of the
+nodes. The constraints and objectives of the topology control problems
+are quite different than our reconfiguration subproblem, and thus, the
+techniques used for topology control are not directly applicable.
+%
+Finally, the reconfiguration subproblem (as the PCFT problem) also
+falls in the class of {\em degree-constrainted subgraph} problem, but
+the TE-based objectives makes the reconfiguration subproblem very
+different from prior-addressed degree-constrainted subgraph problems.
+
+\para{Proposed Approaches.} We note that the ILP formulation of the
+JRTE problem took several hours to solve on the state-of-art ILP
+solver~\cite{}, even for a small 20-node instance. In contrast, the
+reconfiguration of our \ArchName network should not take more than a
+few milliseconds, for it to be of any real benefit. Thus, the
+challenge is to design very fast, scalable, and efficient JRTE
+algorithms.
+
+\begin{packeditemize}
+\item {\em Matching Techniques.} One simple and reasonable way to
+  approach the reconfiguration subproblem would be to select the
+  maximum-weighted matching (solvable in polynomial time) between
+  FSOs, where the link $(i,j)$ is weighted by the inter-rack traffic
+  demand between the correspondin racks. Such a topology essentially
+  serves the maximum possible total inter-rack demand using {\em one}
+  hop paths.  It is challenging to generalize the above approach to
+  include two-hop routes, i.e., to select the matching that serves the
+  maximum traffic demand in one or two hops. In general, we would like
+  to pick a matching that yields the minimum weighted average
+  inter-rack distance (where the distances are weighted by the traffic
+  demands). Even generalizing the matching algorithm to ensure that
+  the corresponding inter-rack graph is connected is challenging, but
+  this may be a reasonable tractable objective. \blue{After picking a
+    matching, we can do the TE part independently using standard
+    techniques~\cite{} over the selected topology.}
+
+\item {\em LP Relaxation Techniques.} One promising approach is to
+  formulate the reconfiguration problem as an ILP (using flow-like
+  constraints and binary variables for link selection) with the
+  objective of minimum link congestion or maximum total ``fair''
+  flow~\cite{max-fair-flow}, and solve the relaxed LP. We can then
+  convert the LP solution to an ILP solution by an appropriate
+  ``rounding'' technique, while ensuring that the ``matching
+  constraint'' is still satisfied (unsatisfied flow-constraints will
+  only result in a sub-optimal TE solution). \blue{Here, for the
+    unsplittable (i.e., single-path routing) verion, we also need to
+    do path-striping as in~\cite{rand-round} in conjunction with the
+    rounding process.}  An alternate approach in a similar vein as
+  above is: First solve the multi-commodity flow problem over the
+  entire PCFT graph, and then select a ``good'' matching based on the
+  flow values on the links. Both above approaches are expected to be
+  fast, and it would be interesting to compare their relative
+  performance over real traffic traces.
+\end{packeditemize}
+
+\para{Further Directions.} In addition to the above, we are also
+interested in designing algorithms based on limited traffic
+information, and incremental or localized approaches.
+
+\begin{packeditemize}
+\item {\em Strategies with Limited Traffic Information.}  Our previous
+  discussion implicity assumes availability of traffic demands for the
+  next \blue{epoch.}  However, in reality, traffic predictability may
+  be limited. In the worst case, we may only be able to distinguish
+  between ``elephant'' (large) and ``mice'' (small) flows, based on
+  their \blue{initial size.}  In such restricted settings, the
+  reasonable approach would be to change the \blue{realized topology}
+  in an ``online'' manner in response to the arriving elephant flows,
+  while relying solely on TE for the mice flows. This approach should
+  be effective since the structure of real-world workloads suggests
+  that a small number of elephant flows carry the most
+  bytes~\cite{}. Moreover, since these elephant flows are typically
+  long-lived~\cite{}, they are quite amenable to coarser time-scale
+  optimizations. In our preliminary work~\cite{hotnets}, we employed a
+  simple strategy along the above directions, and achieved
+  near-optimal performance over randomly generated traffic
+  traces. \blue{More information about traffic loads such as spatial
+    and temporal distribution of elephant flows (or flow sizes in
+    general) would require challenging generalizations of the above
+    approach.}
+
+  An addition challenge to address in the above online strategy would
+  be to favor JRTE solutions that cause minimal disruption to existing
+  traffic flows. In general, we would like to be able to estimate the
+  {\em overall impact} (including, disruptions to current flows and
+  in-flight packets) of a possible JRTE solution, and only suggest
+  solutions whose overall impact is beneficial. We could define the
+  {\em impact} in terms of the expected change in average evacuation
+  time, packet latency, and/or number of dropped packets. Computation
+  of such appropriately defined impact may be intractable, but upper
+  and/or lower bounds on its value may be sufficient and very useful
+  for our purposes.
+
+\item {\em Incremental or Localized Strategies.} One of the ways to
+  develop a fast and effective JRTE algorithm is to determine the
+  solution in an incremental manner (e.g., by constraining the number
+  of links that need to deactivated or activated), and morever, even
+  limiting ourselves to only localized (i.e., close to where the
+  traffic changes occur) strategies. To design incremental JRTE
+  algorithms, we can use augmenting-path techniques to incrementally
+  improve the matching~\cite{}, with additional constraints and/or a
+  modified objective function. For localized strategies, we can
+  exploit the flow structure of the optimization to design distributed
+  strategies~\cite{khandekar,conext13}. Note that localized
+  reconfigurations may result in multiple {\em concurrent}
+  reconfigurations across the network, which would need to be handled
+  carefully to ensure \blue{consistency and connectivity} (as
+  discussed in the next subsection).
+\end{packeditemize}
+
+\eat{
+First, we simplify the traffic engineering aspect of the problem by
+aggregating the given inter-machine flows into inter-rack flows, and
+allowing the aggregated inter-rack flows to be splittable (across
+multiple paths.)  Such a simplification makes the traffic engineering
+problem much easier (splittable multi-commodity flow problem is in P),
+while allowing the split inter-rack flows to be mapped to non-split
+original TCP flows using ``path-striping''~\cite{}; such a mapping
+should work well for most practical inputs.}

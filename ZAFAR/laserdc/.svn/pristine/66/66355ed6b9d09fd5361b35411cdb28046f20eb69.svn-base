@@ -1,0 +1,23 @@
+\section{running list of concerns}
+
+\begin{itemize}
+
+\item algos seem ad hoc -- no specificiation of
+requirements/objective/optimality  
+
+\item can we run stuff fast enough -- i.e. reconf algos take less than 1 ms 
+ even for 500 node topologies? 
+
+\item do we have the inputs we need -- flow size or elephants?
+
+\item can we really beat cthru 3db etc
+
+\item what workloads are bad?
+
+\item what update sequences are bad?
+
+\item are we doing pure sm or hybrid? if so how to do budgeted optimization here?
+
+\item how much do mininet, fs, htsim scale?
+
+\end{itemize}

@@ -1,0 +1,251 @@
+\usepackage{color}
+\usepackage{cite}
+\usepackage{verbatim}
+\usepackage[hyphens]{url}
+\usepackage[normalem]{ulem}
+
+\usepackage{epsfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+%\usepackage{slashbox}
+\usepackage{graphicx}
+
+%\usepackage[top=0.9in, bottom=0.9in, left=0.75in, right=0.75in]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage{amsmath,  amsthm,  amssymb}
+%\usepackage{amsmath,    amssymb}
+%\usepackage[pdftex]{hyperref}
+%\usepackage[english]{babel}
+%\usepackage[dvips]{graphicx}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage{listings}
+%\usepackage{clrscode}
+%\usepackage{styles/algorithmic}
+%\usepackage{styles/algorithm}
+%\usepackage{styles/listings}
+%\usepackage{styles/clrscode}
+%\usepackage{clrscode}
+
+\def\backGroundColor{white}
+\def\txtsize{\normalsize}
+\def\bl{\par\textcolor{\backGroundColor}{\txtsize{ empty line }}\par}
+\def\it{\textit}
+\def\sur{m}
+\def\surit{\it{m}}
+
+\def\includeComments{include}
+\def\includ{include}
+
+\def\comm[#1]{\ifx\includeComments\includ  \bl \texttt{\textbf{\textit{Note: #1}}} \par \fi}
+\def\inlinecomm[#1]{\ifx\includeComments\includ  \textit{Note: #1} \fi}
+\def\dn{$k$ }
+\def\sn{$n$ }
+
+\def\ith{$i^{th}$}
+\def\jth{$j^{th}$}
+\def\tth{$t^{th}$}
+\def\d{$d$}
+\def\s{$s$}
+\def\k{\mbox{$\kappa$}}
+\def\Sd{\mbox{$S(d)$}}
+%\def\S{$S$}
+\def\D{$D$}
+\def\subS{$S$}
+\def\dpr{\mbox{DPR}}
+\def\dpsr{\mbox{\em dpsr}}
+
+\def\DM{D}
+\def\dM{d}
+\def\SdM{S(d)}
+\def\subSM{S}
+\def\SM{S}
+\def\sM{s}
+\def\A{A}
+\def\xs{X_S}
+
+\def\dx{D_X}
+\def\sx{S_X}
+\def\sy{S_Y}
+\def\Nr{\mathcal{N}}
+
+
+\def\dif{U}
+\def\ws{(n+k)}
+\def\Arc{Hypercube+}
+
+\def\R{\mbox{$\widehat{R}$}}
+\def\Rc{\mbox{$\widetilde{R}$}}
+
+\def\pk{\frac{k}{n+k}}
+\def\pn{\frac{n}{n+k}}
+
+\def\blackbox{\hfill {\vrule height6pt width6pt depth0pt}}
+\def\Box{\hfill \framebox(5.25,5.25){}}
+\def\qd{\Box}
+\def\QD{\blackbox}
+
+\def\sma{SMA}
+\def\decsma{DecSMA}
+
+\newcommand{\comments}[1]{\textit{\underline{Note: #1}}}
+
+\newcommand{\MySection}[1]{\section{\textbf{#1}}}
+\newcommand{\MySubSection}[1]{\subsection{\textbf{#1}}}
+
+\def\comfat{combined fatness }
+
+\newcommand{\paras}[1]{\smallskip \noindent {\bf #1}}
+\newcommand{\para}[1]{\smallskip \noindent {\bf #1}}
+\newcommand{\softpara}[1]{\smallskip \noindent \underline{#1}}
+
+\pagenumbering{arabic} \pagestyle{plain}
+
+\newcommand{\F}{\mbox{${\cal F}$}}
+\newcommand{\dl}{\mbox{${\delta}$}}
+\newcommand{\B}{\mbox{${B_{\dl}}$}}
+\newcommand{\e}{\mbox{${\varepsilon}$}}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{black}{#1}}
+
+
+\newcommand{\ommited}[1]{\textcolor{magenta}{#1}}
+%\newcommand{\ommited}[1]{}
+
+
+\newcommand{\cbl}{\color{blue}}
+\newcommand{\cbr}{\color{red}}
+\newcommand{\cw}{\color{white}}
+\newcommand{\cb}{\color{black}}
+\newcommand{\uneat}[1]{\textcolor{green}{#1}}
+\newcommand{\Eat}[1]{}
+\newcommand{\eat}[1]{}
+\newcommand{\vsp}{\vspace{0.05in}}
+
+%\newtheorem{algorithm}{Algorithm}
+%\newtheorem{definition}{Definition}
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}{Lemma}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{formula}{Formula}
+\newtheorem{problem}{Problem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{Plain}{}
+\newtheorem{defin}{Definition}
+\newtheorem{ex}{EXAMPLE}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{alg}{Algorithm}
+\newtheorem{ob}{Observation}
+
+\newenvironment{theorem}{\vsp \begin{thm} \nopagebreak}{{\hfill$\blackbox$} \end{thm} \vsp}
+\newenvironment{thm-prf}{\vsp \begin{thm} \nopagebreak}{\end{thm}}
+\newenvironment{lemma}{\vsp \begin{lem} \nopagebreak}{{\hfill$\blackbox$} \end{lem} \vsp}
+\newenvironment{lem-prf}{\vsp \begin{lem} \nopagebreak}{\end{lem}}
+\newenvironment{prf}{{\sc Proof:} \nopagebreak }{{\hfill$\blackbox$} \vsp}
+
+\newenvironment{definition}[1]{\vsp\begin{defin}\begin{rm}({#1})}
+        {{\hfill$\Box$} \end{rm}\end{defin} \vsp}
+\newenvironment{algorithm}{\begin{alg}\nopagebreak\begin{rm}
+        \begin{tabbing}Tb\=Tb\=Tb\=Tb\=Tb\=Tb\=Tb\=Tb\=Tb\=Tb\=Tb\=Tb\=Tb\=\kill }
+        {\end{tabbing} {\hfill$\Box$} \end{rm}\end{alg}}
+
+\Eat{
+
+\newenvironment{example}{\begin{ex} \nopagebreak
+  \begin{rm}}{{\hfill$\Box$} \end{rm}\end{ex}}
+\newenvironment{observation}{\noindent \begin{ob}}{{\hfill$\Box$}\end{ob}}
+}
+
+\newcommand{\squishlist}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{3pt}
+     \setlength{\topsep}{3pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{1.5em}
+     \setlength{\labelwidth}{1em}
+     \setlength{\labelsep}{0.5em} } }
+
+\newcommand{\squishlisttwo}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\leftmargin}{2em}
+    \setlength{\labelwidth}{1.5em}
+    \setlength{\labelsep}{0.5em} } }
+
+\newcommand{\squishend}{
+  \end{list}  }
+
+
+
+\newcommand{\BEGIN}{{\bf BEGIN\ }}
+\newcommand{\END}{{\bf END.}}
+\newcommand{\Begin}{{\bf Begin\ }}
+\newcommand{\End}{{\bf End}}
+
+
+\newcommand{\Do}{{\bf do}}
+\newcommand{\Else}{{\bf else}}
+
+\newcommand{\Endif}{{\bf end if;}}
+\newcommand{\Endfor}{{\bf end for;}}
+\newcommand{\Endwhile}{{\bf end while;}}
+
+\newcommand{\For}{{\bf for}}
+\newcommand{\for}{{\bf for}}
+\newcommand{\If}{{\bf if}}
+\newcommand{\In}{{\bf in}}
+\newcommand{\Let}{{\bf let}}
+\newcommand{\Repeat}{{\bf REPEAT\ }}
+\newcommand{\Return}{{\bf RETURN\ }}
+\newcommand{\Then}{{\bf then}}
+\newcommand{\Until}{{\bf UNTIL\ }}
+\newcommand{\While}{{\bf while}}
+\newcommand{\When}{{\bf When}}
+\newcommand{\On}{{\bf On}}
+\newcommand{\Procedure}{{\bf Procedure}}
+\newcommand{\Break}{{\bf break}}
+
+
+\newcommand{\Max}{{\bf max}}
+\newcommand{\Min}{{\bf min}}
+
+\newcounter{packednmbr}
+\newenvironment{packedenumerate}{\begin{list}{\thepackednmbr.}{\usecounter{packednmbr}\setlength{\itemsep}{0pt}\addtolength{\labelwidth}{-5pt}\setlength{\leftmargin}{\labelwidth}\setlength{\listparindent}{\parindent}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
+\newenvironment{packeditemize}{\begin{list}{$\bullet$}{\setlength{\itemsep}{0pt}\addtolength{\labelwidth}{-5pt}\setlength{\leftmargin}{\labelwidth}\setlength{\listparindent}{\parindent}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
+\newenvironment{packedlist}{\begin{list}{$\bullet$}{\setlength{\itemsep}{0pt}\addtolength{\labelwidth}{-5pt}\setlength{\leftmargin}{\labelwidth}\setlength{\listparindent}{\parindent}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
+
+
+%\newcommand{\Section}{Section~}
+\newcommand{\Section}{\S}
+
+
+\newcommand{\tightcaption}[1]{\vspace{-8pt}\caption{{\bf #1}\vspace{-8pt}}}
+\newcommand{\taskref}[1]{\ref{#1}}
+\newcommand{\Eqref}[1]{Eq~\eqref{#1}}
+
+\newcounter{tasknmbr}
+\newcounter{tasklabel}
+\renewcommand{\thetasklabel}{\textbf{Task \thetasknmbr}}
+\newenvironment{task}{
+\begin{list}{\thetasklabel:}{\usecounter{tasklabel}\stepcounter{tasknmbr}\item\em}}{\end{list}}
+
+
+\newcommand{\mypara}[1]{\smallskip\noindent{\bf {#1}:}~}
+\newcommand{\myparaq}[1]{\smallskip\noindent{\bf {#1}?}~}
+
+\newcommand{\DC}{DC\xspace}
+\newcommand{\DCs}{DCs\xspace}
+\newcommand{\ToR}{ToR\xspace}
+\newcommand{\ToRs}{ToRs\xspace}
+\newcommand{\ArchName}{{FireFly}\xspace}
+\newcommand{\ArchNameExpand}{Free-space optical Inter-Rack nEtwork with high FLexibilitY\xspace}

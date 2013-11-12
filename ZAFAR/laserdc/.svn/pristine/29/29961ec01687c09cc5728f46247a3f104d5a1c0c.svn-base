@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{xspace}
+\input{macros}
+
+\title{Quick and dirty optimal topology formulation}
+
+\begin{document}
+
+\maketitle
+
+\medskip\noindent {\bf Preliminaries:}  We consider a setting with $\NumRacks$ 
+ {\Rack}s each equipped with $\NumFSOs$ {\FSO} devices. 
+ We use the index $\RackIndex$ to refer to a specific {\Rack} 
+ and  $\FSOIndex$ to refer to a specific {\FSO} device. 
+  Thus, the subscript $\RackFSOa$  will refer to a specific 
+ Rack-FSO combination.
+
+
+ Let $\InterRack$ denote a pair of racks and let us assume that we know some estimated traffic matrix for every pair 
+ of racks denoted by $\Traffic_\InterRack$ for the volume of 
+ traffic from $\InterRack$.
+
+Suppose the bandwidth of an inter-FSO link (if enabled) is $\Capacity$. 
+
+ 
+\medskip\noindent{\bf Control variables:}
+Our goal is to decide which pair of Rack-FSO links that need to be connected -- 
+ let $\EdgeVarIndex$ be a binary variable that takes the value 
+ 1 if we choose to add a link between $\Edge$. Note that we are considering 
+ a fully steerable model where every pair of FSO trasceivers 
+ can talk to each other.   
+
+
+\medskip\noindent{\bf Formulation:}
+
+ Let $\FlowEdge$ denote the volume of the inter-rack traffic on $\InterRack$ 
+ that flows on the edge $\Edge$.  
+
+Then, we have a natural sanity check that the flow can only be positive and non-zero 
+ only if we have an edge enabled.
+
+\begin{equation}
+ \forall \FlowEdge:   0 \leq \FlowEdge \leq \Capacity \times \EdgeVarIndex 
+\label{eq:edgesanity}
+\end{equation}
+
+We have a flow conservation constraint on a per-rack basis for rack that is not the ingress or egress: 
+
+\begin{equation}
+ \forall \InterRack, \forall \RackIndex: \sum_{ \RackIndex', \FSOIndex', \FSOIndex}       \Flow_{\InterRack, (\RackIndex', \FSOIndex' \rightarrow \RackIndex, \FSOIndex)  }    = \sum_{ \RackIndex', \FSOIndex', \FSOIndex} \Flow_{ \InterRack, (\RackIndex, \FSOIndex \rightarrow \RackIndex', \FSOIndex')  }  
+\label{eq:flowcons}
+\end{equation}
+
+
+For the ingress, we have a special constraint: 
+
+\begin{equation}
+ \forall \InterRack, s.t.\ \RackIndex = \mathit{Ingress}(\InterRack):   \sum_{ \RackIndex', \FSOIndex', \FSOIndex}       \Flow_{\InterRack, (\RackIndex, \FSOIndex \rightarrow \RackIndex', \FSOIndex')   }    = \Traffic_\InterRack 
+\label{eq:flowconsin}
+\end{equation}
+
+For the egress, we have a special constraint: 
+
+\begin{equation}
+ \forall \InterRack, s.t.\ \RackIndex = \mathit{Egress}(\InterRack):   \sum_{ \RackIndex', \FSOIndex', \FSOIndex}       \Flow_{ \InterRack, (\RackIndex', \FSOIndex' \rightarrow \RackIndex, \FSOIndex )  }    = \Traffic_\InterRack 
+\label{eq:flowconsin}
+\end{equation}
+
+
+
+Each FSO on each rack can be connected to at most one other receiver.
+\begin{equation}
+ \forall \RackFSOa:  \sum_{\RackFSOb} \EdgeVarIndex \leq 1  
+\label{eq:degreecons}
+\end{equation}
+
+
+
+By symmetry, each FSO on each rack can be connected to at most one other sender. 
+\begin{equation}
+ \forall \RackFSOb:  \sum_{\RackFSOa} \EdgeVarIndex \leq 1  
+\label{eq:degreecons}
+\end{equation}
+
+
+We need to model  the bidirectionality of the links as well: 
+By symmetry, each FSO on each rack can be connected to at most one other sender. 
+\begin{equation}
+ \forall \RackFSOa:  \EdgeVarIndex =  \EdgeVarRevIndex
+\label{eq:degreecons}
+\end{equation}
+
+
+
+
+\medskip\noindent {\bf Objective:}  Our goal is to accomodate the demands represented
+by our traffic matrix in the most efficient manner.  In other words, we want to
+minimize the congestion on the maximum loaded inter-FSO link  so  that the
+completion time for the maximum flow is the smallest. 
+
+
+\begin{equation}
+ \mathit{Minimize}  \max_{\Edge}  \frac{\sum_{\InterRack}\FlowEdge}{\Capacity }
+\end{equation}
+
+
+
+\end{document}
+

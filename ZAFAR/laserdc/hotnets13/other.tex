@@ -1,0 +1,121 @@
+\section{Introduction}
+
+Data centers (DCs) are a critical piece of today's computing infrastructure that
+support key Internet applications.  In this context, data center network designs
+must satisfy several potentially conflicting goals---performance (e.g.,
+minimize oversubscribed links, low latency)~\cite{fattree,vl2}, equipment and
+management cost~\cite{fattree,popa-cost}, flexibility to adapt to changing
+traffic patterns~\cite{proteus,3db,flyways,cthru}, incremental expandability to
+add new servers or racks~\cite{legup,jellyfish}, and other practical concerns
+including cabling complexity, power, and
+cooling~\cite{farrington,portland,cabling}.
+
+Given the highly variable and unpredictable nature of data center
+workloads~\cite{vl2}, early data center designs offered extreme points
+in the space of cost-performance tradeoffs---either poor performance
+at low cost (e.g., a simple tree has many oversubscribed links) or
+expensive over-provisioned solutions with good worst-case performance
+(e.g., fat-trees for full bisection bandwidth~\cite{fattree}). Recent
+works suggest a ``middle ground'' that dynamically augments a simple
+fixed infrastructure with additional inter-rack
+wireless~\cite{flyways,3db} or optical links~\cite{cthru} to
+alleviate congested hotspots.  While these do offer performance
+benefits, we believe that these do not push the envelope far enough.
+
+% early datacenter designers were initially 
+
+%Early datacenter designs used structured topologies 
+%such as  simple tree architectures or fat-tree style
+%topologies~\cite{fattree}. These designs, unfortunately, cannot
+%flexibly adapt to changing traffic patterns;  e.g., if some pairs of
+%racks become hotspots~\cite{flyways,3db,vl2,cthru}.
+% and they are not
+%incrementally expandable (e.g., with a fat-tree one can only expand in
+%discrete increments).  
+% Consequently, datacenter operators need to
+%compensate for this lack of flexibility  by
+%  overprovisioning the network~\cite{fattree,jellyfish}.
+
+%} \ref{Not %  true?}
+ %}
+
+%\footnote{While
+%  optical interconnects have also been suggested~\cite{cthru}, the use
+%  of wireless is more appealing as it does not burden operators with
+%  cabling costs.} %\red{I would just move the footnote inline ..} 
+
+In this work, we take the flexibility offered by wireless inter-rack
+links to the logical extreme and explore the vision
+of an \emph{all-wireless inter-rack data center fabric}.  This vision,
+if realized, would provide unprecedented degrees of flexibility for
+data centers.  For example, it will allow operators to dynamically
+reconfigure the {\em entire} network topology to adapt to changing
+traffic demands.  Similarly, it can act as an enabler for operators to
+explore and benefit from topology structures  that would otherwise remain
+``paper designs'' due to the perceived cabling complexity.
+
+%(e.g., random graphs that offer better incremental expandability~\cite{jellyfish}),
+%\vyas{something else}
+
+Unfortunately, existing wireless/RF technologies are not suitable on
+two fronts. First, they incur a large interference footprint even with
+advanced phased-array antennas, especially when side lobes are
+considered~\cite{cornell}. Second, they suffer from a significant
+drop-off in data rates at longer distances~\cite{3db}, especially
+since federal regulations prevent use of higher power or wider
+bandwidth.  In conjunction, these factors fundamentally limit the
+number and types of inter-rack links that can be created---an issue
+that exists even with newer designs to extend the range via ceiling
+reflectors~\cite{3db}.
+
+Consequently, we look beyond traditional RF-based solutions and
+explore a somewhat non-standard ``wireless'' technology, namely {\em
+  Free-Space Optics} (FSO).  FSO uses visible or infra-red lasers to
+implement point-to-point data links, at very high data rates
+($>$1~Gbps) and at longer ranges. (We elaborate on these
+in \Section\ref{sec:fso}). While the use of FSO in a general
+communications context is not new, there has been very little work to
+systematically explore the viability of FSO in the data center or
+highlight the benefits that FSO offers in this context.\footnote{The
+  only parallel work we are aware of is a recent patent
+  document~\cite{us-patent}. Unfortunately, this offers little in
+  terms of viability analysis, design space arguments, or
+  performance tradeoffs.}
+
+
+While FSO is an enabling technology, there are two significant
+challenges that need to be addressed before we can realize a flexible
+DC network fabric.  First, with off-the-shelf technology, FSO
+  links cannot be cost-effectively reconfigured (i.e., realigned) at
+  fast time-scales necessary in the DC context. Second, cost and
+physical constraints limit the number of FSO links that can be
+installed on the top of each rack.  Thus, we need an effective
+topology design and management framework that can provide the desired
+performance and flexibility while operating under the physical and
+cost constraints.
+
+
+In this paper, we discuss the viability of an FSO-based all-wireless inter-rack
+fabric and present early solutions to address the above challenges.
+Specifically, to achieve fast reconfigurability, we leverage ``switchable
+mirrors'' that can be electronically controlled to act as mirrors or
+pass-through glasses; the use of switchable mirrors effectively obviates the
+need for careful (re)alignment (\S\ref{sec:design}). We also discuss topology
+design and reconfiguration heuristics that seem to work well in practice.  We
+have built a proof-of-concept prototype using off-the-shelf FSO and switchable
+mirror solutions. We present simulation results that demonstrate superior
+performance of our initial design compared to state-of-art data center network
+designs of comparable cost (\Section\ref{sec:perf}). We discuss extensions 
+ to our basic approach in \S\ref{sec:future}, before concluding in \S\ref{sec:conc}.
+  We discuss related work inline through the paper.
+
+
+
+
+
+
+
+
+
+
+

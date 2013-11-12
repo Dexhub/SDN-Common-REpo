@@ -1,0 +1,47 @@
+% Section 4 notations. Can change the below, as needed.
+
+%\newcommand{\PCFT}{{\em PCFT}\xspace}
+\newcommand{\BBO}{{BBND}\xspace}
+
+\newcommand{\TotalMachines}{\ensuremath{\mathit{N}}} 
+\newcommand{\NumMachinesPerRack}{\ensuremath{\mathit{l}}} 
+\newcommand{\NumRacks}{\ensuremath{\mathit{n}}} 
+\newcommand{\NumNonToR}{\ensuremath{\mathit{S}}} 
+\newcommand{\NumFSOs}{\ensuremath{\mathit{m}}} 
+\newcommand{\FSODegree}{\ensuremath{\mathit{k}}} 
+\newcommand{\NumFSOsWithGM}{\ensuremath{\mathit{g}}} 
+\newcommand{\NumSMsPerFSO}{\ensuremath{\mathit{k'}}} 
+
+\newcommand{\DegreeFlex}{\ensuremath{\mathit{f}}} 
+\newcommand{\NumPortsPerToR}{\ensuremath{\mathit{P}}} 
+
+\newcommand{\Rack}{\ensuremath{\mathit{Rack}\xspace}} 
+\newcommand{\FSO}{\ensuremath{\mathit{FSO}\xspace}} 
+\newcommand{\RackIndex}{\ensuremath{\mathit{i}}} 
+\newcommand{\FSOIndex}{\ensuremath{\mathit{j}}} 
+
+\newcommand{\RackFSOa}{\ensuremath{\RackIndex,\FSOIndex}} 
+\newcommand{\RackFSOb}{\ensuremath{\RackIndex',\FSOIndex'}} 
+
+\newcommand{\RackFSOc}{\ensuremath{\RackIndex,\FSOIndex}} 
+\newcommand{\RackFSOd}{\ensuremath{\RackIndex,\FSOIndex}} 
+
+
+
+\newcommand{\Flow}{\ensuremath{\mathit{f}}} 
+\newcommand{\InterRack}{\ensuremath{\mathit{k}}}
+\newcommand{\Traffic}{\ensuremath{\mathit{T}}}
+\newcommand{\Edge}{\ensuremath{ (\RackFSOa \rightarrow \RackFSOb) }} 
+\newcommand{\EdgeRev}{\ensuremath{ (\RackFSOb \rightarrow \RackFSOa) }} 
+\newcommand{\Edgefoo}{\ensuremath{ (\RackFSOc \rightarrow \RackFSOd) }} 
+\newcommand{\EdgeVar}{\ensuremath{\mathit{d}}}
+\newcommand{\EdgeVarIndex}{{\EdgeVar_{\Edge}}}
+\newcommand{\EdgeVarRevIndex}{{\EdgeVar_{\EdgeRev}}}
+\newcommand{\Capacity}{\mathit{C}}
+\newcommand{\FlowEdge}{\ensuremath{\Flow_{\InterRack,\Edge}}} 
+
+\newcommand{\Preconfiguration}{Preconfiguration\xspace}
+\newcommand{\Reconfiguration}{Steering\xspace}
+\newcommand{\Alignment}{Adjustment\xspace}
+
+

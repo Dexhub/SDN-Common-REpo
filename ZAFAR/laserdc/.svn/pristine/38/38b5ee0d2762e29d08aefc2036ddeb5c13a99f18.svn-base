@@ -1,0 +1,154 @@
+\section{FSO: Motivation and Viability} 
+\label{sec:fso}
+
+%Our overarching vision is to explore an all ``wireless'' inter-rack
+%fabric that can offer several natural advantages over traditional
+%wired architectures: it obviates the need for a fixed infrastructure,
+%it does not need to be overprovisioned for the ``worst-case'', it can
+%be easily adapted depending on future demands, and it offers better
+%incremental expandability.
+
+In this section, we provide background on free-space optics
+(FSO) and argue why this technology can serve as the ``workhorse''  for our goals.
+
+\subsection{Background on FSO} 
+
+Free-space optical (FSO) communication~\cite{kedar} uses modulated
+visible or infrared (IR) laser beams in the free space to implement a
+communication link. Unlike traditional optical networks, the laser
+beam in FSO is not enclosed in a glass fiber, but transmitted through
+the air. There are \blue{two main} benefits of FSO compared to
+traditional RF technologies (e.g., WiFi or 60~GHz) that make it a
+promising candidate for \DCs:
+
+\para{(1) Low Interference and Bit-Error Rates.} FSO uses very narrow laser beam
+widths, \cam{diverging with an angle of a} few milliradians or less (1
+milliradian = 0.0573 degree). This reduces the interference footprint to a
+negligible level.  Thus, unlike traditional RF technologies, FSO communications
+from multiple senders do not interfere, unless the senders are aligned to the
+same receiver. Minimal interference and narrowness of the beams also results in
+very low bit-error rate.
+
+\para{(2) High Bandwidth over Long Ranges.}  Optical communications inherently
+provide significantly higher bandwidth than  current RF technologies owing to
+the use of much higher frequency and absence of regulatory
+restrictions~\cite{kedar}. Coupled with much lower attenuation of power over
+distance, FSO links are able to offer higher data rates at long distances
+(several kms) even with modest transmit power
+(watts)~\cite{kedar}; e.g., commercially available FSO devices 
+ provide 2.5Gbps~\cite{fsona}, and demonstration systems even report 
+ few Tbps~\cite{mustafa2013reintroducing}.
+
+\subsection{Feasibility of FSO in the Data center} 
+
+%The use of lasers naturally requires perfect line-of-sight. Thus, 
+The main stumbling block for traditional FSO communication comes from
+atmospheric elements (e.g., rain, fog, dust) and background radiation (e.g.,
+sunlight).  In the indoor and controlled environment of a \DC, these
+challenges largely disappear. 
+%
+However, key challenges remain.  First, commercially available FSO systems are
+bulky, expensive (\$5-10K for a single link), and power hungry.  
+%
+Second, FSO beams require a clear line-of-sight, and thus, obstacle avoidance
+is a potential issue. (We defer the issue of beam alignment to the next
+section.)
+
+\para{Cost, Size and Power:} Today's commercial FSO devices are
+relatively bulky $\approx$ 2 cubic feet of volume
+(e.g.,~\cite{lightpointe}).
+% e.g, an off-the-shelf we found was $12.6"\times 11.7"\times
+%  24.4$~\cite{lightpointe}.  
+\blue{This stems from many factors mandated by outdoor use-cases, viz., 
+use of multiple laser beams to provide spatial diversity, elaborate
+alignment mechanisms needed for long distance use and recovery from
+building swaying, ruggedization needs etc.}
+%
+In contrast, a \DC-centric FSO
+  device can be conceptually built by repurposing  
+  commonly used optical small form-factor
+  pluggable (SFP) transceivers~\cite{sfp}.  %SFP is a standards-based compact
+%  transceiver to interface a standard network device (e.g., switch,
+% router, media converter or similar device) to a fiber optic
+ % cable. 
+ The real difference between an \cam{optical} SFP transceiver and an
+  FSO device is that the former interfaces directly with an optical fiber instead
+  of transmitting the laser signal through the air. 
+\cam{Converting optical SFP to FSO entails the  use of 
+collimating lenses on the optical path and an alignment 
+mechanism (e.g., precision positioners with a camera), though
+  of a lesser level of complexity than that needed for alignment for
+  outdoors and very long distances. }
+  
+  Several projects have demonstrated the viability of this approach without
+extra
+amplification~\cite{tsujimura2008trans,mustafa2013reintroducing,yoshida2013focus},
+including one that uses commodity components~\cite{mustafa2013reintroducing} and one that targets Tbps speeds between
+buildings~\cite{ciaramella2009terabit}.
+%  Thus, the only additional components needed to build an FSO would be a
+%  focusing lens, a small camera (for alignment), and the alignment machinery. 
+  Given that 10Gbps SFP transceivers  cost about US\$250~\cite{sfp}, we
+estimate that an FSO device can be built for roughly \$750. 
+  
+  With respect to  size, SFPs themselves are small.  After reviewing the basic
+design requirements of the mirror and alignment mechanisms, we believe that the
+entire assembly can be put together within about $\approx$ \mbox{3'' x 8''} 2D
+footprint \blue{that could provide a usable range of
+100-200m~\cite{mustafa2013reintroducing,ciaramella2009terabit}. This range
+would normally cover the needs of most \DCs.} Finally, in terms of power, we
+note that with no additional amplification needed, the bulk of the power will
+be consumed in  the SFP component, which is $\leq$ 1~watt. 
+%\it{maximum}.
+  
+%  Since optical SFPs themselves are small (\mbox{2'' x 1''}), the FSO device
+%  described above would be $\approx$ \mbox{3'' x 8''}.
+
+% for an FSO device equipped with five
+%\mbox{1'' x 1''} switchable mirrors (discussed later in \S\ref{sec:design}).}
+
+\para{Circumventing Physical Obstructions:} If we have multiple FSO devices
+on the top of each rack, then the devices are likely to be obstacles for other 
+ links. We avoid this by   leveraging 
+ceiling mirrors~\cite{3db}. 
+%\blue{(Note, however, that ceiling mirrors serves a slightly
+%different purpose in our context. In 60~Ghz communication, the ceiling mirrors
+%reduce interference. In contrast, we use it to establish clear line of sight
+%between arbitrary pairs of transceivers.)} \red{SD: suggest remove.} 
+Specifically, we avoid obstructions by  directing FSO beams  upwards and
+reflecting them  from the ceiling mirrors  (Figure~\ref{fig:link}).
+Conventional mirrors themselves can easily reflect visible and IR FSO beams with negligible
+loss (see~\S\ref{sec:design-sm}) and thus, the cost of a ceiling mirror is negligible.
+ 
+
+%\end{packeditemize}
+
+
+%\red{This is not the right place. SMs haven't been introduced yet.} 
+ %% Agree ..
+
+%Having established the viability of FSO in the \DC, next we describe
+%our overall architecture for realizing an FSO-based inter-rack fabric. 
+
+%VS: dropping .. added the pointer earlier \blue{An important challenge we will address there is that
+%of beam alignment while imparting the ability of switching.}
+
+
+%In summary, we find that FSO can be a potential ``enabler'' for an
+%all-wireless datacenter fabric: it 
+%provides a much better transmit power, range and data rate tradeoff with respect
+%to RF as well as automatic immunity from interference from other links. 
+%Some of its traditional problems (e.g., impact of atmosphere) largely go away in the datacenter context
+%and other requirements (e.g., line of sight requirement) can be handled by a judicious design.
+
+%On 
+%the other hand
+%
+%significantly higher
+%bandwidth, longer range, and lower interference compared to RF-based
+%technologies.  Furthermore, many traditionally perceived challenges
+%for FSO (e.g., attenuation, size, power, cost) will
+%likely disappear in a datacenter context.
+
+
+%\vyas{there is a meta issue missing here that the FSOs are on the top of each rack etc}
+

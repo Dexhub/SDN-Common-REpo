@@ -1,0 +1,152 @@
+\documentclass[11pt]{article} 
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{wrapfig}
+\usepackage{times}
+\usepackage{xspace}
+\usepackage{subfig}
+\usepackage{soul}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{-0.6in}
+\setlength{\textheight}{9.05in}
+\setlength{\textwidth}{6.5in}
+\newcommand{\plsfill}{{\color{red}XXXFillmeXXX}}
+\input{def}
+\newcommand{\vyas}[1]{{\footnotesize\color{magenta}[VS: #1]}}
+
+\begin{document}
+
+\centerline{\LARGE\bf Collaboration Plan}
+\bigskip
+
+\section{Team Expertise}
+The project will be collaborative between Stony Brook University (SBU)
+and Carnegie Mellon University (CMU). 
+The project team has a broad range of  inter-disciplinary expertise available 
+suitable to deliver on different facets of the project.
+\begin{itemize}
+
+\item PI Gupta (Assoc. Professor, Computer Science, Stony Brook University)  is
+an expert in algorithmic aspects of networking, specifically involving routing,
+scheduling, connectivity and geometric aspects mostly related to wireless and
+sensor networks. 
+
+\item PI Sekar (Asst. Professor, ECE, Carnegie-Mellon University) has interest
+in broad aspects of networked systems. His work spans design and management of
+middleboxes, Internet video, scalable network monitoring, content distribution,
+software-defined networking and network forensics.  
+
+\item Co-PI Das (Professor, Computer Science, Stony Brook University) is an
+expert in networking protocols and systems – specifically focusing on
+wireless/mobile networks. He has built several experimental systems related to
+ad hoc/mesh and sensor networking and vehicular networking. In prior research,
+he also developed scalable discrete event simulation  systems.  
+
+\item Co-PI Longtin (Professor, Mechanical Engineering, Stony Brook University)
+is an expert in laser ...  \plsfill.
+
+\end{itemize}
+
+A total of 4 PhD students (2 CS students and 1 ME student in SBU and 1 ECE student
+in CMU) will participate in the project. Each will be primarily advised by a
+PI/Co-PI.  They will also closely work with the rest of the team. 
+
+\begin{wraptable}{r}{0.5\textwidth}
+\begin{small}
+\begin{tabular}{p{2cm}|p{2cm}|p{3cm}}
+Task	& 	 Lead	&  Collaborator(s) \\ \hline
+FSO1	& 	Das		& Longtin \\  
+FSO2	& 	Longtin		& Das \\ 	
+Theory1	&	Gupta		& Sekar \\
+Theory2	& 	Gupta		& Sekar \\
+System1	&	Sekar		& Gupta \\
+System2	&	Sekar		& Das \\ 
+System3	&	Das		& Sekar \\
+E2E	&	Das, Gupta	& Longtin, Sekar 
+\end{tabular}
+\end{small}
+\caption{Task leads}
+\label{table:tasklead}
+\end{wraptable}
+
+While all investigators will participate in all parts of the project, each
+Task will be lead by one of the investigators (see Table~\ref{table:tasklead}). 
+Gupta will lead Tasks \plsfill that are mostly related to topology design
+and algorithms for traffic engineering. Sekar will lead Tasks \plsfill that are 
+related to network management and control plane design. Das will lead
+Tasks \plsfill that related to system building and evaluations. Longtin will lead 
+Tasks \plsfill related to building the lower layers of FSO-based design. 
+
+\section{Division of Work and Collaboration Plan}
+
+The PI/Co-PIs have history of collaborations. Gupta and Das have long collaborated 
+on several wireless/sensor networking topics and have published 15+ papers~\cite{} together. They  also
+collaborated in 4 different NSF-funded projects.  The collaborations with Sekar started with Sekar 
+joining SBU faculty in 2012. This collaboration resulted in the preliminary work along the 
+direction of this proposal -- published as a position paper in ACM HotNets 2013~\cite{}. 
+After this initial success, the team sought input from Longtin who helped build 
+the SFP-based FSO link (Figure \plsfill in the proposal) in his optics lab thus demonstrating
+the general feasibility of the design. 
+Das and Longtin also collaborated in a home energy monitoring project~\cite{} funded by 
+NYSERDA.
+
+With Sekar joining CMU faculty starting 2014, the collaborations will continue  
+remotely aided by frequent `skype' meetings and semi-annual visits. 
+%
+The hardware prototype will be primarily developed in SBU and has been
+accordingly budgeted. The initial development and characterization of the  FSO
+links, the alignment and steering techniques will be pursued in the optics lab
+(in SBU Mechanical Engineering) that Longtin directs. The lab has excellent set
+up for laser studies including multiple optical benches, \red{say something
+about the lab's equipments that can benefit the project}. Concurrently, the
+simulation platforms will be set up and trace-driven simulations will be
+performed  on the initial topology control and reconfiguration techniques (both
+in SBU and CMU by Gupta and Sekar in their respective labs). At this time, the
+NetFPGA-based switches will be developed as well (in SBU WINGS/PCL Lab by Das)
+to aid the final end-to-end prototyping.  The SDN-based control plane will be
+primarily developed in CMU (by Sekar) and will be ported to SBU in time for the
+end-to-end testing. The RF-based controller system will developed in SBU (in
+SBU WINGS/PCL Labs by Das).  The general description of above labs and other
+facilities available for the project are described in the Facilities section. 
+
+In the third year of the project, we expect the initial design of FSO and
+steering mechanisms will have stabilized and understanding of the rest of the
+Firefly system will have progressed far enough. At this time the  project will
+concentrate significantly on the end-to-end prototyping. This will be done in
+the CEWIT datacenter (as articulated in Section \plsfill) in SBU (led by Das).
+The large-scale evaluations and refinement of topology control, reconfiguration
+and control plane will still continue while this proof-of-concept prototype is
+developed.  \vyas{it might be better for the lead PI to be on the integration task?} 
+
+
+\section{Project Timeline}
+
+\red{[sd: Below needs revision. Best to state in terms of tasks/subtasks.]}
+
+\newcommand{\myc}{$\circ$}
+
+\begin{table}[h]
+\begin{center}
+
+\begin{tabular}{l||c|c||c|c||c|c||c|c}
+		& \multicolumn{2}{c||}{Year 1 (2014)} & \multicolumn{2}{c||}{Year 2 (2015)} & \multicolumn{2}{c||}{Year 3 (2016)}  & \multicolumn{2}{c}{Year 4 (2017)}\\
+					& Fall & Spring & Fall & Spring & Fall & Spring & Fall & Spring \\ \hline
+ \taskref{task:system:fastalgo}: Algorithms 	&	&  & & \myc &  \myc  &       \myc   & \myc &  \\
+ \taskref{task:system:dataplane}: DataPlane 	&	&  & & \myc &  \myc  &       \myc   & \myc &  \\
+ \taskref{task:system:ctrlchannel}: ControlChannel 	&	&  & & \myc &  \myc  &       \myc   & \myc &  \\
+ \taskref{task:eval:demo}: E2E Demos 	&	&  & & \myc &  \myc  &       \myc   & \myc &  \\
+\end{tabular}
+
+\end{center}
+
+\caption{Projected schedule for tasks described in the previous sections. The $\circ$ shows when 
+ a task is ``active''.  Some tasks are  split in the timeline as we 
+ will need to revisit/integrate with respect to other aspects of the proposed work. 
+ }
+
+\label{tbl:schedule}
+\end{table}
+
+
+\end{document}

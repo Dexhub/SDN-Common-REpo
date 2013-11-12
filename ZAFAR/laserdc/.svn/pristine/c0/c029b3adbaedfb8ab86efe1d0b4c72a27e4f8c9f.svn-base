@@ -1,0 +1,124 @@
+Current LOCKS
+	Sec 1  --  Vyas
+	Sec 2  --  Vyas
+	Sec 3  --  Himanshu 
+	Sec 4  --  Himanshu
+	Sec 5.1  --  Himanshu
+	Sec 5.2  --  Himanshu
+	Sec 5.3 -- Samir
+	Sec 6	-- Himanshu.
+	Sec 7+	.. Samir
+
+==================
+
+TODOs
+======
+
+. HG: Review 3-6, 3.figures, 
+. Control, non-technical parts (collaboration plan)
+. FSO vs RF
+
+. Benefits: A/C, labor-laying, .... [HPRef], energy-proportional [google], Multi-cast.
+. Section 4 (degree-bounded vs. regular, re-reminding of variable names, optimal/upper-bound, latency (definitions change))
+
+
+Format
+=====
+
+Para Heading: CAPS, ":/." ...
+throughput vs bandwidth
+realizabel-topology vs realization topology
+links/devices/..
+
+
+REFS: SIGCOMM 2004, caesarhotsdn12, out-of-band control~\cite{emulab,ethane}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======================== HG's junk.==================================
+
+5.1 Plan
+====
+
+** PCT vs. RC. 	[Greedy in PCT -- … confirm with matroid…
+
+ non-splittable flows. Min congestion. NPC (mc or others).
+	PCT vs RC: Flows given, TE related objectives, given a non-complete graph …. Latency plays important role.
+	ILP is very slow.
+	Relationship with Network Design … 	
+. Approaches:
+	. Aggregate, and make it splittable. 
+***	. Approximation: Greedy won't work?? We'll try (a) randomizing, (b) Iterative Routing
+	. Relax the assumption of traffic predictability: Online ……
+	. When to reconfigure?? 
+	. Local Reconfiguration??
+
+. Graph extraction -- Steiner tree.
+. 1 SM/FSO. No selection. Exactly as min-congestion problem
+. 1 FSO/
+
+Eaten
+=====
+
+\eat{\para{Flexible Topology.} Essentially, each rack has a certain number
+of FSOs, and each FSO is associated with a set of other FSOs
+(typically from other and different racks) that it can {\em
+  potentially} ``connect'' to by a {\em full-duplex} link.  These
+associations are determined by pre-alignment of SMs or the GM of the
+FSOs, and hence may be limited in number and area.
+%
+In any case, at any instant, each FSO is connected to at most one
+other FSO, chosen in real-time from the set of associated FSOs.
+}
+
+
+
+512 racks, 48 machines/rack
+
+48 hypercubes (432 FSOs, 1 SM):	24m. 			[static]	non-optimal
+255+48 = 303 FSOs			24m		[static]	optimal?
+
+>48 FSOs (??).
+48 FSOs (with 256 SMs each):		24m.		[dynamic]	optimal.
+<48 FSOs (nothing will work)
+
+
+
+========
+
+topology.
+link has bandwidth.
+add all together.
+
+saturating traffic -- asymmetric … all of the links are used to their max bandwidth.
+
+what is the 
+
+====>  network throughput  =  total capacity/(weighted avg # of hops).      [saturated traffic]
+====>  
+
+max. network throughput = [total capacity active] /(avg # of hops). 	[latency = 0; one of shortest path.
+vertex-transitive graphs: you can get saturated (each edge in the network is saturated) uniform traffic. 
+			
+
+
+\sum (flow-size x no of hops) = total capacity.
+avg-flow-size = total-capacity/(\sum (weight # of hops))
+total flow size = 
+
+
+NP-hardness.
+

@@ -1,0 +1,67 @@
+\documentclass{sig-alt-hotnetscr}
+\usepackage{times}
+\usepackage{subfig}
+\usepackage{balance}
+
+\input{def}
+
+\newcommand{\vyas}[1]{{\footnotesize\color{red}[VS: #1]}}
+
+\newcounter{savecntr}
+\newcounter{restorecntr}
+\usepackage{footnote}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\title{\huge Patch Panels in the Sky: \\ A Case for Free-Space Optics in Data Centers}
+
+\author{Navid Hamedazimi, Himanshu Gupta, Vyas Sekar, Samir R. Das \\
+Department of Computer Science, Stony Brook University, Stony Brook NY, USA \\
+ \{navid,hgupta,vyas,samir\}@cs.stonybrook.edu}
+
+\begin{document}
+\conferenceinfo{Hotnets '13,} {November 21--22, 2013, College Park, MD, USA.}
+\CopyrightYear{2013}
+\crdata{978-1-4503-2596-7}
+\clubpenalty=10000
+\widowpenalty = 10000
+
+\maketitle
+
+\input{abstract}
+
+\vspace{-0.2cm}
+\category{C.2.1}{Computer Communication Networks}{Network Architecture and Design}
+\vspace{-0.2cm}
+\terms{Design, Experimentation, Management, Performance}
+\vspace{-0.2cm}
+\keywords{Data center, Free-Space Optics, Reconfigurable}
+\vspace{-0.2cm}
+
+
+%% classification terms
+%% keywords
+
+%% 1 page
+\input{intro_vyas}
+%% 1 page
+\input{fso}
+%% 1.75 page 
+\input{design}
+%% 1 page
+\input{performance}
+%% 1 page
+\input{future}
+%% 0.25
+\input{conc}
+
+\newpage 
+%\input{concerns}
+{
+\footnotesize
+\bibliographystyle{abbrv}
+\bibliography{../bib/Ref,../bib/VyasRef}
+}
+
+\end{document}

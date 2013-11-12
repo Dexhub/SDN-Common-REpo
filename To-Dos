@@ -1,0 +1,7 @@
+> Traffic generator ; wget or anything
+> Routing using POX
+> 100 nodes - 100 switches
+> Consistent Update
+> Kind of Event Listener for linking and unlinking of links
+> Send commands from outside, Polls the file at each interval
+

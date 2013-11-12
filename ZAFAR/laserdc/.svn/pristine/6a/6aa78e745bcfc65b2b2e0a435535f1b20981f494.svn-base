@@ -1,0 +1,250 @@
+@inproceedings{devoflow,
+  title={DevoFlow: Scaling flow management for high-performance networks},
+  author={A. Curtis et al.},
+  booktitle={SIGCOMM},
+  year={2011}
+}
+
+@inproceedings{rewire,
+  title={REWIRE: an optimization-based framework for unstructured data center network design},
+  author={A. Curtis},
+  booktitle={INFOCOM},
+  year={2012},
+}
+
+@inproceedings{mahout,
+  title={Mahout: Low-overhead datacenter traffic management using end-host-based elephant detection},
+  author={Andrew Curtis and Wonho Kim and Praveen Yalagandula},
+  booktitle={INFOCOM},
+  year={2011},
+}
+
+@article{kedar,
+  title={Urban optical wireless communication networks: the main challenges and possible solutions},
+  author={Kedar, D. and Arnon, S.},
+  journal={IEEE Communications Magazine},
+  volume={42},
+  number={5},
+  year={2004}
+}
+
+@article{taiwan,
+  title={10m/500Mbps WDM visible light communication systems},
+  author={W. Lin et al.},
+  journal={Optics Express},
+  volume={20},
+  number={9},
+  year={2012},
+}
+
+@inproceedings{flyways,
+  title={Augmenting data center networks with multi-gigabit wireless links},
+  author={Daniel  Halperin and Srikanth Kandula and Jitendra Padhye and Paramvir 
+ Bahl and David Wetherall},
+  booktitle={SIGCOMM},
+  year={2011}
+ }
+
+@inproceedings{modelwild,
+  title={Network traffic characteristics of data centers in the wild},
+  author={T. Benson and A. Akella and D. Maltz},
+  booktitle={IMC},
+  year={2010}
+}
+
+@inproceedings{jellyfish,
+  title={JellyFish: Networking Data Centers Randomly},
+  author={ Ankit Singla and Chi-Yao Hong and Lucian Popa and P. Brighten Godfrey},
+  booktitle={NSDI},
+  year={2012}
+}
+
+
+@inproceedings{model2,
+  title={The nature of datacenter traffic: measurements and analysis},
+  author={S. Kandula et al.},
+  booktitle={IMC},
+  year={2009}
+}
+
+@inproceedings{cornell,
+  title={On the feasibility of completely wireless datacenters},
+  author={Ji-Yong Shin and Emin Gun Sirer and Hakim Weatherspoon and Darko Kirovski},
+  booktitle={Proc.\ ANCS},
+  year={2012}
+}
+
+@inproceedings{cthru,
+  title={c-Through: Part-time optics in data centers},
+  author={Guohui Wang and David G. Andersen and Michael Kaminsky 
+ and Konstantina Papagiannaki and T. S. Eugene Ng and Michael Kozuch and Michael Ryan},
+  booktitle={SIGCOMM},
+  year={2010}
+}
+
+@inproceedings{fattree,
+  title={A scalable, commodity data center network architecture},
+  author={M. Al-Fares and and A. Loukissas and A. Vahdat},
+  booktitle={SIGCOMM},
+  year={2008}
+}
+
+@inproceedings{3db,
+  title={Mirror mirror on the ceiling: flexible wireless links for data centers},
+  author={Xia  Zhou and Zengbin Zhang and Yibo Zhu and Yubo Li 
+ and Saipriya Kumar and Amin Vahdat and Ben Y. Zhao and Haitao Zheng},
+  booktitle={SIGCOMM},
+  year={2012}
+}
+
+@misc{fsona,
+howpublished = {\url{http://www.fsona.com/product.php?sec=2500e}}
+}
+
+
+@misc{dc-size,
+howpublished = {\url{http://www.forbes.com/pictures/efei45lkmk/range-international-information-hub/}}
+}
+
+@misc{sfp,
+howpublished = {\url{http://www.corporatearmor.com/product_info.php?source=GBUS&products_id=6340&gclid=COTa4cauurgCFcOe4AodZgYA5g}}
+}
+
+@misc{lightpointe,
+howpublished = {\url{http://discountechnology.com/LightPointe-FlightStrata-G-Optical-Gigabit-Link}}
+}
+
+@inproceedings{helios,
+ author = {Nathan Farrington and George Porter and Sivasankar Radhakrishnan 
+ and Hamid Hajabdolali Bazzaz and Vikram Subramanya and Yeshaiahu Fainman and George Papen and Amin Vahdat},
+ title = {Helios: a hybrid electrical/optical switch architecture for modular data centers},
+ booktitle = {SIGCOMM},
+ year = {2010}
+}
+
+
+@inproceedings{vl2,
+ author = {Albert Greenberg and James R. Hamilton and Navendu Jain and 
+ Srikanth Kandula and Changhoon Kim and Parantap Lahiri and David A. Maltz
+ and Parveen Patel and Sudipta Sengupta},
+ title = {VL2: a scalable and flexible data center network},
+ booktitle = {SIGCOMM},
+ year = {2009}
+}
+
+
+@inproceedings{popa-cost,
+ author = {Lucian Popa and Sylvia Ratnasamy and Gianluca Iannaccone and 
+ Arvind Krishnamurthy and Ion Stoica},
+ title = {A cost comparison of datacenter network architectures},
+ booktitle = {Co-NEXT},
+ year = {2010}
+}
+
+@misc{sm,
+howpublished={\url{http://kentoptronics.com/switchable.html}}}
+
+@misc{sm-size,
+howpublished={\url{http://www.nanowerk.com/news/newsid=24852.php#ixzz2ZAueSvFq}}}
+
+
+@misc{64switch,
+howpublished={\url{http://www.colfaxdirect.com/store/pc/viewPrd.asp?idproduct=1377}}}
+
+@misc{sm-personal,
+author = {Le Li},
+note = {CEO, KentOptronics. Personal Communication}
+}
+
+@misc{us-patent,
+ author = {Howard Lee  Davidson and others},
+ title = {Data center with free-space optical communications},
+ howpublished = {US Patent 8,301,028},
+ year = {2012}
+}
+
+@misc{48-switch-cost,
+howpublished={\url{http://www.cisco.com/en/US/prod/collateral/switches/ps5718/ps6406/product_bulletin_c25-705278.html
+}
+}}
+
+
+@inproceedings{legup,
+ author = {Andrew Curtis and Srinivasan Keshav and Alejandro Lopez-Ortiz},
+ title = {LEGUP: using heterogeneity to reduce the cost of data center network upgrades},
+ booktitle = { Co-NEXT},
+ year = {2010},
+}
+
+@misc{space-laser,
+howpublished={\url{http://news.bbc.co.uk/2/hi/science/nature/4587580.stm}}}
+
+@misc{ieee-visible-light,
+howpublished={\url{http://www.ieee802.org/15/pub/TG7.html}}}
+
+@article{elec-survey,
+author={Paul F.  McManamon and Philip K. Bos and Michael J. Escuiti and 
+ Jason Jeikenfeld and Steve Serati and Huikai Xie and Edward A. Watson},
+title = {A Review of Phased Array Steering for Narrow-Band Electrooptical Systems},
+journal = {Proceedings of the IEEE},
+vol=97,
+no=6,
+year=2009
+}
+
+@article{160gbps,
+author={David Rockwell and G.S. Mecherie},
+title={Optical Wireless: Low-cost broadband optical access},
+journal={Lightwave},
+year=2001
+}
+
+@misc{hotnets09scribe,
+note={HotNets-VIII, Scribe Notes},
+howpublished={\url{http://conferences.sigcomm.org/hotnets/2009/session1.txt}}}
+year=2009
+}
+
+@inproceedings{tsujimura2008trans,
+  title={Trans-window free space optics transmission system},
+  author={Tsujimura, Takeshi and Yoshida, Koichi and Kurashima, Toshio and Mikawa, Masahiko},
+  booktitle={Proc. SICE Annual Conference, 2008},
+  year={2008},
+  organization={IEEE}
+}
+
+@inproceedings{mustafa2013reintroducing,
+  title={Reintroducing Free-space Optical technology to Community Wireless Networks},
+  author={Mustafa, Luka and Thomsen, Benn},
+  year={2013},
+  booktitle={Proc. 19th Americas Conference on Information Systems, Chicago, August, 2013.}
+}
+
+
+@ARTICLE{yoshida2013focus,
+author={Yoshida, K. and Tanaka, K. and Tsujimura, T. and Azuma, Y.},
+journal={Industrial Electronics, IEEE Transactions on},
+title={Assisted Focus Adjustment for Free Space Optics System Coupling Single-Mode Optical Fibers},
+year={2013},
+volume={60},
+number={11}
+}
+
+@ARTICLE{ciaramella2009terabit,
+author={Ciaramella, E. and Arimoto, Y. and Contestabile, G. and Presi, M. and D'Errico, A. and Guarino, V. and Matsumoto, M.},
+journal={Photonics Technology Letters, IEEE},
+title={{1.28-Tb/s} (32 $\times$ 40 {Gb/s)} Free-Space Optical {WDM} Transmission System},
+year={2009},
+volume={21},
+number={16}
+}
+
+@inproceedings{proteus,
+ author = {Ankit Singla and others},
+ title = {Proteus: a topology malleable data center network},
+ booktitle = {HotNets},
+ year = {2010}
+}
+
+@misc{48-10-switch,
+howpublished={\url{http://www.corporatearmor.com/product_info.php?source=GBUS&products_id=5198&gclid=CNPrh9DKvLgCFcee4Aod4j4AVQ}}}

@@ -1,0 +1,5 @@
+# for topology files, 
+# 1st Column is: flow start time in miliseconds from teh beginning of experiment
+# 2nd Column is: source
+# 3rd Column is: destination
+# 4th Column is: flow size in bytes

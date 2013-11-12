@@ -1,0 +1,265 @@
+@inproceedings{YCM:07,
+title = {{ProgME: Towards Programmable Network MEasurement}},
+author = {Lihua Yuan and Chen-Nee Chuah and Prashant Mohapatra},
+booktitle = {Proc.\ SIGCOMM},
+year = 2007
+}
+
+
+@inproceedings{KME:05,
+title = {{A Robust System for Accurate Real-time Summaries of Internet Traffic}},
+author = {Ken Keys and David Moore and Cristian Estan},
+booktitle = {Proc.\ SIGMETRICS},
+year = 2005
+}
+
+@inproceedings{LMPDK:08,
+author = {Yi Lu and Andrea Montanari and Balaji Prabhakar and Sarang Dharmapurikar and Abdul Kabbani},
+title = {{Counter Braids: A Novel Counter Architecture for Per-Flow Measurement}},
+booktitle  = {Proc.\ SIGMETRICS},
+year = 2008
+} 
+
+@article{CM:05,
+author = "G. Cormode and S. Muthukrishnan", 
+title = {{An improved data stream summary: the count-min sketch and its applications}},
+journal = {Journal of Algorithms},
+volume = 55,
+issue = 1,
+year = 2005
+}
+
+@inproceedings{SGCP:04,
+author = {{R. Schweller, A. Gupta, Y. Chen, and E. Parsons}},
+title = {{ Reversible sketches for efficient and accurate change detection over
+network data streams}},
+booktitle = {Proc.\ IMC},
+year = 2004
+}
+
+@inproceedings{KSXZ:05,
+title = {A Data Streaming Algorithm for Estimating Subpopulation Flow Size Distribution}, 
+author = "A. Kumar and M. Sung and J. Xu and E. Zegura", 
+booktitle = {Proceedings of ACM SIGMETRICS},
+year = 2005
+}
+@inproceedings{GMV:06,
+title = {Streaming and Sublinear Approximation of Entropy and Information Distances}, 
+author = {S. Guha and  A. McGregor and  S. Venkatasubramanian},
+booktitle = {Proceedings of ACM Symposium on Discrete Algorithms (SODA)} ,
+year = 2006
+}
+
+@inproceedings{CBM:06,
+ author = {{A. Chakrabarti, K. Do Ba, and S. Muthukrishnan}},
+ title = {Estimating entropy and entropy norm on data streams},
+ booktitle = {Proceedings of the 23rd International Symposium on Theoretical Aspects of Computer Science (STACS)},
+ year = 2006,
+}
+@inproceedings{AMS:96,
+ author = {N. Alon and Y. Matias and M. Szegedy},
+ title = {The space complexity of approximating the frequency moments},
+ booktitle = {Proc.\ STOC}, 
+ year = {1996},
+ }
+@InProceedings{VSGB:05,
+author = "S. Venkataraman and D. Song and P. B. Gibbons and A. Blum",
+title =  {{New Streaming Algorithms for Fast Detection of Superspreaders }},
+booktitle =  {Proc.\ NDSS},
+year  = 2005
+}
+@inproceedings{KSZC:03,
+author = {Balachander Krishnamurthy and Subhabrata Sen and Yin Zhang and Yan Chen},
+title = {Sketch-based change detection: Methods, Evaluation, and Applications},
+booktitle = {Proc.\ ACM IMC},
+year = 2003
+}
+
+@inproceedings{KSV:04,
+author = {Ramana Rao Kompella and Sumeet Singh and George Varghese},
+title = {On scalable attack detection in the network},
+booktitle = {Proc.\ IMC},
+year = 2004
+}
+@inproceedings{SLCGGZDKM:06,
+author  = {R. Schweller and Z. Li and Y. Chen and Y. Gao and A. Gupta and Y. Zhang and  P. Dinda and M. Kao and G. Memik },
+title = { Reverse Hashing for High-speed Network Monitoring: Algorithms, Evaluation, and Applications},
+booktitle = {Proc.\ IEEE INFOCOM},
+year = 2006
+}
+
+@misc{streaming-muthu,
+ author = "S. Muthukrishnan",
+ title = "Data streams: algorithms and applications",
+ howpublished = {\url{http://athos.rutgers.edu/~muthu/stream-1-1.ps}},
+}
+
+@inproceedings{CH:08,
+author = {Graham Cormode and Marios Hadjieleftheriou},
+title = {{Finding Frequent Items in Data Streams}},
+booktitle = {Proc.\ VLDB},
+year = 2008
+}
+
+@article{MK:08,
+author = {Harsha Madhyastha and Balachander Krishnamurthy},
+title = {{A Generic Language for Application-Specific Flow Sampling}},
+journal = {ACM CCR},
+volume =  38,
+number = 2,
+pages = {{7--15}},
+month = apr,
+year = 2008
+}
+
+@misc{flexnetflow,
+title = {{Flexible Netflow}},
+howpublished = {{\url{http://www.cisco.com/en/US/products/ps6965/products_ios_protocol_option_home.html}},
+}
+}
+
+@misc{netflowinputfilters,
+title = {{NetFlow Input Filters}},
+howpublished = {\url{http://www.cisco.com/en/US/docs/ios/12_3t/12_3t4/feature/guide/gtnfinpf.html}}
+}
+
+@inproceedings{CJOS:03,
+author = {{C. Cranor, T. Johnson, O. Spatscheck, and V. Shkapenyuk}},
+title = {{Gigascope: A stream database for network applications}},
+booktitle = {Proc.\ ACM SIGMOD},
+year =  2003
+}
+
+@inproceedings{GZSSCSK:07,
+title = {{Detecting Stealthy Attacks Using Online Histograms}},
+author = {{Y. Gao, Y. Zhao, R. Schweller, S. Venkataraman, Y. Chen, D. Song and M.-Y. Kao}},
+booktitle = {Proc.\ IWQoS},
+year = 2007
+}
+
+@article{PD:80,
+author = {David A. Patterson and David R. Ditzel},
+title = {{The case for the reduced instruction set computer}},
+journal = {ACM SIGARCH Computer Architecture News},
+volume = 8,
+number = 6,
+pages = {{25-33}},
+month= oct,
+year = 1980
+}
+
+@inproceedings{MKKLC:01,
+author = {{D. Moore, K. Keys, R. Koga, E. Lagache, and k. claffy}},
+title = {{CoralReef software suite as a tool for system and network
+administrators}}, 
+booktitle = {Proc.\ LISA},
+year = 2001
+}
+
+@misc{sprintreports,
+title = {IPMON - packet trace analysis},
+howpublished = {\url{http://ipmon.sprintlabs.com/packstat/packetoverview.php}}
+}
+
+@inproceedings{LCD:05,
+	author = {A. Lakhina and  M. Crovella and C. Diot},
+	title = {Mining Anomalies Using Traffic Feature
+	Distributions},
+	booktitle = {Proc.\ ACM SIGCOMM},
+	year = 2005
+}
+@inproceedings{FSBK:03,
+author = {Laura Feinstein and Dan Schnackenberg and Ravindra Balupari and
+Darrell Kindred},
+title = {{Statistical Approaches to DDoS Attack
+Detection and Response}},
+booktitle = {Proc.\ DARPA
+Information Survivability Conference and Exposition},
+year = 2003
+}
+@article{FM:85,
+	author = {Philippe Flajolet and Nigel G. Martin},
+	journal = {Journal of Computer and System Sciences},
+	number = {2},
+	pages = {182--209},
+	title = {Probabilistic Counting Algorithms for Data Base Applications},
+	volume = {31},
+	year = {1985}
+}
+@misc{cflowd,
+title = {Juniper cflowd},
+howpublished = {\url{http://www.juniper.net/techpubs/software/junos/junos91/swconfig-policy/cflowd.html}}
+}
+
+@inproceedings{SDTL:05,
+author = {{H. Song, S. Dharmapurikar, J. Turner,  and J. Lockwood}},
+title = {{ Fast Hash Table Lookup Using Extended Bloom Filter: An Aid to Network 
+Processing}},
+booktitle  = {Proc.\ ACM SIGCOMM},
+year = 2005
+}
+
+@inproceedings{KC:05,
+author = {{S. Kumar and P. Crowley}},
+title = {{Segmented Hash: An Efficient Hash Table Implementation for High
+Performance Networking Subsystems}},
+booktitle  = {Proc.\ ACM ANCS},
+year = 2005
+}
+
+@inproceedings{CR:07,
+author = {{M. P. Collins and M. K. Reiter}},
+title = {{Hit-list Worm Detection and Bot Identification in Large Networks Using Protocol Graphs}},
+booktitle = {Proc.\ RAID},
+year = 2007
+}
+
+@inproceedings{VGRZ:10,
+author = {{V. Sekar, A. Gupta, M. K. Reiter and H. Zhang}},
+title = {{Coordinated Sampling sans Origin-Destination Identifiers: Algorithms and  Analysis}},
+booktitle  = {Proc.\ COMSNSETS},
+year = 2010
+}
+
+@techreport{VGRZ:09,
+author = {{V. Sekar, A. Gupta, M. K. Reiter and H. Zhang}},
+title = {{Coordinated Sampling sans Origin-Destination Identifiers: Algorithms, Analysis, and Evaluation}},
+number = {CMU-CS-09-104},
+institution = {Carnegie Mellon University},
+year = 2009
+}
+
+@misc{narus,
+title = {{Narus Intercept Solution}},
+howpublished = {\url{http://www.narus.com/index.php/solutions/intercept}}
+}
+
+@inproceedings{CPKES:09,
+author = {Lorenzo De Carli and Yi Pan and Amit Kumar and Cristian Estan and Karthikeyan Sankaralingam},
+title = {{ PLUG: Flexible Lookup Modules for Rapid Deployment of New Protocols in High-speed Routers}},
+booktitle  = {Proc.\ SIGCOMM},
+year = 2010
+}
+
+@inproceedings{RTYB:06,
+title = {{Fisher information of sampled packets: an application to flow size estimation}},
+author = {Bruno Ribeiro and Don Towsley and Tao Ye and Jean Bolot},
+booktitle = {Proc.\ IMC},
+year = 2006
+}
+@misc{SRZ:09,
+title = {{Revisiting the Case for a Minimalist Architecture for Network Flow Monitoring}},
+author = {Vyas Sekar and  Michael K Reiter and Hui Zhang},
+howpublished = {Under submission. An earlier version appears as Technical Report CMU-CS-09-125},
+}
+
+@Misc{psamp-group,
+title = {{Packet Sampling, IETF Working Group Charter}},
+howpublished = {\url{http://www.ietf.org/html.charters/psamp/charter/} },
+}
+@inproceedings{KX:06,
+author = {Abhishek Kumar and Jim Xu},
+title = {{Sketch Guided Sampling -- Using On-Line Estimates of Flow Size for Adaptive Data Collection}},
+booktitle = {Proc.\ IEEE Infocom},
+year = 2006
+}

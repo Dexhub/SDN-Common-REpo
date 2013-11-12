@@ -1,0 +1,20 @@
+\section{Consistency during reconfigurations}
+
+\begin{itemize}
+
+\item example of loop
+
+\item example of blackhole
+
+\item what is the protocol to avoid this problem?
+
+\item are we sacrificing anything w.r.t performance?
+
+\item can we prove correctness? what assumptions? 
+
+\item does anything here tie back to the section 2 stuff abt 
+ static vs dynamic links .. do we want a static multihop core?
+
+\item why doesnt consistent update or the bandwidth aware stuff from uiuc 
+ solve this problem?
+\end{itemize}

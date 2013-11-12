@@ -1,0 +1,84 @@
+\section{Introduction}
+
+%% datacenter is hot
+Data centers (DCs) are a critical piece of today's computing infrastructure
+that drive  key networked applications in both the private~\cite{} as well as
+the public sector~\cite{}.  The key factors that have driven this trend toward
+massive large-scale consolidation of computing power is the economies of scale
+that these offer,  reduced or amortized management costs, better utilization of
+hardware via statistical multiplexing, and the ability to
+dynamically/elastically scale applications in response to changing workload
+patterns.  
+
+
+%% datacenter network needs to be designed carefully
+ An efficient and robust  {\em network fabric} is a key component that
+determines the success of such large-scale datacenters.  In the limit, this
+network fabric must give users and application designers the illusion of simply
+not being there---it should seamlessly provide the necessary performance and
+reliability that the applications demand. Otherwise, users often feel that the
+datacenter network is the fundamental stumbling block that stands in the way of
+developing high-performance and high-availability
+applications~\cite{jhamiltonblog}.  In this context, data center network
+designs must satisfy several potentially conflicting goals: high performance
+(e.g., high throughput and low latency)~\cite{fattree,vl2}; low equipment and
+management cost~\cite{fattree,popa-cost}; robustness to extremely dynamic
+traffic patterns~\cite{proteus,3db,flyways,cthru}; incremental expandability to
+add new servers or racks~\cite{legup,jellyfish}; and a host of  other practical
+concerns including cabling complexity, power, and
+cooling~\cite{farrington,portland,cabling}.
+
+
+%% traditional success
+ Due to the highly variable and unpredictable nature of data center
+workloads~\cite{vl2}, traditional  data center designs end up  offering extreme
+points in the space of cost-performance tradeoffs.  One one hand, simple tree
+or leaf/spine architectures offer  poor performance at low cost (e.g., a simple
+tree has many oversubscribed links). On the other hand, custom interconnects
+such as fat-tree architecture can provide good worst-case performance but are
+expensive and over-provisioned in the common case. 
+
+
+
+
+\begin{itemize}
+
+ %\item datacenters are hot and critical both in public/private sector etc 
+
+ %\item what are the key challenges that datacenters face -- cost, performance, expansion, power/cooling etc 
+
+ %\item key metrics seem to be cost/performance --  traditional  techniques are too inflexible -- oversubscribed or underscribed wired core  
+
+\item recent work shows promise of augmentation  -- undersubscribed wired core + wireless links
+
+\item take this vision to the logical extreme  --  fully wireless -- get rid of wired core oversubscribed or otherwise altogether 
+
+\item  vision figure and explanation  --  flexible fabric +  topology manager,  
+
+\item  what are the benefits this can offer -- flexibility, expandability, better cost-performance, no wiring etc
+
+\item what are the challenges in realizing this vision -- existing wireless isnt good enough, existing mgmt logic not really geared to such scenarios 
+
+\item enablers -- FSO, SDN etc  
+
+\item argue that this is a fundamental rethink on how we build DCs routing traffic engg etc
+
+\end{itemize}
+
+\mypara{Research Plan and Intellectual Merit}
+
+  find 2-3 concrete subtasks within each that seems "paper worthy"
+\begin{itemize}
+\item Thrust 1 is FSO feasibility -- 
+\item Thrust 2 is topology design  -- exploring backbone design and fast 
+\item Thrust 3 is management layer 
+\end{itemize}
+
+this will enhance a bunch of disciplines -- laser, DC, SDN, routing 
+
+\mypara{Team Qualifications} we have wireless, laser, theory, network mgmt, sdn
+
+do we have a strong history of collaboration?
+
+ we dont have dc .. that might be a bit of a problem
+

@@ -1,0 +1,74 @@
+\section{\bf Appendix (Network Architecture)}
+\label{sec:architecture}
+
+
+\vyas{i dont really follow what "problem" this section is solving,  or what
+objective this modified hypercube is trying to optimize}
+
+In this section, we introduce the architecture for the data center which guaranty the baseline performance of the system. This architecture also
+utilize dynamic links which can be changed base on demand to match the traffic pattern of
+the data center.
+
+\subsection{D-Cube}
+In this section, we introduce D-Cube, a modified version of hypercube with extra edges to improve diameter and bisection bandwidth of the graph. We define first level D-cube and diagonal edges as follows.
+
+\begin{definition} {Level 1 Diagonal Edges}
+
+ For a given hypercube where each vertex has a binary representation of $(a_0,…,a_n)$, we define level one
+diagonal edge for each vertex as the edge between the vertex and its complement.
+\end{definition}
+
+\begin{definition} {Level 1 D-Cube}
+  A level one D-Cube is a hypercube with addition of level one diagonal edges.
+\end{definition}
+
+Higher level diagonal edges and D-Cubes are defined recursively as follows.
+
+\begin{definition} {Level k Diagonal Edges} For a given hypercube where each vertex is represented as a binary number $(a_0,…,a_n)$, we define
+level $k$ diagonal edge for each vertex $(a_0,…,a_n)$ recursively as level $k_1$
+diagonal edge in sub D-Cube consisting of all vertices of from $(b_0 ,…, b_m , \overline{a_{m+1}} ,…, \overline{a_n} )$ and sub D-Cube
+consisting of all vertices of form $(\overline{a_0} ,…, \overline{a_m} , b_{m+1} ,…, b_n )$ where $m = \lfloor\frac{n}{2}\rfloor$, $\overline{a_i}$ is the compliment of $a_i$ and $b_{i}$’s are arbitrary digits.
+\end{definition}
+
+Similarly, level $k$ D-cube can be defined as follows.
+
+\begin{definition} {Level k D-Cube} A level one D-Cube is a hypercube with addition of level $1$ to $k$ diagonal edges.
+\end{definition}
+
+
+We prove the following theorems about hypercube with diagonal edges.
+\begin{theorem}  For a hypercube with $2^n$ vertex and diagonal of $n$, adding each additional level $k$
+diagonal edges as defined in definitions $1 \& 2$ would reduce the diameter of the hypercube to $\lfloor\frac{n}{2^k}\rfloor$ .
+\end{theorem}
+\begin{proof}
+    We do a recursive proof.  Recall that for a given hypercube, the distance between two nodes are the hamming distance between their two numbers. One can easily see that in level one D-Cube of size $2^n$, for any source node and destination with hamming distance of $a \leq n$ , one can use the diagonal edge to go to the compliment where the hamming distance is equal to $n-a$. Since, either $a$ or $n-a$ are less than $n/2$, the maximum distance between two nodes and hence the diagonal of the graph is at most $1+n/2$.
+
+    For the general case, proof would be added later.
+\end{proof}
+
+
+In addition, we have the following conjecture about the hypercube with diagonal edges.
+
+\softpara{\bf Conjecture 1}: The bisection bandwidth of level $k$ D-Cube with $2^n$ vertex, is $2^{n+k-1}$
+
+Although we have yet to find the proof for conjecture 1, we have tested its validity for D-Cubes of up to level $2$ and 1024 vertices by computer
+
+
+Our goal is to build an architecture which won't cost significantly more than the current wired architectures
+while providing similar performance. The network architecture described below is optimized to handle almost 24000 servers or in other word, 512 racks. In our architecture, we use one 64 port 10Gbps switch on top of each rack. We assume 48 ports of the switch ports
+are reserved for the servers inside the rack and 16 port are used for communications between the racks. We
+divide the 16 remaining ports into two group. We use 10 or more ports to create a D-Cube with additional
+diagonal edges on top of the racks. We use the remaining ports to create an additional random graph on top of the racks. The random links
+can later be adjusted on demand to better handle the network traffic patterns. With 16 port available, a D-Cube of up to level 3 can be created which give us three possible network graphs. In the next section, we compare the latency and other network characteristic of these three network graph to the other well known available architectures.
+
+
+
+
+
+
+
+
+
+
+
+

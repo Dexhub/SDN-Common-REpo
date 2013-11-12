@@ -1,0 +1,252 @@
+
+
+
+@inproceedings{GPW:07,
+author = {{J. Gonzalez, V. Paxson, and N. Weaver}},
+title = {{ Shunting: A Hardware/Software Architecture for Flexible, High-Performance Network Intrusion Prevention}},
+booktitle = { Proc. ACM CCS},
+year = 2007
+}
+
+@inproceedings{DFPS:08,
+author = {{H. Dreger, A. Feldmann, V. Paxson and R. Sommer}},
+title = {{ Predicting the Resource Consumption of Network Intrusion Detection Systems}},
+booktitle = {Proc. RAID},
+year = 2008
+}
+
+@inproceedings{AKPSW:08,
+author = {{M. Allman, C. Kreibich, V. Paxson, R. Sommer and N. Weaver}},
+title = {{ Principles for Developing Comprehensive Network Visibility}},
+booktitle = {{USENIX Workshop on Hot Topics in Security}}, 
+year = 2008
+}
+
+@inproceedings{DFPS:04,
+author = {{H. Dreger, A. Feldmann, V. Paxson, and R. Sommer}},
+title = {{ Operational Experiences with High-Volume Network Intrusion Detection}}, 
+booktitle = {Proc. ACM CCS},
+year = 2004}
+
+@inproceedings{P:98,
+author = {Vern Paxson}, 
+title = {{ Bro: A System for Detecting Network Intruders in Real-Time}}, 
+booktitle = {Proc.  USENIX Security Symposium}, 
+year = 1998
+}
+@article{P:05,
+author = {Vern Paxson},
+title = {{Bro: A System for Detecting Network Intruders in Real-Time}}, 
+journal = {Computer Networks},
+volume = 31,
+number = {23--24},
+pages = {2435--2463},
+year = 1999
+}
+
+@article{KV:05,
+author = {Adam Kalai and Santosh Vempala},
+title = {{Efficient Algorithms for Online Decision Problems}},
+journal = {Journal of Computer System Sciences},
+volume = 71,
+number = 3,
+month = Oct,
+year = 2005
+}
+
+@inproceedings{KLS:05,
+title = {{Configuring Networks with Content Filtering Nodes with Applications to Network Security}},
+author  = {{M. Kodialam, T. V. Lakshman, and Sudipta Sengupta}},
+booktitle = {Proc.\ INFOCOM},
+year = 2005
+}
+
+@article{R:87,
+title = {{Randomized rounding: A technique for provably good algorithms and algorithmic proofs}},
+author = {Prabhakar Raghavan and Clark D. Thompson},
+journal = {Combinatorica},
+volume = 7,
+number = 4,
+month = Dec,
+year = 1987
+}
+
+@inproceedings{LMV:10,
+title = {{Carousel: Scalable Logging for Intrusion Prevention Systems}},
+author= {Vinh The Lam and Michael Mitzenmacher and George Varghese},
+booktitle = {Proc. NSDI},
+year = 2010
+}
+
+@inproceedings{LZG:10,
+title = {{Sketch-based Streaming PCA Algorithm for Network-wide Traffic Anomaly Detection   }},
+author  = {Yang Liu and Linfeng Zhang and Yong Guan }, 
+booktitle = {Proc. ICDCS},
+year  = 2010
+}
+
+@inproceedings{KMR:02,
+title = {{Secure Overlay Services}},
+author  = { Angelos D. Keromytis and Vishal Misra and Dan Rubenstein}, 
+booktitle = {Proc. SIGCOMM},
+year = 2002
+}
+
+
+
+
+@inproceedings{ACJKLW:07,
+title = {{Compressing Rectilinear Pictures and Minimizing Access Control Lists}},
+author  = {David L. Applegate and  Gruia Calinescu and David S. Johnson and Howard Karloff and Katrina Ligett and Jia Wang},
+booktitle = {Proc.\ SODA},
+year= 2007
+}
+
+@inproceedings{AAMZWGG:07long,
+author = {Subrata Acharya and  Mehmud Abliz and  Bryan Mills and  Taieb F. Znati and Jia Wang and Zihui Ge and Albert Greenberg},
+title = {{OPTWALL: A Traffic-Aware Hierarchical Firewall Optimization}},
+booktitle = {Proc.\ NDSS},
+year = 2007
+}
+
+@inproceedings{AAMZWGG:07,
+author = {{S. Acharya et~al}},
+title = {{OPTWALL: A Traffic-Aware Hierarchical Firewall Optimization}},
+booktitle = {Proc.\ NDSS},
+year = 2007
+}
+@inproceedings{F:05,
+author = {{E. W. Fulp}}, 
+title = {Optimization of network firewalls policies using directed
+acyclic graphs},
+booktitle = {Proc.\  Internet Management Conference},
+year = 2005
+}
+@inproceedings{YKL:04,
+title = {{Gigabit Rate Packet Pattern-Matching Using TCAM}},
+author = {Fang Yu and Randy H. Katz and T. V. Lakshman},
+booktitle ={Proc.\ ICNP},
+year = 2004
+}
+
+@inproceedings{YLMK:05,
+author = {Fang Yu and T. V. Lakshman and Martin August Motoyama and Randy H. Katz},
+title = {{SSA: A Power and Memory Efficient Scheme to Multi-Match Packet Classification}},
+booktitle = {Proc.\ ANCS},
+year = 2005
+}
+
+
+@inproceedings{CM:02,
+author = {{F. Cuppens and A. Miege}},
+title = {{Alert correlation in a cooperative intrusion detection framework}},
+booktitle = {Proc.\ IEEE Symposium on Security and Privacy},
+year = 2002
+}
+ 
+@inproceedings{S:91,
+author = {Steven R. Snapp and  James Brentano and  Gihan V. Dias and  Terrance L. Goan and  L. Todd Heberlein and  Che-lin Ho and  Karl N. Levitt and  Biswanath Mukherjee and  Stephen E. Smaha and  Tim Grance and  Daniel M. Teal and  Doug Mansur},
+title  = {{DIDS (distributed intrusion detection system), - motivation, architecture, and an early prototype}},
+booktitle = {Proc.  National Computer Security Conference},
+year = 1991
+}
+@inproceedings{VS:01,
+author = {{A. Valdes and K. Skinner}},
+title = { Probabilistic alert correlation},
+booktitle = {Proc.\ RAID},
+year = 2001
+}
+@misc{symantec,
+key = "symantec",
+title = {{Symantec Corporation. Deepsight}},
+howpublished = {\url{http://www.enterprisesecurity.symantec.com}}
+}
+@misc{dshield,
+author = {J. Ullrich},
+title = { Dshield.org},
+howpublished = {\url{http://www.dshield.org}}
+}
+@inproceedings{BJY:04,
+title = {{Fusion and Filtering in Distributed Intrusion Detection Systems}},
+author = {Paul Barford and Somesh Jha and Vinod Yegneswaran},
+booktitle = {Proc.\ Allerton Conference on Communication, Control and Computing},
+year = 2004
+}
+
+@inproceedings{FTCKV:08,
+title = {{A Parallel Architecture for Stateful, High-Speed  Intrusion Detection}}, 
+booktitle = {Proc.\ ICISS},
+author = {Luca Foschini and Ashish V. Thapliyal and Lorenzo Cavallaro and Christopher Kruegel and Giovanni Vigna },
+year = 2008
+}
+@article{SPW:09,
+author = { Robin Sommer and Vern Paxson and Nicholas Weaver},
+title = {{ An Architecture for Exploiting Multi-Core Processors to Parallelize Network Intrusion Prevention}},
+journal = { Concurrency and Computation: Practice and Experience, Wiley}, 
+pages = {1255--1279},
+ volume = 21,
+ number =10,
+year = 2009
+}
+@inproceedings{LSB:08,
+author = {Anh Le and Ehab Al-Shaer and Raouf Batouba},
+booktitle = {Proc.\ INFOCOM},
+title = {{On Optimizing Load Balancing of Intrusion   Detection and Prevention Systems}},
+year = 2008
+} 
+@inproceedings{LSB2:08,
+author = {Anh Le and Ehab Al-Shaer and Raouf Batouba},
+booktitle = {Proc.\ SECURECOMM},
+title = {{Correlation-Based Load Balancing for Intrusion   Detection and Prevention Systems}},
+year = 2008
+}
+@inproceedings{SP:05,
+author = {R. Sommer and V. Paxson},
+title = {{Exploiting Independent State for Network Intrusion Detection}},
+booktitle = {Proc.\ ACSAC},
+year = 2005
+}
+@inproceedings{KVVK:02,
+author = {{C. Kruegel, F. Valeur, G. Vigna, and R. A. Kemmerer}},
+title = {{ Stateful Intrusion Detection for High-Speed Networks}},
+booktitle  = {Proc.\ IEEE Symposium on Security and Privacy},
+year = 2002
+}
+@InProceedings{zhang01:IMW,
+  author =   "Y. Zhang and N. Duffield and V. Paxson and S. Shenker",
+  title =    "{On the Constancy of {I}nternet Path Properties}",
+  booktitle =    {Proc.\ IMW},
+  year = 2001
+}
+@misc{snort,
+key = snort,
+howpublished = {\url{http://www.snort.org}}
+} 
+
+@misc{arbor,
+key = "Arbor",
+title = {Arbor Networks},
+howpublished = {\url{http://www.arbor.com}}
+}
+
+@misc{att-internetprotect,
+key = "ATT",
+title = {{AT\&T Enterprise Threat Management}},
+howpublished = {\url{http://www.business.att.com/enterprise/Family/business-continuity-enterprise/threat-management-enterprise/}}
+}
+
+@inproceedings{LKK:07,
+title = {{Playing Games with Approximation Algorithms}},
+author = {Katrina Ligett and Sham Kakade and Adam Tauman Kalai}, 
+booktitle = {Proc.\ STOC},
+year =  2007
+}
+@article{NLMK:08,
+author = {Sanjai Narain and Gary Levin and Sharad Malik and Vikram Kaul}, 
+title = {Declarative Infrastructure Configuration Synthesis and Debugging},
+journal = {Journal of Network and Systems Management},
+volume = 16,
+number = 3,
+year = 2008
+}
+

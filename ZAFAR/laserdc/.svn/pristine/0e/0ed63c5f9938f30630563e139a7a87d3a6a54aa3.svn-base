@@ -1,0 +1,59 @@
+
+@inproceedings{portland,
+title = {{PortLand: A Scalable Fault-Tolerant Layer 2 Data Center Network Fabric}},
+author = { Radhika Niranjan Mysore and Andreas Pamboris and Nathan Farrington and Nelson Huang and Pardis Miri and Sivasankar Radhakrishnan and Vikram Subramanya and Amin Vahdat},
+booktitle = {Proc.\ ACM SIGCOMM},
+year = 2009
+}
+
+@misc{farrington,
+author = {Nathan Farrington},
+title = { Optics in Data Center Network Architecture},
+howpublished = {\url{http://nathanfarrington.com/papers/dissertation.pdf}}
+}
+
+
+@inproceedings{multipathtcp,
+title = {{Design, Implementation and Evaluation of Congestion Control for Multipath TCP}},
+author = {Damon Wischik and Costin Raiciu and Adam Greenlagh and Mark Handley},
+booktitle = {proceedings of Usenix NSDI},
+year= 2011
+}
+
+@misc{thorup,
+title = {{ Traffic engineering with traditional IP routing protocols}},
+author = {Bernard Fortz and Jennifer Rexford and Mikkel Thorup},
+howpublished = {IEEE COmmunications Magazine},
+year = 2002
+}
+
+
+@misc{airflow,
+title = {Avoidable Mistakes that Compromise Cooling Perfomance},
+howpublished= {\url{http://www.mm4m.net/library/Avoidable\_Mistakes\_that\_Compromise\_Cooling\_Perfomance.pdf}}
+}
+
+@inproceedings{cabling,
+title = {{Taming the Flying Cable Monster: A Topology Design and Optimization Framework for Data-Center Networks}},
+author = { Jayaram Mudigonda and Praveen Yalagandula and  Jeffrey C. Mogul},
+booktitle = {Proc.\ USENIX ATC},
+year = 2011}
+
+
+@misc{hamiltonblog,
+author = {James Hamilton},
+title = {{ Datacenter Networks are in my Way}},
+howpublished = {\url{http://perspectives.mvdirona.com/2010/10/31/DatacenterNetworksAreInMyWay.aspx}}
+}
+
+@inproceedings{elastictree-nsdi10,
+title   = {{ElasticTree: Saving Energy in Data Center Networks}},
+author = {Brandon Heller and Srini Seetharaman and Priya Mahadevan and 
+ Yiannis Yiakoumis and Puneet Sharma and Sujata Banerjee and Nick 
+ McKeown},
+booktitle  = {Proc.\ NSDI},
+year = 2010
+}
+
+
+

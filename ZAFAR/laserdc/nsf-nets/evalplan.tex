@@ -1,0 +1,148 @@
+\section{Prototyping and Evaluation Plan}
+\label{sec:evalplan}
+
+\begin{task}
+\label{task:eval:demo}
+We will
+evaluate our approach both at an individual  component granularity as well as
+an end-to-end prototype and testbed demonstration. 
+\end{task}
+
+
+\begin{packeditemize}
+
+\item {\bf Design and protoype compact, cost-effective, steerable FSO
+devices:}  We will prototype a proof-of-concept  10~Gbps SFP-based FSO
+devices with a small form factor and design optical mechanisms to
+collimate  the laser beam to about 100m.  prototype  two  proposed
+steering mechanisms: using switchable mirrors and galvo motors.
+%Initially, the design of the collimation and  steering mechanisms will be decoupled
+ As a starting point, %To accelerate the initial development of steering mechanisms, 
+ we will decouple these two steps and repurpose our existing commodity/outdoor FSO devices~\cite{}
+ to test steering mechanisms. 
+
+
+%As a start, we will begin by using
+%commodity platforms~\cite{} and also develop a cost-effective platform for
+%tailoring these technologies to the reconfigurable datacenter context. 
+
+\item {\bf Reliability of steerable FSO in realistic conditions:} Real
+DCs will  have several sources of ``disturbances'' (e.g., rack
+vibration, temperature gradients, airflow patterns, etc.) that may cause
+alignment and performance issues for FSO communication.  First, we will
+create a  lab environment that can emulate the effects of different
+types of disturbances.  To estimate the range parameters for these
+effects, we will engage our industry partners (see letters from Facebook
+and Microsoft)  and add
+instrumentation sensors to compute clusters at local organizations
+(e.g., Brookhaven National Lab and CEWIT). Second, we will deploy a
+small number of FSO links in an actual DC environment (CEWIT cluster in
+Stony Brook University) and conduct a longitudinal study of the
+reliability of the links. 
+
+%The final goal of this stage is fine-tuning
+%the FSO design via systematic stress-testing and pick one steering
+%design for the end-to-end protoyping and evaluation (described
+%momentarily). 
+ \red{[SD: do we have access to a lab that can emulate ``disturbances"??]}
+
+\item {\bf Performance and benefits under realistic workloads:} We will
+develop scalable packet- and flow-level simulation platforms extending
+prior work~\cite{htsim,flowsim}  to evaluate the  benefits of our
+topology design  (Section~\ref{sec:topology}) and reconfiguration
+(Section~\ref{sec:system}) algorithms.  We will start with extrapolating
+from existimg small-scale
+datasets~\cite{Benson10:IMC,ycsb,ycsb-paper,googleclusterdata} and work
+with industry supporters (e.g., Facebook and Microsoft) to quantify the
+benefits at scale. 
+
+%ur concepts using real traces.
+
+
+\item {\bf Responsiveness, and correctness of control plane:}  We will
+implement a SDN  controller starting with research prototypes~\cite{pox}
+and port our ideas to open-source  platforms such as
+OpenDayLight~\cite{} as the project matures.  We will synthesize
+benchmark suites to ``stress-test''  the scalability and responsiveness
+of our controller.  We  plan to leverage our experiences with emulation
+platforms such as MiniNet~\cite{} and Emulab~\cite{} to  test the
+correctness of the proposed recovery and consistent reconfiguration
+mechanisms in the presence of network dynamics.
+
+\item {\bf End-to-end integration and  evaluation:} A full-scale DC
+testbed is outside the scope of the proposal in terms of infrastructure
+and personnel resources.\footnote{We plan to develop separate
+infrastructure proposals to develop at-scale prototypes.}
+%
+Within the scope of our budget, we will demonstrate a proof-of-concept
+testbed of 4 nodes (node represents a rack). Each node will be
+essentially a NetFPGA card~\cite{} on a host computer.  Each NetFPGA
+card has 4 x 10G SFP ports, three of which will connect to a FSO device
+each with one left for the controller use. We will use OpenFlow switch
+implementation on the NetFPGA cards~\cite{} to represent the ToR switch.
+ Using NetFPGA will enable precise timing and diagnostic
+information~\cite{}, link characterization~\cite{}, as well as aid 
+ in high-rate traffic generation~\cite{}.
+
+%Using NetFPGA will allow us use of precise traffic generators for
+%repeatable traffic loads~\cite{}, perform very fine-grain, per-hop
+%timing measurements and performance analysis in the openflow switch, and
+%easy access to the diagnostics information (DOM or digital optical
+%monitoring~\cite{}) from the optical SFP for alignment/steering and as
+%well as link characterization. \blue{It will also perhaps allow us to
+%study innovative packet hadling/forwarding not possible with commodity
+%SDN-capable switches.}
+
+The 4 node setup (along with the 4x3=12 FSO devices) will be deployed on
+top of the racks in an operational cluster (in CEWIT). %for testing in
+realistic environments.  The nodes will be moved around on different
+racks to create various geometric possibilities.  This will create
+various stress cases for studying the stability of the FSO link and
+steering performance. \red{[SD: will somebody complain that real data
+centers have real obstructions so such deployment is difficult?]} 
+
+%In
+%addition to the characterizing the raw performance of the links, a
+%variety of synthetic and trace-driven traffic load will be used to
+%evaluate the end-to-end, application perceived performance of the entire
+%system. 
+
+%{\bf 4--8} SDN-capable
+%switches (e.g., HP Procurve), each configured with {\bf 2-3} FSO-based links
+%(e.g., using the commodity galvo meter or mirror design) that can be
+%dynamically reconfigured via a central controller running on a server-grade
+%platform (e.g., Dell PowerEdge R720 or equivalent).   We will demonstrate the
+%viability of reconfigurability at fine-grained timescales as well as the
+%(evidently scaled-down) benefits of a flexible architecture.
+
+\vyas{something abt USRP etc?}
+
+\end{packeditemize}
+
+
+%\mypara{Project Timeline}
+%
+%\newcommand{\myc}{$\circ$}
+%
+%\begin{table}[t]
+%\begin{center}
+%{\small
+%\begin{tabular}{l||c|c||c|c||c|c||c|c}
+%		& \multicolumn{2}{c||}{Year 1 (2014)} & \multicolumn{2}{c||}{Year 2 (2015)} & \multicolumn{2}{c||}{Year 3 (2016)}  & \multicolumn{2}{c}{Year 4 (2017)}\\
+%					& Fall & Spring & Fall & Spring & Fall & Spring & Fall & Spring \\ \hline
+% \taskref{task:system:fastalgo}: Algorithms 	&	&  & & \myc &  \myc  &       \myc   & \myc &  \\
+% \taskref{task:system:dataplane}: DataPlane 	&	&  & & \myc &  \myc  &       \myc   & \myc &  \\
+% \taskref{task:system:ctrlchannel}: ControlChannel 	&	&  & & \myc &  \myc  &       \myc   & \myc &  \\
+% \taskref{task:eval:demo}: E2E Demos 	&	&  & & \myc &  \myc  &       \myc   & \myc &  \\
+%\end{tabular}
+%}
+%\end{center}
+%\vspace{-0.5cm}
+%\tightcaption{Projected schedule for tasks described in the previous sections. The $\circ$ shows when 
+% a task is ``active''.  Some tasks are  split in the timeline as we 
+% will need to revisit/integrate with respect to other aspects of the proposed work. 
+% }
+%\vspace{-0.5cm}
+%\label{tbl:schedule}
+%\end{table}
+%

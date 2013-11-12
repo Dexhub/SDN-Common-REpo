@@ -1,0 +1,120 @@
+\documentclass{sig-alternate-10pt}
+
+\usepackage{subfig}
+\usepackage{epsfig,endnotes,color,paralist, multirow,appendix}
+\usepackage{times}
+\usepackage{xspace}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage{etoolbox}
+\patchcmd{\quote}{\rightmargin}{\leftmargin 1em \rightmargin}{}{}
+\newcommand{\simplequote}[1]{\\\noindent{\it``{#1}''}\linebreak[3]}
+
+\newcommand{\vyas}[1]{{\footnotesize\color{blue}[VS: #1]}}
+
+\newcommand{\ignore}[1]{}
+\newcommand{\comment}[1]{}
+
+
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+
+
+\input{macros}
+\input{def}
+
+\begin{document}
+
+
+
+\title{\ArchName: Flexible All-Wireless Inter-Rack Network using Free-Space Optics}
+
+
+\newcommand{\supsym}[1]{\raisebox{4pt}{{\footnotesize #1}}}
+\newcommand{\pr}{\supsym{$\ast$}}
+\newcommand{\ms}{\supsym{$\dag$}}
+
+%\author{
+%Paper \# (6 pages)
+%:w
+%}
+
+\hyphenation{Seq-Nxt-Ack}
+\vspace{-1in}
+\maketitle
+
+% Use the following at camera-ready time to suppress page numbers.
+% Comment it out when you first submit the paper for review.
+%\thispagestyle{empty}
+
+
+\newcommand{\paraspace}{\vspace{0.05in}}
+\newcommand{\paragraphb}[1]{\paraspace\noindent{\bf #1} }
+\newcommand{\paragraphe}[1]{\paraspace\noindent{\em #1} }
+\newcommand{\paragraphbe}[1]{\paraspace\noindent{\bf \em #1} }
+
+
+
+%\newcommand{\mySection}{Section~}
+\newcommand{\mySection}{\S}
+\newcommand{\Name}{FireFly}
+
+
+
+
+%% 0.25
+\input{abstract}
+
+%% 1.5 pgs
+\input{intro}
+
+%% 2 pages
+\input{background}
+
+%% 1
+\input{overview}
+
+%% 1.5
+\input{fso}
+
+%% 1.5 pgs
+\input{preconfig}
+
+%% 1.5 pgs
+\input{reconfig}
+
+%% 1.5 pgs
+\input{consistency}
+
+%% 0.5
+\input{implementation}
+
+%% 2.5 pgs
+\input{evaluation}
+
+%% 0.5
+\input{discussion} 
+
+%% 0.5
+\input{related}
+
+%% 0.25
+\input{conclusions}
+
+\input{concerns}
+
+%% 0.5
+{\scriptsize 
+\bibliographystyle{abbrv}
+\bibliography{firefly}
+}
+
+\end{document}
+
+
+
+
+
+
+
+

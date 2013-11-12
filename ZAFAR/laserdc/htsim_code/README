@@ -1,0 +1,11 @@
+# To run the htsim simulations, execute run_all.sh, which runs FSO(0), FSO(16), Jellyfish, FSO(8)
+# Look into run_all.h if you want to execute a single topology
+# Below are the arguments taken by run_all.sh
+
+./run_all.sh #ToR #steiner_jellyfish hotspot/uniform executable(htsim_30mbps or htsim_256_1g) hotspot(proportion, < 1)
+
+
+The logs are saved in the folder htsim_code/sim/data
+
+#For analysis refer to the folder: simulation_scripts/find_stats, it has a README for how to analyze htsim logs  and for plotting simulation_scripts/gnuplot_scripts
+

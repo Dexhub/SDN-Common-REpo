@@ -1,0 +1,22 @@
+\section{Preconfiguration problem}
+
+\begin{itemize}
+
+\item  what is the input?
+
+\item  what is the objective?
+
+\item can we formalize the optimization problem here -- e.g., is it similar
+ to oblivious routing?
+
+\item what makes this hard/interesting from theoretical point of view?
+
+\item what are some naive strawman solutions that dont work? 
+
+\item what is the approach we use? for SM? for GM? for hybrid?
+
+\item how does this map back to result from sec 2 -- is this type of limited
+flexibility sufficient .. what is being kept static and what is being kept
+dynamic?
+
+\end{itemize}

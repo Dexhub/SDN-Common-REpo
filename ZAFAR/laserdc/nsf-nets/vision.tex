@@ -1,0 +1,84 @@
+\section{Motivation and Research Vision} 
+
+%, Overall Architecture, and Key Challenges}
+\label{sec:mot}
+
+\para{Motivation for Flexibile Architectures.}  Our vision of a
+``fully flexible'' architecture for data centers is motivated by the
+following key observations that we made through analysis of available
+real data center workloads~\cite{}.
+
+\begin{enumerate}
+\item
+{\em Under-Utilization of Network Resources in Fixed Architectures.}
+When we simulated the available DC workloads over a fixed DC
+architecture viz., JellyFish~\cite{jellyfish}, we observed that, at
+any point of time, a large fraction of the links/wires in the network
+were severely under-utilized (i.e., total traffic carried by them was
+only a small fraction of their total capacity). 
+
+\item
+{\em ``Flexibility'' Improves Resource Utilization and Reduces
+  Required Infrastructure.} We show that by appropriately re-wiring
+the connections between switches at each epoch, based on the
+future-epoch's traffic, we can actually achieve similar performance as
+the fixed architecture while using a fewer number of switches.
+%
+Moreover, we observe that the larger the number of ports that are
+rewired at each epoch the smaller is the number of total switches 
+required by the network. 
+\end{enumerate}
+
+\cbl \para{Traffic Analysis Methodology.}  We consider a data center
+of 20 racks, where each rack has $k$ machines. We use 1Gbps $2k$-port
+switches, as in FatTree architectures.  The ToR (top of rack) switches
+use $k$ ports for the machines, and the remaining $k$ ports for
+inter-switch connections. The non-ToR switches use all their ports for
+inter-switch connections. Our fixed architecure for (a) is based on a
+random graph (of inter-switch connections) over $XX$ number of
+switches, and delivers a performance of $ZZZ$ flow-completion time.
+We generate $D$-flexible architecture as follows: We allow $D$ ports
+of each ToR switch and $2D$ ports of each non-ToR switch to be
+``reconnected'' at each epoch; the interconnections between remaining
+ports are random but {\em fixed}. Thus, higher the value of $D$, more
+flexible is the architecture. We also consider $m$-ToRFlexible
+architectures, wherein we use only ToR switches with $m$ ports each;
+$k$ ports of these ToR switches are connected to the rack machines, 
+and the remaining $m-k$ ports are reconnected at every epoch. 
+
+\begin{figure*}
+\vspace{2in}
+\caption{ (a) Cumulative fraction of underutlized links for the fixed
+  architecture with XX switches. (b) Number of switches used in $D$-flexible 
+  architectures, for varying $D$, for uniform performance (note that the
+  fixed architecture corresponds to $D$=0). (c) Performance of $k$-ToRFlexible 
+  architectures for varying $k$.}
+\end{figure*}
+
+\softpara{Results.} Figure~\ref{fig:mot}(a) shows that a large
+fraction of links are underutlized in the fixed
+architecture. Figure~(b) demonstrate that imparting flexibility to the
+architecture can greatly reduce the network infrastructure (switches),
+and the reduction in switches increases with the increase in
+flexibility. Figure~(c) shows a full-flexible architecture based on
+only ToR switches (like ours) can match the performance of the fixed
+architecture, if a large enough ports are used on the ToR switch.  \cb
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
