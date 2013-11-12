@@ -1,0 +1,230 @@
+
+-------------------------------------------------------INNER : 2 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=2 --test pingall 2>&1 | tee output_temp.file
+completed in 0.350 seconds
+0.02user 0.05system 0:00.39elapsed 19%CPU (0avgtext+0avgdata 8228maxresident)k
+0inputs+0outputs (0major+23577minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 3 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=3 --test pingall 2>&1 | tee output_temp.file
+completed in 0.695 seconds
+0.03user 0.04system 0:00.73elapsed 11%CPU (0avgtext+0avgdata 8240maxresident)k
+0inputs+0outputs (0major+23085minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 4 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=4 --test pingall 2>&1 | tee output_temp.file
+completed in 0.726 seconds
+0.03user 0.06system 0:00.76elapsed 13%CPU (0avgtext+0avgdata 8256maxresident)k
+0inputs+0outputs (0major+32585minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 5 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=5 --test pingall 2>&1 | tee output_temp.file
+completed in 0.968 seconds
+0.07user 0.06system 0:01.01elapsed 13%CPU (0avgtext+0avgdata 8264maxresident)k
+0inputs+0outputs (0major+54060minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 6 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=6 --test pingall 2>&1 | tee output_temp.file
+completed in 0.944 seconds
+0.05user 0.09system 0:00.98elapsed 14%CPU (0avgtext+0avgdata 8268maxresident)k
+0inputs+0outputs (0major+59373minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 7 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=7 --test pingall 2>&1 | tee output_temp.file
+completed in 1.163 seconds
+0.08user 0.09system 0:01.20elapsed 14%CPU (0avgtext+0avgdata 8284maxresident)k
+0inputs+0outputs (0major+71851minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 8 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=8 --test pingall 2>&1 | tee output_temp.file
+completed in 1.266 seconds
+0.06user 0.12system 0:01.30elapsed 14%CPU (0avgtext+0avgdata 8296maxresident)k
+0inputs+0outputs (0major+84918minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 9 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=9 --test pingall 2>&1 | tee output_temp.file
+completed in 1.371 seconds
+0.05user 0.15system 0:01.41elapsed 14%CPU (0avgtext+0avgdata 8304maxresident)k
+0inputs+0outputs (0major+90748minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 10 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=10 --test pingall 2>&1 | tee output_temp.file
+completed in 1.556 seconds
+0.08user 0.14system 0:01.59elapsed 13%CPU (0avgtext+0avgdata 8308maxresident)k
+0inputs+0outputs (0major+96836minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 11 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=11 --test pingall 2>&1 | tee output_temp.file
+completed in 1.783 seconds
+0.09user 0.16system 0:01.82elapsed 14%CPU (0avgtext+0avgdata 8316maxresident)k
+0inputs+0outputs (0major+127225minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 12 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=12 --test pingall 2>&1 | tee output_temp.file
+completed in 1.863 seconds
+0.11user 0.16system 0:01.90elapsed 14%CPU (0avgtext+0avgdata 8336maxresident)k
+0inputs+0outputs (0major+135451minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 13 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=13 --test pingall 2>&1 | tee output_temp.file
+completed in 2.103 seconds
+0.09user 0.21system 0:02.14elapsed 14%CPU (0avgtext+0avgdata 8340maxresident)k
+0inputs+0outputs (0major+160150minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 14 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=14 --test pingall 2>&1 | tee output_temp.file
+completed in 2.198 seconds
+0.12user 0.23system 0:02.24elapsed 15%CPU (0avgtext+0avgdata 8356maxresident)k
+0inputs+0outputs (0major+178986minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 15 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=15 --test pingall 2>&1 | tee output_temp.file
+completed in 2.453 seconds
+0.08user 0.26system 0:02.49elapsed 13%CPU (0avgtext+0avgdata 8360maxresident)k
+0inputs+0outputs (0major+177680minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 16 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=16 --test pingall 2>&1 | tee output_temp.file
+completed in 2.358 seconds
+0.08user 0.33system 0:02.40elapsed 17%CPU (0avgtext+0avgdata 8380maxresident)k
+0inputs+0outputs (0major+214651minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 17 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=17 --test pingall 2>&1 | tee output_temp.file
+completed in 2.851 seconds
+0.11user 0.33system 0:02.89elapsed 15%CPU (0avgtext+0avgdata 8392maxresident)k
+0inputs+0outputs (0major+237175minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 18 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=18 --test pingall 2>&1 | tee output_temp.file
+completed in 3.030 seconds
+0.10user 0.34system 0:03.07elapsed 14%CPU (0avgtext+0avgdata 8396maxresident)k
+0inputs+0outputs (0major+223573minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 19 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=19 --test pingall 2>&1 | tee output_temp.file
+completed in 3.028 seconds
+0.08user 0.44system 0:03.07elapsed 17%CPU (0avgtext+0avgdata 8404maxresident)k
+0inputs+0outputs (0major+277774minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 20 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=1,fanout=20 --test pingall 2>&1 | tee output_temp.file
+completed in 3.496 seconds
+0.16user 0.37system 0:03.53elapsed 15%CPU (0avgtext+0avgdata 8424maxresident)k
+0inputs+0outputs (0major+290605minor)pagefaults 0swaps
+
+===========================================OUTER : 1 =======================================
+
+
+-------------------------------------------------------INNER : 2 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=2 --test pingall 2>&1 | tee output_temp.file
+completed in 1.157 seconds
+0.05user 0.07system 0:01.19elapsed 10%CPU (0avgtext+0avgdata 8276maxresident)k
+0inputs+0outputs (0major+43678minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 3 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=3 --test pingall 2>&1 | tee output_temp.file
+completed in 1.872 seconds
+0.07user 0.16system 0:01.91elapsed 12%CPU (0avgtext+0avgdata 8336maxresident)k
+0inputs+0outputs (0major+103553minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 4 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=4 --test pingall 2>&1 | tee output_temp.file
+completed in 4.031 seconds
+0.08user 0.40system 0:04.07elapsed 12%CPU (0avgtext+0avgdata 8448maxresident)k
+0inputs+0outputs (0major+216423minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 5 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=5 --test pingall 2>&1 | tee output_temp.file
+completed in 7.499 seconds
+0.14user 0.78system 0:07.54elapsed 12%CPU (0avgtext+0avgdata 8560maxresident)k
+0inputs+0outputs (0major+439785minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 6 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=6 --test pingall 2>&1 | tee output_temp.file
+completed in 13.364 seconds
+0.22user 1.26system 0:13.40elapsed 11%CPU (0avgtext+0avgdata 8696maxresident)k
+0inputs+0outputs (0major+772148minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 7 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=7 --test pingall 2>&1 | tee output_temp.file
+completed in 23.658 seconds
+0.26user 2.24system 0:23.70elapsed 10%CPU (0avgtext+0avgdata 8840maxresident)k
+0inputs+0outputs (0major+1331077minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 8 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=8 --test pingall 2>&1 | tee output_temp.file
+completed in 41.109 seconds
+0.31user 3.94system 0:41.15elapsed 10%CPU (0avgtext+0avgdata 9016maxresident)k
+0inputs+0outputs (0major+2042513minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 9 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=9 --test pingall 2>&1 | tee output_temp.file
+completed in 67.316 seconds
+0.44user 6.36system 1:07.36elapsed 10%CPU (0avgtext+0avgdata 9272maxresident)k
+0inputs+0outputs (0major+3262691minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 10 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=10 --test pingall 2>&1 | tee output_temp.file
+completed in 115.524 seconds
+0.53user 9.05system 1:55.56elapsed 8%CPU (0avgtext+0avgdata 9476maxresident)k
+0inputs+0outputs (0major+4718108minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 11 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=11 --test pingall 2>&1 | tee output_temp.file
+completed in 190.212 seconds
+0.82user 13.12system 3:10.25elapsed 7%CPU (0avgtext+0avgdata 9688maxresident)k
+0inputs+0outputs (0major+6749175minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 12 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=12 --test pingall 2>&1 | tee output_temp.file
+completed in 295.640 seconds
+1.11user 18.95system 4:55.68elapsed 6%CPU (0avgtext+0avgdata 9936maxresident)k
+0inputs+0outputs (0major+9464792minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 13 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=13 --test pingall 2>&1 | tee output_temp.file
+completed in 451.353 seconds
+1.36user 27.94system 7:31.42elapsed 6%CPU (0avgtext+0avgdata 10196maxresident)k
+0inputs+0outputs (0major+13027675minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 14 --------------------------------
+
+time sudo mn --switch ovsk --controller ref --topo tree,depth=2,fanout=14 --test pingall 2>&1 | tee output_temp.file
+completed in 663.025 seconds
+1.96user 38.22system 11:03.07elapsed 6%CPU (0avgtext+0avgdata 10492maxresident)k
+0inputs+0outputs (0major+17168822minor)pagefaults 0swaps
+
+-------------------------------------------------------INNER : 15 --------------------------------
+
