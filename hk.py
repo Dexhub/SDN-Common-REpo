@@ -6,6 +6,7 @@ This example shows how to create an empty Mininet object
 """
 import linecache
 import sys
+import rules
 
 from time import sleep
 from mininet.net import Mininet
@@ -71,7 +72,6 @@ for num in range(3,count+1):
   if (Nodes[0].find('S')!=-1): # Node is a Switch
     Node1 = Switches[int(Nodes[0][1:])-1]
   else:
-    print Nodes[0]
     Node1 = Hosts[int(Nodes[0][1:])-1]
 
   print "Node 1 :", 
@@ -105,8 +105,10 @@ net.start()
 #  parts[1].cmd('sleep(parts[0]);wget ');
 #  print timing
 
+print Switches
+#print Hosts
 
-
+rules(Nodes,Switches)
 
 info( '*** Running CLI\n' )
 CLI( net )

@@ -1,4 +1,4 @@
-cr!/usr/bin/python
+#!/usr/bin/python
 
 """
 This example shows how to create an empty Mininet object
@@ -50,6 +50,7 @@ def rules(Hosts,Switches):
       Next = Nodes[i+1]
 
       print ">Current:"+ Current
+
 ##########################################################
 
 ########## FLOW RULES LOGIC ##############################
@@ -57,59 +58,68 @@ def rules(Hosts,Switches):
       priority = "1"
       in_port = "1"
 
-
-      # SET DATA LINK SOURCE
-      if (Prev.find('H')!=-1): # Prev is a Host
-        nw_src = "10.0.0."+int(Prev[1:]) # IP address of the Host
-      else:
-        nw_src = "127.0.0.1" # IP address of the Switch
-    
-      # SET DATA LINK DESTINATION
-      if (Next.find('H')!=-1): # Next is a Host i.e last switch
-        nw_dst = "10.0.0."+int(Next[1:]) # IP address of the Host
-      else:
-        nw_dst = "127.0.0.1" # IP address of the Switch
-
-
-
-
-      # SET SOURCE IP ADDRESS
-      if (Prev.find('H')!=-1): # Prev is a Host
-        nw_src = "10.0.0."+int(Prev[1:]) # IP address of the Host
-      else:
-        nw_src = "127.0.0.1" # IP address of the Switch
-    
-      # SET DESTINATION IP ADDRESS 
-      if (Next.find('H')!=-1): # Next is a Host i.e last switch
-        nw_dst = "10.0.0."+int(Next[1:]) # IP address of the Host
-      else:
-        nw_dst = "127.0.0.1" # IP address of the Switch
+      dl_src = Current.Mac()
+      dl_dst = Next.Mac()
       
+      net_src = Current.Mac()
+      dl_dst = Next.Mac()
 
       actions = "output:2"
-      
-      rule= "dl_type="+dl_type+", priority="+priority+", dl_src="+dl_src+", dl_dst="+dl_dst+", in_port="+in_port+", nw_src="+nw_src+", nw_dst="+nw_dst=+", actions="actions
-     print "=======GENERATED RULE======="
-     print rule
+
+#      # SET DATA LINK SOURCE
+#      if (Prev.find('H')!=-1): # Prev is a Host
+#        dl_src = "10.0.0."+int(Prev[1:]) # IP address of the Host
+#      else:
+#        dl_src = "127.0.0.1" # IP address of the Switch
+#    
+#      # SET DATA LINK DESTINATION
+#      if (Next.find('H')!=-1): # Next is a Host i.e last switch
+#        dl_dst = "10.0.0."+int(Next[1:]) # IP address of the Host
+#      else:
+#        dl_dst = "127.0.0.1" # IP address of the Switch
+#
+#
+#
+#
+#      # SET SOURCE IP ADDRESS
+#      if (Prev.find('H')!=-1): # Prev is a Host
+#        nw_src = "10.0.0."+int(Prev[1:]) # IP address of the Host
+#      else:
+#        nw_src = "127.0.0.1" # IP address of the Switch
+#    
+#      # SET DESTINATION IP ADDRESS 
+#      if (Next.find('H')!=-1): # Next is a Host i.e last switch
+#        nw_dst = "10.0.0."+int(Next[1:]) # IP address of the Host
+#      else:
+#        nw_dst = "127.0.0.1" # IP address of the Switch
+#      
 
       
+      rule= "dl_type=" + dl_type
+      + ", priority=" + priority
+      +  ", dl_src=" + dl_src
+      +  ", dl_dst=" + dl_dst
+      +  ", in_port=" + in_port
+      +  ", nw_src=" + nw_src
+      +  ", nw_dst=" + nw_dst
+      +  ", actions=" + actions
 
- dl_type=0x0800, priority=1, dl_src=00:00:00:00:00:01, dl_dst=00:00:00:0    0:00:02, in_port=1, nw_src=10.0.0.1, nw_dst=10.0.0.2, actions=output:2
+      print "=======GENERATED RULE======="
+      print rule
       
-      
-    print " " 
 
 ######### OUTPUT THE RULE IN CORRESPONDING FILE #############
-logfile = open('test.log', 'a') 4
-logfile.write('line 2')
-logfile.close()
-print file('test.log').read()    
+      rulefile = "rule"+Prev[1:]
+      rulefile = open(rulefile, 'a') 
+      rulefile.write('\n'+rule)
+      rulefile.close()
 
 
 #########  MERGE  THE RULES IN A SINGLE FILE ###############  
+        
   
   
-  
+#print file('test.log').read()    
 ######### INVOKE THE POX MODULE TO IMPLEMENT THIS FILE #####
 
 
