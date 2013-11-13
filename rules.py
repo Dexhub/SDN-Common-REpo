@@ -13,7 +13,10 @@ from mininet.node import Controller
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 
-def rules(Hosts,Switches,routefile):
+def generator(Hosts,Switches,routefile):
+
+
+
 
 #  SPLIT_TOTAL = 100
   "Create an empty network and add nodes to it."
@@ -21,6 +24,7 @@ def rules(Hosts,Switches,routefile):
   #input = open(file, "r")
 
 
+  print Hosts
 
   info( '*** Adding controller\n' )
 #  net.addController( 'c0' )
@@ -58,40 +62,45 @@ def rules(Hosts,Switches,routefile):
       priority = "1"
       in_port = "1"
 
-      dl_src = Current.Mac()
-      dl_dst = Next.Mac()
+#      dl_src = Current.Mac()
+#      dl_dst = Next.Mac()
       
-      net_src = Current.Mac()
-      dl_dst = Next.Mac()
+#      net_src = Current.Mac()
+#      dl_dst = Next.Mac()
 
       actions = "output:2"
 
 #      # SET DATA LINK SOURCE
-#      if (Prev.find('H')!=-1): # Prev is a Host
-#        dl_src = "10.0.0."+int(Prev[1:]) # IP address of the Host
-#      else:
-#        dl_src = "127.0.0.1" # IP address of the Switch
+      if (Prev.find('H')!=-1): # Prev is a Host
+        dl_src = Hosts[int(Prev[1:])].Mac()
+        #"10.0.0."+int(Prev[1:]) # IP address of the Host
+      else:
+        dl_src = Switches[int(Prev[1:])].Mac()
+        #dl_src = "127.0.0.1" # IP address of the Switch
 #    
 #      # SET DATA LINK DESTINATION
-#      if (Next.find('H')!=-1): # Next is a Host i.e last switch
+      if (Next.find('H')!=-1): # Next is a Host i.e last switch
 #        dl_dst = "10.0.0."+int(Next[1:]) # IP address of the Host
-#      else:
+        dl_dst = Hosts[int(Next[1:])].Mac()
+      else:
+        dl_dst = Switches[int(Next[1:])].Mac()
 #        dl_dst = "127.0.0.1" # IP address of the Switch
-#
+
 #
 #
 #
 #      # SET SOURCE IP ADDRESS
-#      if (Prev.find('H')!=-1): # Prev is a Host
-#        nw_src = "10.0.0."+int(Prev[1:]) # IP address of the Host
-#      else:
-#        nw_src = "127.0.0.1" # IP address of the Switch
+      if (Prev.find('H')!=-1): # Prev is a Host
+        nw_src = Hosts[int(Prev[1:])].Ip()
+      else:
+        nw_src = Switches[int(Prev[1:])].Ip()
+
 #    
 #      # SET DESTINATION IP ADDRESS 
-#      if (Next.find('H')!=-1): # Next is a Host i.e last switch
-#        nw_dst = "10.0.0."+int(Next[1:]) # IP address of the Host
-#      else:
-#        nw_dst = "127.0.0.1" # IP address of the Switch
+      if (Next.find('H')!=-1): # Next is a Host i.e last switch
+        nw_dst = Hosts[int(Next[1:])].Ip()
+      else:
+        nw_dst = Switches[int(Next[1:])].Ip()
 #      
 
       

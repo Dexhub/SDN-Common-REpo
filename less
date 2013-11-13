@@ -1,0 +1,114 @@
+from mininet.node import Host
+print "*** Creating nodes"
+print "*** Configuring nodes"
+from mininet.node import Host
+This demo shows how to monitor a set of nodes by using
+We monitor nodes in a couple of ways:
+- First, each individual node is monitored, and its output is added
+    def __init__( self, parent, net, node, height=10, width=32, title='Node' ):
+        self.node = node
+        self.prompt = node.name + '# '
+        def newTerm( net=self.net, node=self.node, title=self.title ):
+            "Pop up a new terminal window for a node."
+            net.terms += makeTerms( [ node ], title )
+        label = Button( self, text=self.node.name, command=newTerm,
+        self.tk.createfilehandler( self.node.stdout, READABLE,
+        "If it's an interactive command, send it to the node."
+        if self.node.waiting:
+            self.node.write( char )
+        if self.node.waiting:
+            self.node.write( event.char )
+        self.node.sendInt()
+        "Send a command to our node."
+        if not self.node.waiting:
+            self.node.sendCmd( cmd )
+        data = self.node.monitor( timeoutms )
+        if not self.node.waiting:
+        return self.node.waiting
+        while self.node.waiting:
+            nodes = getattr( net, name )
+                cframe, nodes, width, titles[ name ] )
+    def createConsoles( self, parent, nodes, width, title ):
+        for node in nodes:
+            console = Console( f, self.net, node, title=title )
+            ip = consoles[ i ].node.IP()
+            console.node.cmd( 'iperf -s &' )
+            ip = consoles[ i ].node.IP()
+from mininet.node import Controller, OVSSwitch
+from mininet.node import OVSSwitch, Controller, RemoteController
+from mininet.node import Controller, UserSwitch
+        "returns primary/named networks or node from any net"
+        #search each net for node named key
+        "Iterate through all nodes in all Mininet objects"
+            for node in net:
+                yield node
+        "returns aggregate number of nodes in all nets"
+        "returns True if node is a member of any net"
+        "returns a list of all node names in all networks"
+        "returns a list of all nodes in all networks"
+        "returns (key,value) tuple list for every node in all networks"
+        """n: number of data network controller nodes
+from mininet.node import CPULimitedHost
+(without a topology object) and add nodes to it manually.
+from mininet.node import Controller
+    "Create an empty network and add nodes to it."
+    _intf = Intf( intfName, node=switch )
+from mininet.node import CPULimitedHost
+from mininet.node import UserSwitch, OVSKernelSwitch
+        # Initialize node data
+        self.nodeBindings = self.createNodeBindings()
+        self.nodePrefixes = { 'Switch': 's', 'Host': 'h' }
+        self.nodeCount = 0
+    # We could have used bindtags, as in nodeIcon, but
+    # links. Nodes are handled by bindings in the node icon.
+    def nodeIcon( self, node, name ):
+        "Create a new node icon."
+        icon = Button( self.canvas, image=self.images[ node ],
+        bindtags = [ str( self.nodeBindings ) ]
+    def newNode( self, node, event ):
+        "Add a new node to our canvas."
+        self.nodeCount += 1
+        name = self.nodePrefixes[ node ] + str( self.nodeCount )
+        icon = self.nodeIcon( node, name )
+                                          tags=node )
+        "Drag a link's endpoint to another node."
+    # Generic node handlers
+        "Create a set of bindings for nodes."
+        "Select node on entry."
+    # Specific node handlers
+        "Select the node that was clicked on."
+        "Drag a node around on the canvas."
+        # Adjust node position
+            # Didn't click on a node
+        "Delete node (and its links) from model."
+        # Make nodes
+            nodeNum = int( name[ 1: ] )
+                ipAddr = ( 10 << 24 ) + nodeNum
+                raise Exception( "Cannot create mystery node: " + name )
+from mininet.node import Node
+            node = Node.outToNode[ fd ]
+            print '%s:' % node.name, node.monitor().strip()
+from mininet.node import OVSKernelSwitch
+from mininet.node import Node
+    root: node to access iptables from
+       root: a node in the root namespace (for running commands)
+    # Create a node in root namespace
+    rootnode = connectToInternet( net )
+    stopNAT( rootnode )
+from mininet.node import CPULimitedHost
+from mininet.node import Node
+    info( "*** Creating nodes\n" )
+from mininet.node import Node
+def linkIntfs( node1, node2 ):
+    "Create link from node1 to node2 and return intfs"
+    link = Link( node1, node2 )
+    for node in controller, switch, h0, h1:
+        info( str( node ) + '\n' )
+from mininet.node import CPULimitedHost
+from mininet.node import Node
+      ip: IP address for root namespace node
+    # Create a node in root namespace and link to switch 0
+from mininet.node import OVSKernelSwitch
+"Create a 64-node tree network, and test connectivity using ping."
+from mininet.node import UserSwitch, OVSKernelSwitch  # , KernelSwitch
+    "Run ping test on 64-node tree networks."
