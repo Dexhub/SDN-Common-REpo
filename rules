@@ -1,0 +1,4 @@
+Switch 00-00-00-00-00-01:
+dl_type=0x0800, priority=1, dl_src=00:00:00:00:00:01, dl_dst=00:00:00:00:00:02, in_port=1, nw_src=10.0.0.1, nw_dst=10.0.0.2, actions=output:2
+#dl_type=0x0800, priority=1, nw_dst=11.0.1.2/24, actions=mod_dl_src:1a:2a:3a:1a:2a:3a, mod_dl_dst:00:00:00:00:00:01, output:2
+
