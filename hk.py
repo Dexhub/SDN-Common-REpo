@@ -62,13 +62,16 @@ count = len(open(file).readlines(  ))
 print count,
 
 for num in range(3,count+1):
-  line = linecache.getline('tree', num)
+  line = linecache.getline(file, num)
   Nodes = line.split(' ',3)
+  
+  print Nodes
 
 # Check if it is Switch or Host
   if (Nodes[0].find('S')!=-1): # Node is a Switch
     Node1 = Switches[int(Nodes[0][1:])-1]
   else:
+    print Nodes[0]
     Node1 = Hosts[int(Nodes[0][1:])-1]
 
   print "Node 1 :", 
@@ -92,9 +95,9 @@ net.start()
 
 # Logic to fetch the values from traffic matrix and call sleep for specific threads.
 # step 1 run a loop and fetch values for the first 5 lines of traffic matrix
-print "***STARTING!!"
+#print "***STARTING!!"
 #Hosts[0].cmd('sleep(1); wget h2:~/10000bytes copiedfile')
-print "***STOPPING!!"
+#print "***STOPPING!!"
 #for num in range (1, 6):
 #  line = linecache.getline('traffic', num)
 #  parts = line.split(' ',3)
