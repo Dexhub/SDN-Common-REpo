@@ -13,7 +13,7 @@ from mininet.node import Controller
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 
-def rules(Hosts,Switches):
+def rules(Hosts,Switches,routefile):
 
 #  SPLIT_TOTAL = 100
   "Create an empty network and add nodes to it."
@@ -25,7 +25,7 @@ def rules(Hosts,Switches):
   info( '*** Adding controller\n' )
 #  net.addController( 'c0' )
 
-  file = str(sys.argv[1])
+  file = routefile
   
   
   print "=== Generating switch rules from the file:",
