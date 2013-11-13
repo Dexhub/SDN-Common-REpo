@@ -58,7 +58,7 @@ for x in range(1, Num_Switches+1):
 
 info( '*** Creating links\n' )
 # Logic to read from line 3 to the end of file
-count = len(open('tree').readlines(  ))
+count = len(open(file).readlines(  ))
 print count,
 
 for num in range(3,count+1):
