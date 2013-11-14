@@ -46,14 +46,17 @@ Num_Hosts = int(new_str)
 info( '*** Adding hosts\n' )
 #Get value 100 from the file -> Host
 for x in range(1, Num_Hosts+1):
-  host = net.addHost( 'h'+str(x), ip='10.0.0.'+str(x))
+  ip = '10.0.0.%d/24' % x
+  host = net.addHost('h'+str(x), ip=ip, mac="00:00:11:00:00:0%d" % x) 
+  #host = net.addHost( 'h'+str(x), ip='10.0.0.'+str(x))
+  print host.IP()
   Hosts.append(host)
 #print Hosts
 
 
 print "########## Experiment ##########"
 
-#print net.hosts[0].eth0.Mac()
+#print Hosts[0].MAC()
 
 print "========My Hosts================"
 print Hosts
@@ -244,7 +247,7 @@ info( '*** Starting network\n')
 net.start()
 
 info( '*** Running CLI\n' )
-#CLI( net )
+CLI( net )
 
 info( '*** Stopping network' )
 net.stop()

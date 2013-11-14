@@ -2,8 +2,9 @@
 ***STOPPING!!
 topology
 ########## Experiment ##########
+[<Host h1:  pid=10964> , <Host h2:  pid=10965> , <Host h3:  pid=10966> , <Host h4:  pid=10967> ]
 ========My Hosts================
-[<Host h1:  pid=21211> , <Host h2:  pid=21212> , <Host h3:  pid=21213> , <Host h4:  pid=21214> ]
+[<Host h1:  pid=10964> , <Host h2:  pid=10965> , <Host h3:  pid=10966> , <Host h4:  pid=10967> ]
 12 Node 1 : s1 Node 2 :  s2
 Node 1 : s2 Node 2 :  s4
 Node 1 : s4 Node 2 :  h1
@@ -162,14 +163,5 @@ H4<--> S7<--> S3<--> S1<--> S2<--> S5<--> H2<--> Current:S7
 dl_type=0x0800, priority=1, dl_src=127.0.0.1, dl_dst=127.0.0.1, in_port=1, nw_src=00::00::00::00::00::03, nw_dst=00::00::00::00::00::03, actions=output:2
 H4<--> S7<--> S3<--> S1<--> S2<--> S5<--> H2<--> Current:S3
 =======GENERATED RULE=======
-dl_type=0x0800, priority=1, dl_src=127.0.0.1, dl_dst=127.0.0.1, in_port=1, nw_src=00::00::00::00::00::01, nw_dst=00::00::00::00::00::01, actions=output:2
-H4<--> S7<--> S3<--> S1<--> S2<--> S5<--> H2<--> Current:S1
-=======GENERATED RULE=======
-dl_type=0x0800, priority=1, dl_src=127.0.0.1, dl_dst=127.0.0.1, in_port=1, nw_src=00::00::00::00::00::02, nw_dst=00::00::00::00::00::02, actions=output:2
-H4<--> S7<--> S3<--> S1<--> S2<--> S5<--> H2<--> Current:S2
-=======GENERATED RULE=======
-dl_type=0x0800, priority=1, dl_src=127.0.0.1, dl_dst=127.0.0.1, in_port=1, nw_src=00::00::00::00::00::05, nw_dst=00::00::00::00::00::05, actions=output:2
-H4<--> S7<--> S3<--> S1<--> S2<--> S5<--> H2<--> Current:S5
-=======GENERATED RULE=======
-dl_type=0x0800, priority=1, dl_src=127.0.0.1, dl_dst=10.0.0.2, in_port=1, nw_src=00::00::00::00::00::02, nw_dst=00::00::00::00::00::02, actions=output:2
-Total Files Generated:7
+dl_type=0x0800, priority=1, dl_src=127.0.0.1, dl_dst=127.0.0.1, in_port=1, nw_src=00::00::00::00::00::01,*** Unknown command: :q
+ifconi: No such file or directory
