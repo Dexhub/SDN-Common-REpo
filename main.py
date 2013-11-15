@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
 """
-This example shows how to create an empty Mininet object
-(without a topology object) and add nodes to it manually.
+This script creates a topology and routes in the switches using the routes file passed.
 """
 import linecache
 import sys
 import rules
+import threading
 
 from time import sleep
 #from mininet.net
@@ -15,6 +15,24 @@ from mininet.node import Controller
 from mininet.cli import CLI
 from mininet.node import Node
 from mininet.log import setLogLevel, info
+
+
+# Our thread class:
+class CommandThread ( threading.Thread ):
+
+   # Override Thread's __init__ method to accept the parameters needed:
+   def __init__ ( self, hostname, command ):
+
+      self.hostname = hostname
+      self.command = command
+      threading.Thread.__init__ ( self )
+
+   def run ( self ):
+
+      print 'Running thread'
+      self.hostname.cmd(self.command)
+      print 'Thread Finished'
+      
 
 def emptyNet():
 
@@ -26,7 +44,8 @@ info( '*** Adding controller\n' )
 net.addController( 'c0' )
 
 file = str(sys.argv[1])
-rulefile = str(sys.argv[2])
+trafficfile = str(sys.argv[2])
+#rulefile = str(sys.argv[2])
 print file
 Switches = []
 
@@ -43,29 +62,21 @@ line = linecache.getline(file, 2)
 new_str = ''.join(line.split('=')[1:])
 Num_Hosts = int(new_str)
 
+
+# Hostsx : Mac 00:00:11:00:00:0x IP: 11.0.0.x - Done
+# Switches: Mac 00:00:00:0y:00:00 IP: 127.0.0.y - Left
+
 info( '*** Adding hosts\n' )
 #Get value 100 from the file -> Host
 for x in range(1, Num_Hosts+1):
-  ip = '10.0.0.%d/24' % x
+  ip = '11.0.0.%d/24' % x
   host = net.addHost('h'+str(x), ip=ip, mac="00:00:11:00:00:0%d" % x) 
-  #host = net.addHost( 'h'+str(x), ip='10.0.0.'+str(x))
-  print host.IP()
   Hosts.append(host)
-#print Hosts
-
-
-print "########## Experiment ##########"
-
-#print Hosts[0].MAC()
-
-print "========My Hosts================"
-print Hosts
 
 info( '*** Adding switch\n' )
 for x in range(1, Num_Switches+1):
   switch = net.addSwitch( 's'+str(x))
   Switches.append(switch);
-#  print switch.Mac()
 
 info( '*** Creating links\n' )
 # Logic to read from line 3 to the end of file
@@ -99,7 +110,84 @@ for num in range(3,count+1):
     
 # Logic to fetch the values from traffic matrix and call sleep for specific threads.
 # step 1 run a loop and fetch values for the first 5 lines of traffic matrix
-#print "***STARTING!!"
+print "***STARTING Traffic Generation!!"
+trafficfile
+print "=== Generating Traffic from the file:",
+print trafficfile + " ==="
+
+# start iperf server on all the hosts
+for host in Hosts:
+  host.cmd('iperf -s &')
+
+# Logic to read each line will the end of file
+count = len(open(trafficfile).readlines(  ))
+print "Total Traffic Flows:"+str(count)
+
+results = {}
+threads = [] 
+for num in range(1,count+1):
+  line = linecache.getline(trafficfile, num)
+  
+  Parts = line.split( )
+
+  time = Parts[0]
+  time = str(float(time)/1000)
+  fro = Parts[1]
+  to = Parts[2]
+  flowsize = Parts[3]
+  
+  print time
+
+
+  to_ip = '11.0.0.%s ' % to[1:]
+  log = 'Host'+str(fro[1:])+'.txt'
+  iperf = 'time iperf -c '+ to_ip + '-n '+ flowsize + ' -f b ' 
+  command ='sleep '+ time +' ; '+ iperf +'>> '+log
+  #command =iperf 
+#  command = "htop"
+  thread = CommandThread (Hosts[int(fro[1:])-1] , command ).start()
+  threads.append(thread)
+  print "Host => h"+fro[1:]+" Command = > "+command
+ 
+  #Hosts[0].sendCmd('ifconfig') 
+  #Hosts[0].waitOutput() 
+
+  #Hosts[0].sendCmd(command)
+  #Hosts[0].waitOutput
+  #Hosts[int(fro[1:])-1].cmd(command)
+
+print threads
+
+for x in threads: 
+    x.join()
+
+#  Hosts[int(fro[1:])-1].waitOutput()
+
+
+  
+#results = {}
+#for h in Hosts:
+#    results[h.name] = h.waitOutput()
+#print results
+
+
+#########  MERGE  THE OUTPUT IN A SINGLE FILE ############### 
+
+#sleep (25);
+
+FILES = len(Hosts)
+print "Total Files Generated:"+str(FILES)
+combined = "Flow Completion time.txt"
+combined = open(combined, 'w')
+for i in range(1,FILES+1):
+  log = 'Host'+str(i)+".txt"
+  logfile = open(log, 'r')
+  combined.write("\n Rules for Switch"+str(i))
+  combined.write(logfile.read())
+  logfile.close()
+combined.close()
+
+ 
 #Hosts[0].cmd('sleep(1); wget h2:~/10000bytes copiedfile')
 #print "***STOPPING!!"
 #for num in range (1, 6):
@@ -112,6 +200,9 @@ for num in range(3,count+1):
 #print Switches
 #print Hosts
 
+
+
+'''
 
 file = rulefile
 print "=== Generating switch rules from the file:",
@@ -209,9 +300,6 @@ for num in range(1,count+1):
       
 
 
-#nw_dst = Hosts[int(Next[1:])].Ip()
-#    else:
-#      nw_dst = Switches[int(Next[1:])].Ip()
      
     rule= "dl_type="+dl_type+", priority="+str(priority)+", dl_src="+dl_src+", dl_dst="+dl_dst+", in_port="+str(in_port)+", nw_src="+nw_src+", nw_dst="+nw_dst+", actions="+actions
 
@@ -241,7 +329,7 @@ for i in range(1,FILES+1):
   combined.write(rulefile.read())
   rulefile.close()
 combined.close()
-
+'''
 
 info( '*** Starting network\n')
 net.start()

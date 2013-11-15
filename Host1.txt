@@ -1,0 +1,70 @@
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  6707906935894382601043968 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  29514790517935278290632704 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  29514790517935278290632704 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  36893488147419103232000000 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  21081993227096632258985984 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  5270498306774158064746496 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  36893488147419103232000000 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  29514790517935278290632704 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  36893488147419103232000000 bits/sec
+------------------------------------------------------------
+Client connecting to 11.0.0.3, TCP port 5001
+TCP window size: 87380 Byte (default)
+------------------------------------------------------------
+[  3] local 0.0.0.0 port 0 connected with :: port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.0 sec  18446744073709551616 Bytes  11351842506898185444655104 bits/sec
